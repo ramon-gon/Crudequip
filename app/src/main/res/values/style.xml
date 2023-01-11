@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+
+
+    //boton enter
+    <style name="Widget.ComunicaProdis.ButtonEnter" parent="Widget.MaterialComponents.Button">
+        <item name="android:minHeight">48dp</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textAppearance">?attr/textAppearanceBody1</item>
+    </style>
+
+    //boton confirmar
+    <style name="Widget.ComunicaProdis.ButtonConfirm" parent="Widget.MaterialComponents.Button">
+        <item name="android:minHeight">40dp</item>
+        <item name="android:textSize">22dp</item>
+        <item name="android:text">@string/acceptar</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textAppearance">?attr/textAppearanceBody1</item>
+    </style>
+
+    //boton cancelar
+    <style name="Widget.ComunicaProdis.ButtonCancel" parent="Widget.MaterialComponents.Button">
+        <item name="android:minHeight">40dp</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textAppearance">?attr/textAppearanceBody1</item>
+        <item name="backgroundTint">#FF0000</item>
+        <item name="android:text">CANCELAR</item>
+    </style>
+
+    //Action Bar
+    <!--botones configuracion
+    Usuari/Administrador-->
+    <style name="Widget.ComunicaProdis.buttonConfig" parent="Widget.MaterialComponents.Button">
+        <item name="android:minHeight">48dp</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textAppearance">?attr/textAppearanceBody1</item>
+        <item name="android:layout_marginStart">20dp</item>
+        <item name="android:layout_marginEnd">20dp</item>
+    </style>
+
+
+
+    //Themes
+    <style name="Widget.ComunicaProdis.TextViewTherme" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">20dp</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+    <style name="Widget.ComunicaProdis.buttonTherme" parent="Widget.AppCompat.Button">
+        <item name="android:minHeight">40dp</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textAppearance">?attr/textAppearanceBody1</item>
+        <!--<item name="android:backgroundTint">@color/purple_200</item>-->
+    </style>
+    <style name="constraintlayoutTherme">
+        <item name="android:padding">20dp</item>
+        <!--<item name="android:backgroundTint">@color/purple_200</item>-->
+    </style>
+    <style name="Widget.ComunicaProdis.textInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:minHeight">48dp</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textAppearance">?attr/textAppearanceBody1</item>
+    </style>
+
+
+    <style name="Widget.ComunicaProdis.TextSize_titol" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textSize">30sp</item>
+    </style>
+
+
+    //pnatalla Foto de perfil
+    <style name="Widget.ComunicaProdis.ButtonFotoDePerfil_guardar" parent="Widget.MaterialComponents.Button">
+        <item name="android:minHeight">60dp</item>
+        <item name="android:textSize">30dp</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textAppearance">?attr/textAppearanceBody1</item>
+    </style>
+    <style name="Widget.ComunicaProdis.ButtonFotoDePerfil_cancelar" parent="Widget.MaterialComponents.Button">
+        <item name="android:minHeight">60dp</item>
+        <item name="android:textSize">30dp</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textAppearance">?attr/textAppearanceBody1</item>
+    </style>
+
+</resources>
