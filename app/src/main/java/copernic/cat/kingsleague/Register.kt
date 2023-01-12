@@ -72,11 +72,11 @@ class Register : AppCompatActivity() {
 
                         } else {
                             //Mostrem un missatge a l'usuari mitjançant un Toast
-                            Toast.makeText(
-                                applicationContext,
-                                "Cal introduïr un correu del tutor1",
-                                Toast.LENGTH_LONG
-                            ).show()
+                            val builder = AlertDialog.Builder(applicationContext)
+                            builder.setMessage("Cal introduir un correu")
+                            builder.setPositiveButton("Aceptar", null)
+                            val dialog = builder.create()
+                            dialog.show()
                         }
 
                     }
@@ -125,7 +125,7 @@ class Register : AppCompatActivity() {
                 if (task.isSuccessful) {
                     //afegir les dades del usuaris al Firestore
                     afegirUsuari(usuaris)
-                    startActivity(Intent(this, Menu::class.java))
+                    startActivity(Intent(this, Login::class.java))
                     finish()
                 } else {
                     val builder = AlertDialog.Builder(this)

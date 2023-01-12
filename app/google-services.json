@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "724294953468",
+    "project_id": "kingsleague-1b968",
+    "storage_bucket": "kingsleague-1b968.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:724294953468:android:2f8f4e1438658d5e1c6a79",
+        "android_client_info": {
+          "package_name": "copernic.cat.kingsleague"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "724294953468-ta3j1ft84etl8nb6i05ufrpu8ebbu0j7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD70FYTn9wampjGfozaZTGwZ7n_WC83kb0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "724294953468-ta3j1ft84etl8nb6i05ufrpu8ebbu0j7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -36,7 +36,7 @@
                 android:layout_marginTop="30dp"
                 android:text="@string/contrasenya"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/LoginLogo" />
+                app:layout_constraintTop_toBottomOf="@+id/registre_nomUsuariTextInput" />
 
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -72,15 +72,14 @@
                 app:layout_constraintTop_toBottomOf="@+id/registre_contrasenyaTextInput" />
 
             <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:id="@+id/registre_RepetirContrasenyaTextInput"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/registre_Repetircontrasenya"
                 app:endIconMode="password_toggle"
-                >
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/registre_Repetircontrasenya">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/registre_editRepetirContrasenya"
@@ -99,14 +98,14 @@
                 android:id="@+id/registre_GmailUsuari"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="30dp"
                 android:text="@string/gmail"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/registre_RepetirContrasenyaTextInput" />
+                app:layout_constraintTop_toBottomOf="@+id/LoginLogo" />
 
             <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:id="@+id/registre_nomUsuariTextInput"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -136,16 +135,17 @@
                 android:backgroundTint="#2196F3"
                 android:text="@string/confirmar"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/registre_nomUsuariTextInput" />
+                app:layout_constraintTop_toBottomOf="@+id/registre_RepetirContrasenyaTextInput" />
+
             <Button
                 android:id="@+id/registre_cancelar"
                 style="@style/Widget.ComunicaProdis.ButtonCancel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="38dp"
+                android:layout_marginStart="15dp"
                 android:text="@string/cancelar"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/registre_Guardar"/>
+                app:layout_constraintStart_toEndOf="@+id/registre_Guardar"
+                app:layout_constraintTop_toTopOf="@+id/registre_Guardar" />
 
 
 

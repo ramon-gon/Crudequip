@@ -3,7 +3,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="has_oblidat_la_contrasenya">Has oblidat la contrasenya?</string>
-    <string name="registrarse">Registrarse</string>
+    <string name="registrarse">REGISTRAR-SE</string>
     <string name="escriu_contrasenya">Escriu contrasenya</string>
     <string name="escriu_gmail">Escriu Gmail</string>
     <string name="title_activity_login">Login</string>

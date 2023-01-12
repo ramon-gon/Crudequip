@@ -72,7 +72,7 @@ class Login : AppCompatActivity() {
     fun correo(correu1: String): String {
         return correu1
     }
-
+/*
     override fun onStart() {
         super.onStart() //Cridem al la funció onStart() perquè ens mostri per pantalla l'activity
         //currentUser és un atribut de la classe FirebaseAuth que guarda l'usuari autenticat. Si aquest no està autenticat, el seu valor serà null.
@@ -83,7 +83,7 @@ class Login : AppCompatActivity() {
 
         }
     }
-
+*/
     //Funció per loguinar a un usuari mitjançant Firebase Authentication
     fun loguinar(correu: String, contrasenya: String) {
         //Loguinem a l'usuari

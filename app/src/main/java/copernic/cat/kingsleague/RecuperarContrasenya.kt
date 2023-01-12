@@ -62,6 +62,11 @@ class RecuperarContrasenya : AppCompatActivity() {
                 startActivity(Intent(this, Login::class.java))
                 finish() //Alliberem memòria un cop finalitzada aquesta tasca.
 
+                val builder = AlertDialog.Builder(this)
+                builder.setMessage("S'ha enviat un correu per canviar la contrasenya")
+                builder.setPositiveButton("Aceptar", null)
+                val dialog = builder.create()
+                dialog.show()
             }
             else
             {
