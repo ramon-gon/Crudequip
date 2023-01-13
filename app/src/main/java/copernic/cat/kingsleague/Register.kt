@@ -90,6 +90,28 @@ class Register : AppCompatActivity() {
     }
 
     fun campEsBuit(correu: String, contrasenya: String, contrasenyaBis: String): Boolean {
+        if (correu.isEmpty()){
+            val builder = AlertDialog.Builder(this)
+            builder.setMessage("Cal introduir un correu")
+            builder.setPositiveButton("Aceptar", null)
+            val dialog = builder.create()
+            dialog.show()
+
+        }
+        else if (contrasenya.isEmpty()){
+            val builder = AlertDialog.Builder(this)
+            builder.setMessage("Cal introduir una contrasenya")
+            builder.setPositiveButton("Aceptar", null)
+            val dialog = builder.create()
+            dialog.show()
+        }
+        else if (contrasenyaBis.equals(contrasenyaBis)){
+            val builder = AlertDialog.Builder(this)
+            builder.setMessage("Cal introduir la contrasenya correcta")
+            builder.setPositiveButton("Aceptar", null)
+            val dialog = builder.create()
+            dialog.show()
+        }
         return correu.isNotEmpty() && contrasenya.isNotEmpty() && contrasenyaBis.isNotEmpty()
     }
 
