@@ -47,6 +47,8 @@ class Register : AppCompatActivity() {
                     var contrasenya = binding.registreEditContrasenya.text.toString()
                     var contrasenyaBis = binding.registreEditRepetirContrasenya.text.toString()
 
+                    campEsBuit(correu,contrasenya,contrasenyaBis)
+
                     if (contrasenya.equals(contrasenyaBis) && campEsBuit(
                             correu,
                             contrasenya,
@@ -62,7 +64,7 @@ class Register : AppCompatActivity() {
 
                         if (!utils.isValidEmail(usuaris.gmail)) {
                             binding.registreEditnomUsuari.error =
-                                "email incorrete!!"
+                                "email incorrecte!!"
                         } else if (usuaris.gmail.isNotEmpty()) {
                             //Afegim una subcolecció igual que afegim una col.lecció però penjant de la col.lecció on està inclosa.
 
@@ -70,13 +72,6 @@ class Register : AppCompatActivity() {
 
                             registrar(correu, contrasenya, usuaris)
 
-                        } else {
-                            //Mostrem un missatge a l'usuari mitjançant un Toast
-                            val builder = AlertDialog.Builder(applicationContext)
-                            builder.setMessage("Cal introduir un correu")
-                            builder.setPositiveButton("Aceptar", null)
-                            val dialog = builder.create()
-                            dialog.show()
                         }
 
                     }
@@ -90,28 +85,34 @@ class Register : AppCompatActivity() {
     }
 
     fun campEsBuit(correu: String, contrasenya: String, contrasenyaBis: String): Boolean {
-        if (correu.isEmpty()){
+
+        if (correu.isEmpty()) {
             val builder = AlertDialog.Builder(this)
             builder.setMessage("Cal introduir un correu")
             builder.setPositiveButton("Aceptar", null)
             val dialog = builder.create()
             dialog.show()
 
-        }
-        else if (contrasenya.isEmpty()){
+        } else if (contrasenya.isEmpty()) {
             val builder = AlertDialog.Builder(this)
             builder.setMessage("Cal introduir una contrasenya")
             builder.setPositiveButton("Aceptar", null)
             val dialog = builder.create()
             dialog.show()
-        }
-        else if (contrasenyaBis.equals(contrasenyaBis)){
+        } else if (contrasenyaBis.isEmpty()) {
+            val builder = AlertDialog.Builder(this)
+            builder.setMessage("Cal introduir la contrasenya repetida")
+            builder.setPositiveButton("Aceptar", null)
+            val dialog = builder.create()
+            dialog.show()
+        } else if (contrasenyaBis != contrasenya) {
             val builder = AlertDialog.Builder(this)
             builder.setMessage("Cal introduir la contrasenya correcta")
             builder.setPositiveButton("Aceptar", null)
             val dialog = builder.create()
             dialog.show()
         }
+
         return correu.isNotEmpty() && contrasenya.isNotEmpty() && contrasenyaBis.isNotEmpty()
     }
 
