@@ -27,5 +27,9 @@
     <string name="gmail">Gmail</string>
     <string name="repetir_contrasenya">Repetir Contrasenya</string>
     <string name="logo_splash_screen">Logo Splash screen</string>
+    <string name="benvingut_a_la_kings_league">Benvingut a la Kings League</string>
+    <string name="veure_jugadors">Veure jugadors</string>
+    <string name="veure_classificacio">Veure classificació</string>
+    <string name="item">Item</string>
 
 </resources>

@@ -148,7 +148,7 @@ class Register : AppCompatActivity() {
                 if (task.isSuccessful) {
                     //afegir les dades del usuaris al Firestore
                     afegirUsuari(usuaris)
-                    startActivity(Intent(this, Login::class.java))
+                    startActivity(Intent(this, Menu::class.java))
                     finish()
                 } else {
                     val builder = AlertDialog.Builder(this)

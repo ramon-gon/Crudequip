@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MenuUsuari">
+
+    <TextView
+        android:id="@+id/titol_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="130dp"
+        android:text="@string/benvingut_a_la_kings_league"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/logomenu"
+        android:layout_width="200dp"
+        android:layout_height="130dp"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titol_menu" />
+
+    <Button
+        android:id="@+id/btnJugadors"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="51dp"
+        android:backgroundTint="#E11010"
+        android:text="@string/veure_jugadors"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logomenu" />
+
+    <Button
+        android:id="@+id/btnClasificacio"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="51dp"
+        android:backgroundTint="#E11010"
+        android:text="@string/veure_classificacio"
+        app:layout_constraintStart_toEndOf="@+id/btnJugadors"
+        app:layout_constraintTop_toBottomOf="@+id/logomenu" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
