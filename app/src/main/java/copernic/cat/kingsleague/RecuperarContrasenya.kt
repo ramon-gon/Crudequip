@@ -1,15 +1,16 @@
 package copernic.cat.kingsleague
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import copernic.cat.kingsleague.databinding.RecuperarContrasenyaBinding
+
 
 class RecuperarContrasenya : AppCompatActivity() {
 

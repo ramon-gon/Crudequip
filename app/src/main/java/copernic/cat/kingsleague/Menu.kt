@@ -3,7 +3,9 @@ package copernic.cat.kingsleague
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import copernic.cat.kingsleague.databinding.ActivityMenuBinding
 
@@ -33,5 +35,30 @@ class Menu : AppCompatActivity() {
         menuInflater.inflate(R.menu.menu_main, menu)
 
         return super.onCreateOptionsMenu(menu)
+    }
+
+
+    override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
+        R.id.configuracio -> {
+            binding.navHostFragmentContentMain.findNavController()
+                .navigate(R.id.nav_graph_usuaris)
+            true
+        }
+        R.id.menuUsuari -> {
+            onBackPressed()
+            true
+        }
+        else -> {
+            // If we got here, the user's action was not recognized.
+            // Invoke the superclass to handle it.
+            super.onOptionsItemSelected(item)
+        }
+    }
+
+    override fun onBackPressed() {
+        if ((binding.navHostFragmentContentMain.findNavController().currentDestination?.id
+                ?: -1) != R.id.menuUsuari
+        )
+            findNavController(R.id.nav_host_fragment_content_main).popBackStack()
     }
 }

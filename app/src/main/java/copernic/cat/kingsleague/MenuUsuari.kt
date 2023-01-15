@@ -18,7 +18,7 @@ class MenuUsuari : Fragment() {
         _binding = FragmentMenuUsuariBinding.inflate(inflater, container, false)
 
         binding.btnJugadors.setOnClickListener() {
-            findNavController().navigate(R.id.action_menu_to_classificacio)
+            findNavController().navigate(R.id.action_menuUsuari_to_classificacio2)
         }
 
         binding.btnClasificacio.setOnClickListener() {

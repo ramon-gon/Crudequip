@@ -1,23 +1,20 @@
 package copernic.cat.kingsleague
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Menu
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import androidx.core.content.ContextCompat.startActivity
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.installations.Utils
 import com.google.firebase.ktx.Firebase
 import copernic.cat.kingsleague.databinding.ActivityRegisterBinding
 import copernic.cat.kingsleague.models.Usuari
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+
 
 class Register : AppCompatActivity() {
 

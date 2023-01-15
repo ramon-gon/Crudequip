@@ -9,5 +9,14 @@
         android:id="@+id/menuUsuari"
         android:name="copernic.cat.kingsleague.MenuUsuari"
         android:label="fragment_menu_usuari"
-        tools:layout="@layout/fragment_menu_usuari" />
+        tools:layout="@layout/fragment_menu_usuari" >
+        <action
+            android:id="@+id/action_menuUsuari_to_classificacio2"
+            app:destination="@id/classificacio2" />
+    </fragment>
+    <fragment
+        android:id="@+id/classificacio2"
+        android:name="copernic.cat.kingsleague.Classificacio"
+        android:label="fragment_classificacio"
+        tools:layout="@layout/fragment_classificacio" />
 </navigation>

@@ -17,11 +17,11 @@ class MenuAdmin : Fragment() {
         _binding = FragmentMenuAdminBinding.inflate(inflater, container, false)
 
         binding.btnJugadors.setOnClickListener() {
-           findNavController().navigate(R.id.action_menu_to_classificacio)
+         //  findNavController().navigate(R.id.action_menu_to_classificacio)
         }
 
         binding.btnClasificacio.setOnClickListener() {
-         //   findNavController().navigate(R.id.action_fmenuAdmin2_to_autoritzacionsAdmin)
+            findNavController().navigate(R.id.action_menu_to_classificacio)
         }
 
         return binding.root

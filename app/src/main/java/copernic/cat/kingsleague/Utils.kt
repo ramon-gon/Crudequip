@@ -34,7 +34,7 @@ class Utils {
             notificationManageer.notify(1,notification)
         }
 
-        fun getCorreoUserActural(): String {
+        fun getCorreoUserActual(): String {
             auth = Firebase.auth
             val currentUser = auth.currentUser
             return currentUser!!.email.toString()
