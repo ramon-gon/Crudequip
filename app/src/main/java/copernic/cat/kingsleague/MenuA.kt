@@ -7,14 +7,14 @@ import android.view.MenuItem
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
-import copernic.cat.kingsleague.databinding.ActivityMenuAdmBinding
+import copernic.cat.kingsleague.databinding.ActivityMenu2Binding
 
-class MenuAdm : AppCompatActivity() {
-    private lateinit var binding: ActivityMenuAdmBinding
+class MenuA : AppCompatActivity() {
+    private lateinit var binding: ActivityMenu2Binding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMenuAdmBinding.inflate(layoutInflater)
+        binding = ActivityMenu2Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
         binding.navHostFragmentContentMainAdmin.getFragment<Fragment>().findNavController().setGraph(R.navigation.nav_graph_administrador)
@@ -30,11 +30,7 @@ class MenuAdm : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
         R.id.configuracio -> {
             binding.navHostFragmentContentMainAdmin.findNavController()
-                .navigate(R.id.action_menu_to_classificacio)
-            true
-        }
-        R.id.menu -> {
-            onBackPressed()
+                .navigate(R.id.action_menu_to_classificacioAdmin)
             true
         }
         else -> {

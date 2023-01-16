@@ -74,7 +74,7 @@ class Login : AppCompatActivity() {
     }
 
     override fun onStart() {
-        val intentAdmin = Intent(this, MenuAdm::class.java)
+        val intentAdmin = Intent(this, MenuA::class.java)
         val intent = Intent(this, Menu::class.java)
         super.onStart() //Cridem al la funció onStart() perquè ens mostri per pantalla l'activity
         //currentUser és un atribut de la classe FirebaseAuth que guarda l'usuari autenticat. Si aquest no està autenticat, el seu valor serà null.
@@ -116,7 +116,7 @@ class Login : AppCompatActivity() {
     }
 
     suspend fun isAdmin() {
-        val intentAdmin = Intent(this, MenuAdm::class.java)
+        val intentAdmin = Intent(this, MenuA::class.java)
         val intent = Intent(this, Menu::class.java)
         lifecycleScope.launch {
 

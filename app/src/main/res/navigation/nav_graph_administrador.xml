@@ -7,30 +7,24 @@
 
     <fragment
         android:id="@+id/menu"
-        android:name="copernic.cat.kingsleague.Menu"
+        android:name="copernic.cat.kingsleague.MenuAdmin"
         android:label="fragment_menu_admin"
         tools:layout="@layout/fragment_menu_admin" >
-        <action
-            android:id="@+id/action_menu_to_classificacio"
-            app:destination="@id/classificacio" />
-        <action
-            android:id="@+id/action_menu_to_fotoPerfil2"
-            app:destination="@id/fotoPerfil2" />
         <action
             android:id="@+id/action_menu_to_menuEquips"
             app:destination="@id/menuEquips" />
         <action
             android:id="@+id/action_menu_to_menuJugadors"
             app:destination="@id/menuJugadors" />
-    </fragment>
-    <fragment
-        android:id="@+id/classificacio"
-        android:name="copernic.cat.kingsleague.Classificacio"
-        android:label="fragment_classificacio"
-        tools:layout="@layout/fragment_classificacio" >
         <action
-            android:id="@+id/action_classificacio_to_menu"
-            app:destination="@id/menu" />
+            android:id="@+id/action_menu_to_jugadorsAdmin"
+            app:destination="@id/jugadorsAdmin" />
+        <action
+            android:id="@+id/action_menu_to_fotoPerfilAdmin"
+            app:destination="@id/fotoPerfilAdmin" />
+        <action
+            android:id="@+id/action_menu_to_classificacioAdmin"
+            app:destination="@id/classificacioAdmin" />
     </fragment>
     <fragment
         android:id="@+id/crearEquips"
@@ -81,15 +75,6 @@
             app:destination="@id/menuJugadors" />
     </fragment>
     <fragment
-        android:id="@+id/jugadors2"
-        android:name="copernic.cat.kingsleague.Jugadors"
-        android:label="fragment_jugadors"
-        tools:layout="@layout/fragment_jugadors" >
-        <action
-            android:id="@+id/action_jugadors2_to_menu"
-            app:destination="@id/menu" />
-    </fragment>
-    <fragment
         android:id="@+id/menuEquips"
         android:name="copernic.cat.kingsleague.MenuEquips"
         android:label="fragment_menu_equips"
@@ -123,14 +108,6 @@
             app:destination="@id/eliminarJugadors" />
     </fragment>
     <fragment
-        android:id="@+id/fotoPerfil2"
-        android:name="FotoPerfil"
-        android:label="FotoPerfil" >
-        <action
-            android:id="@+id/action_fotoPerfil2_to_menu"
-            app:destination="@id/menu" />
-    </fragment>
-    <fragment
         android:id="@+id/modificarClassificacio"
         android:name="copernic.cat.kingsleague.ModificarClassificacio"
         android:label="fragment_modificar_classificacio"
@@ -141,5 +118,29 @@
         <action
             android:id="@+id/action_modificarClassificacio_to_menuEquips"
             app:destination="@id/menuEquips" />
+    </fragment>
+    <fragment
+        android:id="@+id/jugadorsAdmin"
+        android:name="copernic.cat.kingsleague.JugadorsAdmin"
+        android:label="JugadorsAdmin" >
+        <action
+            android:id="@+id/action_jugadorsAdmin_to_menu"
+            app:destination="@id/menu" />
+    </fragment>
+    <fragment
+        android:id="@+id/fotoPerfilAdmin"
+        android:name="FotoPerfilAdmin"
+        android:label="FotoPerfilAdmin" >
+        <action
+            android:id="@+id/action_fotoPerfilAdmin_to_menu"
+            app:destination="@id/menu" />
+    </fragment>
+    <fragment
+        android:id="@+id/classificacioAdmin"
+        android:name="copernic.cat.kingsleague.ClassificacioAdmin"
+        android:label="ClassificacioAdmin" >
+        <action
+            android:id="@+id/action_classificacioAdmin_to_menu"
+            app:destination="@id/menu" />
     </fragment>
 </navigation>

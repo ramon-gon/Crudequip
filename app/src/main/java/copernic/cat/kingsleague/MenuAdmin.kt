@@ -17,13 +17,21 @@ class MenuAdmin : Fragment() {
         _binding = FragmentMenuAdminBinding.inflate(inflater, container, false)
 
         binding.btnJugadors.setOnClickListener() {
-         //  findNavController().navigate(R.id.action_menu_to_classificacio)
+            findNavController().navigate(R.id.action_menu_to_jugadorsAdmin)
         }
 
         binding.btnClasificacio.setOnClickListener() {
-            findNavController().navigate(R.id.action_menu_to_classificacio)
+            findNavController().navigate(R.id.action_menu_to_classificacioAdmin)
         }
 
+
+        binding.btnEquipsModificar.setOnClickListener() {
+            findNavController().navigate(R.id.action_menu_to_menuEquips)
+        }
+
+        binding.btnJugadorsModificar.setOnClickListener() {
+            findNavController().navigate(R.id.action_menu_to_menuJugadors)
+        }
         return binding.root
     }
 }
