@@ -13,10 +13,133 @@
         <action
             android:id="@+id/action_menu_to_classificacio"
             app:destination="@id/classificacio" />
+        <action
+            android:id="@+id/action_menu_to_fotoPerfil2"
+            app:destination="@id/fotoPerfil2" />
+        <action
+            android:id="@+id/action_menu_to_menuEquips"
+            app:destination="@id/menuEquips" />
+        <action
+            android:id="@+id/action_menu_to_menuJugadors"
+            app:destination="@id/menuJugadors" />
     </fragment>
     <fragment
         android:id="@+id/classificacio"
         android:name="copernic.cat.kingsleague.Classificacio"
         android:label="fragment_classificacio"
-        tools:layout="@layout/fragment_classificacio" />
+        tools:layout="@layout/fragment_classificacio" >
+        <action
+            android:id="@+id/action_classificacio_to_menu"
+            app:destination="@id/menu" />
+    </fragment>
+    <fragment
+        android:id="@+id/crearEquips"
+        android:name="copernic.cat.kingsleague.CrearEquips"
+        android:label="fragment_crear_equips"
+        tools:layout="@layout/fragment_crear_equips" >
+        <action
+            android:id="@+id/action_crearEquips_to_menuEquips"
+            app:destination="@id/menuEquips" />
+        <action
+            android:id="@+id/action_crearEquips_to_menu"
+            app:destination="@id/menu" />
+    </fragment>
+    <fragment
+        android:id="@+id/crearJugador"
+        android:name="copernic.cat.kingsleague.CrearJugador"
+        android:label="fragment_crear_jugador"
+        tools:layout="@layout/fragment_crear_jugador" >
+        <action
+            android:id="@+id/action_crearJugador_to_menu"
+            app:destination="@id/menu" />
+        <action
+            android:id="@+id/action_crearJugador_to_menuJugadors"
+            app:destination="@id/menuJugadors" />
+    </fragment>
+    <fragment
+        android:id="@+id/eliminarEquips"
+        android:name="copernic.cat.kingsleague.EliminarEquips"
+        android:label="fragment_eliminar_equips"
+        tools:layout="@layout/fragment_eliminar_equips" >
+        <action
+            android:id="@+id/action_eliminarEquips_to_menuEquips"
+            app:destination="@id/menuEquips" />
+        <action
+            android:id="@+id/action_eliminarEquips_to_menu"
+            app:destination="@id/menu" />
+    </fragment>
+    <fragment
+        android:id="@+id/eliminarJugadors"
+        android:name="copernic.cat.kingsleague.EliminarJugadors"
+        android:label="fragment_eliminar_jugadors"
+        tools:layout="@layout/fragment_eliminar_jugadors" >
+        <action
+            android:id="@+id/action_eliminarJugadors_to_menu"
+            app:destination="@id/menu" />
+        <action
+            android:id="@+id/action_eliminarJugadors_to_menuJugadors"
+            app:destination="@id/menuJugadors" />
+    </fragment>
+    <fragment
+        android:id="@+id/jugadors2"
+        android:name="copernic.cat.kingsleague.Jugadors"
+        android:label="fragment_jugadors"
+        tools:layout="@layout/fragment_jugadors" >
+        <action
+            android:id="@+id/action_jugadors2_to_menu"
+            app:destination="@id/menu" />
+    </fragment>
+    <fragment
+        android:id="@+id/menuEquips"
+        android:name="copernic.cat.kingsleague.MenuEquips"
+        android:label="fragment_menu_equips"
+        tools:layout="@layout/fragment_menu_equips" >
+        <action
+            android:id="@+id/action_menuEquips_to_menu"
+            app:destination="@id/menu" />
+        <action
+            android:id="@+id/action_menuEquips_to_eliminarEquips"
+            app:destination="@id/eliminarEquips" />
+        <action
+            android:id="@+id/action_menuEquips_to_crearEquips"
+            app:destination="@id/crearEquips" />
+        <action
+            android:id="@+id/action_menuEquips_to_modificarClassificacio"
+            app:destination="@id/modificarClassificacio" />
+    </fragment>
+    <fragment
+        android:id="@+id/menuJugadors"
+        android:name="copernic.cat.kingsleague.MenuJugadors"
+        android:label="fragment_menu_jugadors"
+        tools:layout="@layout/fragment_menu_jugadors" >
+        <action
+            android:id="@+id/action_menuJugadors_to_menu"
+            app:destination="@id/menu" />
+        <action
+            android:id="@+id/action_menuJugadors_to_crearJugador"
+            app:destination="@id/crearJugador" />
+        <action
+            android:id="@+id/action_menuJugadors_to_eliminarJugadors"
+            app:destination="@id/eliminarJugadors" />
+    </fragment>
+    <fragment
+        android:id="@+id/fotoPerfil2"
+        android:name="FotoPerfil"
+        android:label="FotoPerfil" >
+        <action
+            android:id="@+id/action_fotoPerfil2_to_menu"
+            app:destination="@id/menu" />
+    </fragment>
+    <fragment
+        android:id="@+id/modificarClassificacio"
+        android:name="copernic.cat.kingsleague.ModificarClassificacio"
+        android:label="fragment_modificar_classificacio"
+        tools:layout="@layout/fragment_modificar_classificacio" >
+        <action
+            android:id="@+id/action_modificarClassificacio_to_menu"
+            app:destination="@id/menu" />
+        <action
+            android:id="@+id/action_modificarClassificacio_to_menuEquips"
+            app:destination="@id/menuEquips" />
+    </fragment>
 </navigation>

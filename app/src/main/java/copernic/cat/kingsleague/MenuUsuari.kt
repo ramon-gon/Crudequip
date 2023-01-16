@@ -18,11 +18,11 @@ class MenuUsuari : Fragment() {
         _binding = FragmentMenuUsuariBinding.inflate(inflater, container, false)
 
         binding.btnJugadors.setOnClickListener() {
-            findNavController().navigate(R.id.action_menuUsuari_to_classificacio2)
+            findNavController().navigate(R.id.action_menuUsuari_to_jugadors)
         }
 
         binding.btnClasificacio.setOnClickListener() {
-            //   findNavController().navigate(R.id.action_fmenuAdmin2_to_autoritzacionsAdmin)
+               findNavController().navigate(R.id.action_menuUsuari_to_classificacio2)
         }
 
         return binding.root

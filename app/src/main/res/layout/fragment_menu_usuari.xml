@@ -10,7 +10,7 @@
         android:id="@+id/titol_menu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="55dp"
+        android:layout_marginStart="15dp"
         android:layout_marginTop="130dp"
         android:text="@string/benvingut_a_la_kings_league"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
@@ -30,9 +30,9 @@
 
     <Button
         android:id="@+id/btnJugadors"
-        android:layout_width="150dp"
+        android:layout_width="175dp"
         android:layout_height="70dp"
-        android:layout_marginStart="50dp"
+        android:layout_marginStart="15dp"
         android:layout_marginTop="51dp"
         android:backgroundTint="@color/purple_500"
         android:text="@string/veure_jugadors"
@@ -41,9 +41,9 @@
 
     <Button
         android:id="@+id/btnClasificacio"
-        android:layout_width="150dp"
+        android:layout_width="175dp"
         android:layout_height="70dp"
-        android:layout_marginStart="30dp"
+        android:layout_marginStart="15dp"
         android:layout_marginTop="51dp"
         android:backgroundTint="@color/purple_500"
         android:text="@string/veure_classificacio"

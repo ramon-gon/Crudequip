@@ -13,10 +13,37 @@
         <action
             android:id="@+id/action_menuUsuari_to_classificacio2"
             app:destination="@id/classificacio2" />
+        <action
+            android:id="@+id/action_menuUsuari_to_jugadors"
+            app:destination="@id/jugadors" />
+        <action
+            android:id="@+id/action_menuUsuari_to_fotoPerfil"
+            app:destination="@id/fotoPerfil" />
     </fragment>
     <fragment
         android:id="@+id/classificacio2"
         android:name="copernic.cat.kingsleague.Classificacio"
         android:label="fragment_classificacio"
-        tools:layout="@layout/fragment_classificacio" />
+        tools:layout="@layout/fragment_classificacio" >
+        <action
+            android:id="@+id/action_classificacio2_to_menuUsuari"
+            app:destination="@id/menuUsuari" />
+    </fragment>
+    <fragment
+        android:id="@+id/jugadors"
+        android:name="copernic.cat.kingsleague.Jugadors"
+        android:label="fragment_jugadors"
+        tools:layout="@layout/fragment_jugadors" >
+        <action
+            android:id="@+id/action_jugadors_to_menuUsuari"
+            app:destination="@id/menuUsuari" />
+    </fragment>
+    <fragment
+        android:id="@+id/fotoPerfil"
+        android:name="FotoPerfil"
+        android:label="FotoPerfil" >
+        <action
+            android:id="@+id/action_fotoPerfil_to_menuUsuari"
+            app:destination="@id/menuUsuari" />
+    </fragment>
 </navigation>
