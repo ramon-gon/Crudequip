@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    style="@style/constraintlayoutTherme"
+    tools:context=".EliminarEquips">
+
+    <TextView
+        android:id="@+id/TitolEliminarEquips"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="75dp"
+        android:text="@string/eliminar_equips"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_tornar_Eliminar_equips"
+        style="@style/Widget.ComunicaProdis.ButtonConfirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="84dp"
+        android:layout_marginBottom="200dp"
+        android:text="@string/tornar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eliminarEquip" />
+
+    <TextView
+        android:id="@+id/nomEquip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/nom"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TitolEliminarEquips" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/nomEquipTextInput"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        app:layout_constraintTop_toBottomOf="@+id/nomEquip"
+        tools:layout_editor_absoluteX="40dp" />
+
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/editNomEquip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:hint="@string/introdueix_el_nom_del_equip"
+        android:minHeight="48dp"
+        android:textColor="#757575"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nomEquip"
+        tools:ignore="DuplicateSpeakableTextCheck,MissingConstraints,TextContrastCheck">
+
+    </com.google.android.material.textfield.TextInputEditText>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/jugadorTextInput"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        app:layout_constraintTop_toBottomOf="@+id/nomEquip"
+        tools:layout_editor_absoluteX="40dp" />
+
+
+    <Button
+        android:id="@+id/eliminarEquip"
+        style="@style/Widget.ComunicaProdis.ButtonEnter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="100dp"
+        android:backgroundTint="#CF021A"
+        android:text="@string/eliminar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editNomEquip" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+

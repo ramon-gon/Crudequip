@@ -7,7 +7,6 @@ import android.view.MenuItem
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
-import com.google.android.gms.common.api.internal.LifecycleCallback.getFragment
 import copernic.cat.kingsleague.databinding.ActivityMenuAdmBinding
 
 class MenuAdm : AppCompatActivity() {

@@ -31,5 +31,28 @@
     <string name="veure_jugadors">Veure jugadors</string>
     <string name="veure_classificacio">Veure classificació</string>
     <string name="item">Item</string>
+    <string name="classificaci">Classificació</string>
+    <string name="tornar">TORNAR</string>
+    <string name="nom">Nom</string>
+    <string name="modificar_jugadors">Modificar jugadors</string>
+    <string name="modificar_classificacio">Modificar classificacio</string>
+    <string name="puntuacio">Puntuacio</string>
+    <string name="introdueix_puntuacio">Introdueix puntuacio</string>
+    <string name="jugadors">Jugadors</string>
+    <string name="introdueix_nom_jugador">Introdueix el nom del jugador</string>
+    <string name="modificar_equips">Modificar equips</string>
+    <string name="jugador">Jugador</string>
+    <string name="crear_jugador">CREAR JUGADOR</string>
+    <string name="eliminar_jugador">ELIMINAR JUGADOR</string>
+    <string name="introdueix_el_nom_del_equip">Introdueix el nom de l equip</string>
+    <string name="eliminar">ELIMINAR</string>
+    <string name="crear">CREAR</string>
+    <string name="modificar">MODIFICAR</string>
+    <string name="equip">Equip</string>
+    <string name="crear_equips">CREAR EQUIPS</string>
+    <string name="eliminar_equips">ELIMINAR EQUIPS</string>
+    <string name="modificar_puntuacio">MODIFICAR PUNTUACIO</string>
+    <string name="foto_de_perfil">Foto de perfil</string>
+    <string name="guardar">GUARDAR</string>
 
 </resources>
