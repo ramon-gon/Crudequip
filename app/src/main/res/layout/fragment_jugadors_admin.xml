@@ -24,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="140dp"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="50dp"
         android:text="@string/tornar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -35,7 +35,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
-        android:text="@string/nom"
+        android:text="@string/nom_del_equip"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TitolJugadors" />
 
@@ -63,5 +63,17 @@
         tools:ignore="DuplicateSpeakableTextCheck,MissingConstraints,TextContrastCheck">
 
     </com.google.android.material.textfield.TextInputEditText>
+
+    <Button
+        android:id="@+id/btn_veure_jugadors"
+        style="@style/Widget.ComunicaProdis.ButtonConfirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="146dp"
+        android:layout_marginBottom="25dp"
+        android:backgroundTint="@color/blue"
+        android:text="@string/veure"
+        app:layout_constraintBottom_toTopOf="@+id/btn_tornar_jugadors"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 

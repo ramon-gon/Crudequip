@@ -54,5 +54,11 @@
     <string name="modificar_puntuacio">MODIFICAR PUNTUACIO</string>
     <string name="foto_de_perfil">Foto de perfil</string>
     <string name="guardar">GUARDAR</string>
+    <string name="configuracio">Configuracio</string>
+    <string name="tancar_sessio">TANCAR SESSIO</string>
+    <string name="vine_al_camp">VINE AL CAMP</string>
+    <string name="canviar_foto">CANVIAR FOTO</string>
+    <string name="nom_del_equip">Nom del equip</string>
+    <string name="veure">VEURE</string>
 
 </resources>

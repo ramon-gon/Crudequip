@@ -118,10 +118,11 @@ class Register : AppCompatActivity() {
     fun llegirDades(): Usuari {
         //Guardem les dades introduïdes per l'usuari
         var nomUsuari = binding.registreEditnomUsuari.text.toString()
+        var nomUsuariminuscula = nomUsuari.lowercase()
 
 
         //Afegim els Tutors introduïts per l'usuari a l'atribut treballadors
-        return Usuari(nomUsuari)
+        return Usuari(nomUsuariminuscula)
     }
 
     fun afegirUsuari(usuaris: Usuari) {

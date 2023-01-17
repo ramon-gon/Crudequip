@@ -19,6 +19,9 @@
         <action
             android:id="@+id/action_menuUsuari_to_fotoPerfil"
             app:destination="@id/fotoPerfil" />
+        <action
+            android:id="@+id/action_menuUsuari_to_configuracio2"
+            app:destination="@id/configuracio2" />
     </fragment>
     <fragment
         android:id="@+id/classificacio2"
@@ -45,5 +48,31 @@
         <action
             android:id="@+id/action_fotoPerfil_to_menuUsuari"
             app:destination="@id/menuUsuari" />
+        <action
+            android:id="@+id/action_fotoPerfil_to_configuracio2"
+            app:destination="@id/configuracio2" />
+    </fragment>
+    <fragment
+        android:id="@+id/configuracio2"
+        android:name="copernic.cat.kingsleague.Configuracio"
+        android:label="fragment_configuracio"
+        tools:layout="@layout/fragment_configuracio" >
+        <action
+            android:id="@+id/action_configuracio2_to_menuUsuari"
+            app:destination="@id/menuUsuari" />
+        <action
+            android:id="@+id/action_configuracio2_to_fotoPerfil"
+            app:destination="@id/fotoPerfil" />
+        <action
+            android:id="@+id/action_configuracio2_to_mapsUsuaris"
+            app:destination="@id/mapsUsuaris" />
+    </fragment>
+    <fragment
+        android:id="@+id/mapsUsuaris"
+        android:name="cat.copernic.comunicatsprodis.MapsUsuaris"
+        android:label="MapsUsuaris" >
+        <action
+            android:id="@+id/action_mapsUsuaris_to_configuracio2"
+            app:destination="@id/configuracio2" />
     </fragment>
 </navigation>

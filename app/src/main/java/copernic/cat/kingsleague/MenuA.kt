@@ -30,7 +30,7 @@ class MenuA : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
         R.id.configuracio -> {
             binding.navHostFragmentContentMainAdmin.findNavController()
-                .navigate(R.id.action_menu_to_classificacioAdmin)
+                .navigate(R.id.action_menu_to_configuracioAdmin)
             true
         }
         else -> {

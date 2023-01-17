@@ -104,7 +104,7 @@
         style="@style/Widget.ComunicaProdis.ButtonEnter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="106dp"
+        android:layout_marginStart="95dp"
         android:layout_marginTop="50dp"
         android:backgroundTint="@color/blue"
         android:text="@string/modificar"

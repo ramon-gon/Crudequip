@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="FotoPerfil">
+    tools:context="FotoPerfilAdmin">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -44,28 +44,24 @@
         <Button
             android:id="@+id/button4"
             style="@style/Widget.ComunicaProdis.ButtonFotoDePerfil_guardar"
-            android:layout_width="160dp"
+            android:layout_width="175dp"
             android:layout_height="60dp"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="100dp"
-            android:layout_marginEnd="40dp"
-            android:layout_marginBottom="100dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginBottom="184dp"
             android:text="@string/guardar"
             android:textSize="22sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/btnCancelarfotoPerfil"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/img_Button_buscar" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <Button
             android:id="@+id/btnCancelarfotoPerfil"
             style="@style/Widget.ComunicaProdis.ButtonCancel"
-            android:layout_width="160dp"
+            android:layout_width="175dp"
             android:layout_height="60dp"
-            android:layout_marginEnd="40dp"
-            app:layout_constraintBottom_toBottomOf="@+id/button4"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/button4" />
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="184dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/button4" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

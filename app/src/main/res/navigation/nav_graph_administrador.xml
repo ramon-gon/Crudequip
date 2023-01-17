@@ -25,6 +25,9 @@
         <action
             android:id="@+id/action_menu_to_classificacioAdmin"
             app:destination="@id/classificacioAdmin" />
+        <action
+            android:id="@+id/action_menu_to_configuracioAdmin"
+            app:destination="@id/configuracioAdmin" />
     </fragment>
     <fragment
         android:id="@+id/crearEquips"
@@ -134,6 +137,9 @@
         <action
             android:id="@+id/action_fotoPerfilAdmin_to_menu"
             app:destination="@id/menu" />
+        <action
+            android:id="@+id/action_fotoPerfilAdmin_to_configuracioAdmin"
+            app:destination="@id/configuracioAdmin" />
     </fragment>
     <fragment
         android:id="@+id/classificacioAdmin"
@@ -142,5 +148,27 @@
         <action
             android:id="@+id/action_classificacioAdmin_to_menu"
             app:destination="@id/menu" />
+    </fragment>
+    <fragment
+        android:id="@+id/configuracioAdmin"
+        android:name="copernic.cat.kingsleague.ConfiguracioAdmin"
+        android:label="ConfiguracioAdmin" >
+        <action
+            android:id="@+id/action_configuracioAdmin_to_menu"
+            app:destination="@id/menu" />
+        <action
+            android:id="@+id/action_configuracioAdmin_to_fotoPerfilAdmin"
+            app:destination="@id/fotoPerfilAdmin" />
+        <action
+            android:id="@+id/action_configuracioAdmin_to_maps"
+            app:destination="@id/maps" />
+    </fragment>
+    <fragment
+        android:id="@+id/maps"
+        android:name="cat.copernic.comunicatsprodis.Maps"
+        android:label="Maps" >
+        <action
+            android:id="@+id/action_maps_to_configuracioAdmin"
+            app:destination="@id/configuracioAdmin" />
     </fragment>
 </navigation>
