@@ -71,7 +71,7 @@ class EliminarEquips : Fragment() {
                     if (equip.nom.isNotEmpty()) {
 
                         //Afegim el departament mitjançant eñ mètode afegirDepartament que hem creat nosaltres
-                        AfegirEquip(equip)
+                        EliminarrEquip(equip)
 
 
                         findNavController().navigate(R.id.action_eliminarEquips_to_menuEquips)
@@ -102,17 +102,35 @@ class EliminarEquips : Fragment() {
         return Equip(nom, "0", jugadors)
     }
 
-    fun AfegirEquip(equip: Equip) {
+    fun EliminarrEquip(equip: Equip) {
         var nom = binding.editNomEquip.text.toString()
-        bd.collection("Equips").document(nom).collection("Jugadors").get()
-            .addOnSuccessListener { documents -> for (document in documents) { document.reference.delete() } }
-        bd.collection("Equips").document(nom).delete()
-            .addOnSuccessListener {
-                                                val builder = AlertDialog.Builder(requireContext())
-                                                builder.setMessage("L'equip s'ha eliminat correctament")
-                                                builder.setPositiveButton("Aceptar", null)
-                                                val dialog = builder.create()
-                                                dialog.show()
-                                            }
-                                    }
-                                }
+        var existe =
+            bd.collection("Equips").document(nom)
+
+        existe.get()
+            .addOnSuccessListener { document ->
+                if (document.exists()) {
+                    bd.collection("Equips").document(nom).collection("Jugadors").get()
+                        .addOnSuccessListener { documents ->
+                            for (documentc in documents) {
+                                documentc.reference.delete()
+                            }
+                        }
+                    bd.collection("Equips").document(nom).delete()
+                        .addOnSuccessListener {
+                            val builder = AlertDialog.Builder(requireContext())
+                            builder.setMessage("L'equip s'ha eliminat correctament")
+                            builder.setPositiveButton("Aceptar", null)
+                            val dialog = builder.create()
+                            dialog.show()
+                        }
+                } else {
+                    val builder = AlertDialog.Builder(requireContext())
+                    builder.setMessage("L'equip no existeix")
+                    builder.setPositiveButton("Aceptar", null)
+                    val dialog = builder.create()
+                    dialog.show()
+                }
+            }
+    }
+}
