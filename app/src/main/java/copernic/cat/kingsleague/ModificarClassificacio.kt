@@ -72,7 +72,7 @@ class ModificarClassificacio : Fragment() {
 
                     //Si hem introduit un codi (és l'identifiacdor del departament, per tant ha de ser obligatori).
                     //En el nostre cas, els altres camps no cal que tinguin contingut
-                    if (equips.nom.isNotEmpty() && equips.puntuacio.isNotEmpty()) {
+                    if (equips.nom.isNotEmpty() && equips.id.isNotEmpty()) {
 
                         //Afegim el departament mitjançant eñ mètode afegirDepartament que hem creat nosaltres
                         AfegirPuntuacio(equips)
@@ -105,10 +105,11 @@ class ModificarClassificacio : Fragment() {
         //Guardem les dades introduïdes per l'usuari
         var nom = binding.editNomEquip.text.toString()
         var puntuacio= binding.editPuntuacio.text.toString()
+        var puntuacioint= puntuacio.toInt()
         //Afegim els Tutors introduïts per l'usuari l'atribut treballadors
         jugadors.add(Jugador("",""))
 
-        return Equip(nom, puntuacio, jugadors)
+        return Equip(puntuacio, nom, puntuacioint, jugadors)
     }
 
     fun AfegirPuntuacio(equips:Equip) {

@@ -11,10 +11,10 @@
         android:id="@+id/TitolJugadors"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="75dp"
+        android:layout_marginTop="90dp"
         android:text="@string/veure_jugadors"
         android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -23,10 +23,10 @@
         style="@style/Widget.ComunicaProdis.ButtonConfirm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="140dp"
         android:layout_marginBottom="50dp"
         android:text="@string/tornar"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -69,11 +69,11 @@
         style="@style/Widget.ComunicaProdis.ButtonConfirm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="146dp"
         android:layout_marginBottom="25dp"
         android:backgroundTint="@color/blue"
         android:text="@string/veure"
         app:layout_constraintBottom_toTopOf="@+id/btn_tornar_jugadors"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 

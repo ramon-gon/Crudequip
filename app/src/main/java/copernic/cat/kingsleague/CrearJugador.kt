@@ -71,7 +71,7 @@ class CrearJugador : Fragment() {
 
                     //Si hem introduit un codi (és l'identifiacdor del departament, per tant ha de ser obligatori).
                     //En el nostre cas, els altres camps no cal que tinguin contingut
-                    if (equips.nom.isNotEmpty() && equips.puntuacio.isNotEmpty()) {
+                    if (equips.nom.isNotEmpty() && equips.id.isNotEmpty()) {
 
                         //Afegim el departament mitjançant eñ mètode afegirDepartament que hem creat nosaltres
                         AfegirJugador(equips)
@@ -107,7 +107,7 @@ class CrearJugador : Fragment() {
         //Afegim els Tutors introduïts per l'usuari l'atribut treballadors
         jugadors.add(Jugador("", nomJ))
 
-        return Equip(nom, nomJ, jugadors)
+        return Equip(nomJ, nom,0, jugadors)
     }
 
     fun AfegirJugador(equip: Equip) {
@@ -149,7 +149,7 @@ class CrearJugador : Fragment() {
                             }
                     } else {
                         val builder = AlertDialog.Builder(requireContext())
-                        builder.setMessage("L'equip no existeix'")
+                        builder.setMessage("L'equip no existeix")
                         builder.setPositiveButton("Aceptar", null)
                         val dialog = builder.create()
                         dialog.show()

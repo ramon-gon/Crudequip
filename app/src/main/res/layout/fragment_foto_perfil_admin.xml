@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="FotoPerfilAdmin">
+    tools:context="FotoPerfil">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -12,31 +12,33 @@
 
         <TextView
             android:id="@+id/TextViewFotoPerfil"
+            android:textSize="25sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="90dp"
             android:text="@string/foto_de_perfil"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
         <ImageView
             android:id="@+id/imgFotoDePerfil"
             android:layout_width="132dp"
             android:layout_height="151dp"
-            android:layout_marginStart="150dp"
             android:layout_marginTop="50dp"
+            android:contentDescription="TODO"
             android:src="@drawable/foto_perfil"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/TextViewFotoPerfil"
-            android:contentDescription="TODO" />
+            app:layout_constraintTop_toBottomOf="@+id/TextViewFotoPerfil" />
 
         <ImageButton
             android:id="@+id/img_Button_buscar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="250dp"
             android:contentDescription="TODO"
             android:src="@android:drawable/ic_menu_upload"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imgFotoDePerfil"
             tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />

@@ -10,10 +10,10 @@
         android:id="@+id/titol_menu_equips"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="55dp"
-        android:layout_marginTop="130dp"
+        android:layout_marginTop="90dp"
         android:text="@string/equip"
         android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -22,9 +22,9 @@
         style="@style/Widget.ComunicaProdis.ButtonEnter"
         android:layout_width="320dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
         android:layout_marginTop="50dp"
         android:text="@string/crear_equips"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titol_menu_equips" />
 
@@ -34,21 +34,21 @@
         style="@style/Widget.ComunicaProdis.ButtonEnter"
         android:layout_width="320dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
         android:layout_marginTop="50dp"
         android:text="@string/eliminar_equips"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnCrearEquips" />
 
     <Button
         android:id="@+id/btnModificarPuntuacio"
         style="@style/Widget.ComunicaProdis.ButtonEnter"
-        android:textSize="21sp"
         android:layout_width="320dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
         android:layout_marginTop="44dp"
         android:text="@string/modificar_puntuacio"
+        android:textSize="21sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnEliminarEquips" />
 
@@ -57,10 +57,10 @@
         style="@style/Widget.ComunicaProdis.ButtonConfirm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="150dp"
-        android:layout_marginBottom="150dp"
+        android:layout_marginTop="78dp"
         android:text="@string/tornar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnModificarPuntuacio" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -99,7 +99,7 @@ class EliminarEquips : Fragment() {
         //Afegim els Tutors introduïts per l'usuari l'atribut treballadors
         jugadors.add(Jugador("", ""))
 
-        return Equip(nom, "0", jugadors)
+        return Equip(nom , nom, 0, jugadors)
     }
 
     fun EliminarrEquip(equip: Equip) {

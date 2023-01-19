@@ -72,7 +72,7 @@ class EliminarJugadors: Fragment() {
 
                     //Si hem introduit un codi (és l'identifiacdor del departament, per tant ha de ser obligatori).
                     //En el nostre cas, els altres camps no cal que tinguin contingut
-                    if (equips.nom.isNotEmpty() && equips.puntuacio.isNotEmpty()) {
+                    if (equips.nom.isNotEmpty() && equips.id.isNotEmpty()) {
 
                         //Afegim el departament mitjançant eñ mètode afegirDepartament que hem creat nosaltres
                         EliminarJugador(equips)
@@ -96,7 +96,7 @@ class EliminarJugadors: Fragment() {
         }
 
         binding.btnTornarEliminarJugadors.setOnClickListener {
-            findNavController().navigate(R.id.action_crearJugador_to_menuJugadors)
+            findNavController().navigate(R.id.action_eliminarJugadors_to_menuJugadors)
         }
     }
 
@@ -108,7 +108,7 @@ class EliminarJugadors: Fragment() {
         //Afegim els Tutors introduïts per l'usuari l'atribut treballadors
         jugadors.add(Jugador("", nomJ))
 
-        return Equip(nom, nomJ, jugadors)
+        return Equip(nomJ, nom,0, jugadors)
     }
 
     fun EliminarJugador(equip: Equip) {
@@ -141,7 +141,7 @@ class EliminarJugadors: Fragment() {
                             if (documente.exists()) {
 
                                         val builder = AlertDialog.Builder(requireContext())
-                                        builder.setMessage("El jugador amb aquest nom a l'equip")
+                                        builder.setMessage("El jugador amb aquest nom no existeix a l'equip")
                                         builder.setPositiveButton("Aceptar", null)
                                         val dialog = builder.create()
                                         dialog.show()
