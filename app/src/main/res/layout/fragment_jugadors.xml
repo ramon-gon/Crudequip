@@ -23,14 +23,14 @@
         style="@style/Widget.ComunicaProdis.ButtonConfirm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
+        android:layout_marginTop="25dp"
         android:text="@string/tornar"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_veure_jugadors" />
 
     <TextView
-        android:id="@+id/nomJugador"
+        android:id="@+id/nomEquip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -40,17 +40,17 @@
         app:layout_constraintTop_toBottomOf="@+id/TitolJugadors" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/nomJugadorTextInput"
+        android:id="@+id/nomEquipTextInput"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        app:layout_constraintTop_toBottomOf="@+id/nomJugador"
+        app:layout_constraintTop_toBottomOf="@+id/nomEquip"
         tools:layout_editor_absoluteX="40dp" />
 
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/editNomJugador"
+        android:id="@+id/editNomEquip"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
@@ -59,7 +59,7 @@
         android:minHeight="48dp"
         android:textColor="#757575"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nomJugador"
+        app:layout_constraintTop_toBottomOf="@+id/nomEquip"
         tools:ignore="DuplicateSpeakableTextCheck,MissingConstraints,TextContrastCheck">
 
     </com.google.android.material.textfield.TextInputEditText>
@@ -69,11 +69,20 @@
         style="@style/Widget.ComunicaProdis.ButtonConfirm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="25dp"
+        android:layout_marginTop="10dp"
         android:backgroundTint="@color/blue"
         android:text="@string/veure"
-        app:layout_constraintBottom_toTopOf="@+id/btn_tornar_jugadors"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rvJugadors" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvJugadors"
+        android:layout_width="325dp"
+        android:layout_height="270dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editNomEquip" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 
