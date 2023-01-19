@@ -67,30 +67,38 @@ class ModificarClassificacio : Fragment() {
             lifecycleScope.launch {
                 withContext(Dispatchers.Unconfined) {//llegir dades de la base de dades
 
+                    try {
+
 
                     var equips = llegirDades() //Departament introduït per l'usuari
 
                     //Si hem introduit un codi (és l'identifiacdor del departament, per tant ha de ser obligatori).
                     //En el nostre cas, els altres camps no cal que tinguin contingut
-                    if (equips.nom.isNotEmpty() && equips.id.isNotEmpty()) {
 
-                        //Afegim el departament mitjançant eñ mètode afegirDepartament que hem creat nosaltres
-                        AfegirPuntuacio(equips)
-                        findNavController().navigate(R.id.action_modificarClassificacio_to_menuEquips)
 
-                    } else if (equips.nom.isNotEmpty()) {
+                        if (equips.nom.isNotEmpty() && equips.id.isNotEmpty()) {
+
+                            //Afegim el departament mitjançant eñ mètode afegirDepartament que hem creat nosaltres
+                            AfegirPuntuacio(equips)
+                            findNavController().navigate(R.id.action_modificarClassificacio_to_menuEquips)
+
+
+                        } else {
+                            val builder = AlertDialog.Builder(requireContext())
+                            builder.setMessage("Cal introduïr un nom de l'equip")
+                            builder.setPositiveButton("Aceptar", null)
+                            val dialog = builder.create()
+                            dialog.show()
+                        }
+
+                    } catch (e: Exception){
                         val builder = AlertDialog.Builder(requireContext())
                         builder.setMessage("Cal introduïr una puntuacio")
                         builder.setPositiveButton("Aceptar", null)
                         val dialog = builder.create()
                         dialog.show()
-                    } else {
-                        val builder = AlertDialog.Builder(requireContext())
-                        builder.setMessage("Cal introduïr un nom per l'equip")
-                        builder.setPositiveButton("Aceptar", null)
-                        val dialog = builder.create()
-                        dialog.show()
                     }
+
                 }
             }
         }
@@ -105,11 +113,10 @@ class ModificarClassificacio : Fragment() {
         //Guardem les dades introduïdes per l'usuari
         var nom = binding.editNomEquip.text.toString()
         var puntuacio= binding.editPuntuacio.text.toString()
-        var puntuacioint= puntuacio.toInt()
         //Afegim els Tutors introduïts per l'usuari l'atribut treballadors
         jugadors.add(Jugador("",""))
 
-        return Equip(puntuacio, nom, puntuacioint, jugadors)
+        return Equip(puntuacio, nom, puntuacio.toInt(), jugadors)
     }
 
     fun AfegirPuntuacio(equips:Equip) {
