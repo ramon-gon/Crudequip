@@ -60,5 +60,7 @@
     <string name="canviar_foto">CANVIAR FOTO</string>
     <string name="nom_del_equip">Nom del equip</string>
     <string name="veure">VEURE</string>
+    <string name="nom_equip">Nom equip</string>
+    <string name="_555">555</string>
 
 </resources>

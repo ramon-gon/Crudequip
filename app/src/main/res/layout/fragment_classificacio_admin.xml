@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Classificacio">
+    tools:context=".ClassificacioAdmin">
 
     <TextView
         android:id="@+id/TitolClassificacio"
@@ -27,5 +27,16 @@
         android:text="@string/tornar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvClassificacio"
+        android:layout_width="350dp"
+        android:layout_height="450dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_tornar_classificacio"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TitolClassificacio" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 
