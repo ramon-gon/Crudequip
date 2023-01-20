@@ -51,7 +51,7 @@ class Jugadors : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.btnTornarJugadors.setOnClickListener {
-            findNavController().navigate(R.id.action_jugadorsAdmin_to_menu)
+            findNavController().navigate(R.id.action_jugadors_to_menuUsuari)
         }
         binding.btnVeureJugadors.setOnClickListener {
             try {
