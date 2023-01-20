@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="FotoPerfil">
+    tools:context="FotoPerfilAdmin">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -44,7 +44,7 @@
             tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/btn_guardar"
             style="@style/Widget.ComunicaProdis.ButtonFotoDePerfil_guardar"
             android:layout_width="175dp"
             android:layout_height="60dp"
@@ -63,7 +63,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginBottom="184dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/button4" />
+            app:layout_constraintStart_toEndOf="@+id/btn_guardar" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
