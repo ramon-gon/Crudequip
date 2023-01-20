@@ -90,7 +90,6 @@ class JugadorsAdmin : Fragment() {
 
 
     private fun initRecyclerView(view: View) {
-        JugadorsProvider.jugadorsList.clear()
 
         if (JugadorsProvider.jugadorsList.isEmpty()) {
             lifecycleScope.launch {
@@ -99,6 +98,12 @@ class JugadorsAdmin : Fragment() {
                 }
             }
         } else {
+            JugadorsProvider.jugadorsList.clear()
+            lifecycleScope.launch {
+                withContext(Dispatchers.IO) { // Li  diem que executi amb el fil d'entrada i sortida, IO
+                    rellenarCircularsProvider()
+                }
+            }
             binding.rvJugadors.layoutManager = LinearLayoutManager(context)
             binding.rvJugadors.adapter =
                 JugadorsAdapter(JugadorsProvider.jugadorsList.toList())
