@@ -68,7 +68,7 @@ class JugadorsAdmin : Fragment() {
 
 
                         } else {
-
+                            initRecyclerView(view)
                                 val builder = AlertDialog.Builder(requireContext())
                                 builder.setMessage("L'equip no existeix")
                                 builder.setPositiveButton("Aceptar", null)
@@ -79,14 +79,15 @@ class JugadorsAdmin : Fragment() {
 
             } catch (e: Exception) {
                 val builder = AlertDialog.Builder(requireContext())
-                builder.setMessage("Cal introduïr un nom a l'equip")
-                builder.setPositiveButton("Aceptar", null)
-                val dialog = builder.create()
-                dialog.show()
-            }
-        }
+                            builder.setMessage("Cal introduïr un nom a l'equip")
+                            builder.setPositiveButton("Aceptar", null)
+                            val dialog = builder.create()
+                            dialog.show()
 
-        }
+                        }
+                    }
+            }
+
 
 
     private fun initRecyclerView(view: View) {
@@ -99,7 +100,13 @@ class JugadorsAdmin : Fragment() {
             }
         } else {
             JugadorsProvider.jugadorsList.clear()
-
+            if (JugadorsProvider.jugadorsList.isEmpty()) {
+                lifecycleScope.launch {
+                    withContext(Dispatchers.IO) { // Li  diem que executi amb el fil d'entrada i sortida, IO
+                        rellenarCircularsProvider()
+                    }
+                }
+            }
             binding.rvJugadors.layoutManager = LinearLayoutManager(context)
             binding.rvJugadors.adapter =
                 JugadorsAdapter(JugadorsProvider.jugadorsList.toList())

@@ -68,7 +68,7 @@ class Jugadors : Fragment() {
 
 
                         } else {
-
+                            initRecyclerView(view)
                             val builder = AlertDialog.Builder(requireContext())
                             builder.setMessage("L'equip no existeix")
                             builder.setPositiveButton("Aceptar", null)
@@ -83,10 +83,11 @@ class Jugadors : Fragment() {
                 builder.setPositiveButton("Aceptar", null)
                 val dialog = builder.create()
                 dialog.show()
+
             }
         }
-
     }
+
 
 
     private fun initRecyclerView(view: View) {
@@ -99,9 +100,11 @@ class Jugadors : Fragment() {
             }
         } else {
             JugadorsProvider.jugadorsList.clear()
-            lifecycleScope.launch {
-                withContext(Dispatchers.IO) { // Li  diem que executi amb el fil d'entrada i sortida, IO
-                    rellenarCircularsProvider()
+            if (JugadorsProvider.jugadorsList.isEmpty()) {
+                lifecycleScope.launch {
+                    withContext(Dispatchers.IO) { // Li  diem que executi amb el fil d'entrada i sortida, IO
+                        rellenarCircularsProvider()
+                    }
                 }
             }
             binding.rvJugadors.layoutManager = LinearLayoutManager(context)
