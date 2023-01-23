@@ -5,10 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import androidx.navigation.fragment.findNavController
+
 import copernic.cat.kingsleague.databinding.FragmentConfiguracioAdminBinding
 import copernic.cat.kingsleague.databinding.FragmentConfiguracioBinding
 import copernic.cat.kingsleague.databinding.FragmentMenuAdminBinding

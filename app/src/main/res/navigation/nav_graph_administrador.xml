@@ -20,9 +20,6 @@
             android:id="@+id/action_menu_to_jugadorsAdmin"
             app:destination="@id/jugadorsAdmin" />
         <action
-            android:id="@+id/action_menu_to_fotoPerfilAdmin"
-            app:destination="@id/fotoPerfilAdmin" />
-        <action
             android:id="@+id/action_menu_to_classificacioAdmin"
             app:destination="@id/classificacioAdmin" />
         <action
@@ -131,17 +128,6 @@
             app:destination="@id/menu" />
     </fragment>
     <fragment
-        android:id="@+id/fotoPerfilAdmin"
-        android:name="FotoPerfilAdmin"
-        android:label="FotoPerfilAdmin" >
-        <action
-            android:id="@+id/action_fotoPerfilAdmin_to_menu"
-            app:destination="@id/menu" />
-        <action
-            android:id="@+id/action_fotoPerfilAdmin_to_configuracioAdmin"
-            app:destination="@id/configuracioAdmin" />
-    </fragment>
-    <fragment
         android:id="@+id/classificacioAdmin"
         android:name="copernic.cat.kingsleague.ClassificacioAdmin"
         android:label="ClassificacioAdmin" >
@@ -157,11 +143,11 @@
             android:id="@+id/action_configuracioAdmin_to_menu"
             app:destination="@id/menu" />
         <action
-            android:id="@+id/action_configuracioAdmin_to_fotoPerfilAdmin"
-            app:destination="@id/fotoPerfilAdmin" />
-        <action
             android:id="@+id/action_configuracioAdmin_to_maps"
             app:destination="@id/maps" />
+        <action
+            android:id="@+id/action_configuracioAdmin_to_fotoPerfil2"
+            app:destination="@id/fotoPerfil2" />
     </fragment>
     <fragment
         android:id="@+id/maps"
@@ -169,6 +155,15 @@
         android:label="Maps" >
         <action
             android:id="@+id/action_maps_to_configuracioAdmin"
+            app:destination="@id/configuracioAdmin" />
+    </fragment>
+    <fragment
+        android:id="@+id/fotoPerfil2"
+        android:name="copernic.cat.kingsleague.FotoPerfil"
+        android:label="fragment_foto_perfil_admin"
+        tools:layout="@layout/fragment_foto_perfil_admin" >
+        <action
+            android:id="@+id/action_fotoPerfil2_to_configuracioAdmin"
             app:destination="@id/configuracioAdmin" />
     </fragment>
 </navigation>

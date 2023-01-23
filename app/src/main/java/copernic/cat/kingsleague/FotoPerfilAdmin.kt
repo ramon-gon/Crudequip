@@ -83,10 +83,10 @@ class FotoPerfilAdmin : Fragment() {
             //metode per afegir l'imatge
         }
         binding.btnGuardar.setOnClickListener() {
-            findNavController().navigate(R.id.action_fotoPerfilAdmin_to_configuracioAdmin)
+            findNavController().navigate(R.id.action_fotoPerfil2_to_configuracioAdmin)
         }
         binding.btnCancelarfotoPerfil.setOnClickListener {
-            findNavController().navigate(R.id.action_fotoPerfilAdmin_to_configuracioAdmin)
+            findNavController().navigate(R.id.action_fotoPerfil2_to_configuracioAdmin)
         }
     }
 

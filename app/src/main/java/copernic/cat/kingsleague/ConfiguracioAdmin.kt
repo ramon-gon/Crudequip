@@ -10,6 +10,8 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import copernic.cat.kingsleague.databinding.FragmentConfiguracioAdminBinding
+import androidx.navigation.fragment.findNavController
+
 import copernic.cat.kingsleague.databinding.FragmentConfiguracioBinding
 import copernic.cat.kingsleague.databinding.FragmentMenuAdminBinding
 
@@ -33,7 +35,7 @@ class ConfiguracioAdmin : Fragment() {
         _binding = FragmentConfiguracioAdminBinding.inflate(inflater, container, false)
 
         binding.btnFotoPerfil.setOnClickListener() {
-            findNavController().navigate(R.id.action_configuracioAdmin_to_fotoPerfilAdmin)
+            findNavController().navigate(R.id.action_configuracioAdmin_to_fotoPerfil2)
         }
         auth= Firebase.auth
         binding.btnTancarSessio.setOnClickListener() {

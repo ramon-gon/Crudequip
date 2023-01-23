@@ -2,30 +2,42 @@ package copernic.cat.kingsleague
 
 import android.app.Activity
 import android.content.Intent
+import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import com.google.android.gms.tasks.Tasks
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
-import copernic.cat.kingsleague.databinding.FragmentFotoPerfilAdminBinding
 import copernic.cat.kingsleague.databinding.FragmentFotoPerfilBinding
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
 import kotlinx.coroutines.withContext
 import java.io.File
 
+
+// TODO: Rename parameter arguments, choose names that match
+// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+private const val ARG_PARAM1 = "param1"
+private const val ARG_PARAM2 = "param2"
+
+/**
+ * Clase FotoPerfilUsuari se encarga de mostrar la foto de perfil del usuario y permitirle cambiarla.
+ */
 class FotoPerfil : Fragment() {
     private var photoSelectedUri: Uri? = null
     private lateinit var auth: FirebaseAuth
@@ -84,7 +96,7 @@ class FotoPerfil : Fragment() {
             //metode per afegir l'imatge
         }
         binding.btnGuardar.setOnClickListener() {
-            findNavController().navigate(R.id.action_fotoPerfil_to_configuracio2)
+                  findNavController().navigate(R.id.action_fotoPerfil_to_configuracio2)
         }
         binding.btnCancelarfotoPerfil.setOnClickListener {
             findNavController().navigate(R.id.action_fotoPerfil_to_configuracio2)
