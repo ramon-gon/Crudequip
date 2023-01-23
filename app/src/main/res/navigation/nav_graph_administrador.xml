@@ -146,8 +146,8 @@
             android:id="@+id/action_configuracioAdmin_to_maps"
             app:destination="@id/maps" />
         <action
-            android:id="@+id/action_configuracioAdmin_to_fotoPerfil2"
-            app:destination="@id/fotoPerfil2" />
+            android:id="@+id/action_configuracioAdmin_to_fotoPerfilAdmin"
+            app:destination="@id/fotoPerfilAdmin" />
     </fragment>
     <fragment
         android:id="@+id/maps"
@@ -158,12 +158,12 @@
             app:destination="@id/configuracioAdmin" />
     </fragment>
     <fragment
-        android:id="@+id/fotoPerfil2"
-        android:name="copernic.cat.kingsleague.FotoPerfil"
+        android:id="@+id/fotoPerfilAdmin"
+        android:name="copernic.cat.kingsleague.FotoPerfilAdmin"
         android:label="fragment_foto_perfil_admin"
         tools:layout="@layout/fragment_foto_perfil_admin" >
         <action
-            android:id="@+id/action_fotoPerfil2_to_configuracioAdmin"
+            android:id="@+id/action_fotoPerfilAdmin_to_configuracioAdmin"
             app:destination="@id/configuracioAdmin" />
     </fragment>
 </navigation>

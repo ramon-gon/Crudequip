@@ -47,7 +47,7 @@ class FotoPerfilAdmin: Fragment() {
     private lateinit var auth: FirebaseAuth
     private val utils = Utils()
     private var storage = FirebaseStorage.getInstance()
-    private var storageRef = storage.getReference().child("image/imatges").child(".jpeg")
+    private var storageRef = storage.getReference().child("image/imatges").child(".png")
 
     private var _binding: FragmentFotoPerfilAdminBinding? = null
     private val binding get() = _binding!!
@@ -83,6 +83,10 @@ class FotoPerfilAdmin: Fragment() {
      */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        //metode per carregar l'imatge si ya esta creada
+        lifecycleScope.launch {
+                carregarImatge()
+            }
 
         binding.imgButtonBuscar.setOnClickListener {
             lifecycleScope.launch {
@@ -92,20 +96,16 @@ class FotoPerfilAdmin: Fragment() {
             }
             //metode per afegir l'imatge
         }
-        binding.btnGuardar.setOnClickListener{
-            findNavController().navigate(R.id.action_fotoPerfil2_to_configuracioAdmin)
-        }
-        binding.btnCancelarfotoPerfil.setOnClickListener {
-            findNavController().navigate(R.id.action_fotoPerfil2_to_configuracioAdmin)
-        }
-        //metode per carregar l'imatge si ya esta creada
-        lifecycleScope.launch {
-            withContext(Dispatchers.IO) {
-                carregarImatge()
+        binding.btnGuardar.setOnClickListener() {
+            lifecycleScope.launch {
+                afegirImatge()
+            }
+                findNavController().navigate(R.id.action_fotoPerfilAdmin_to_configuracioAdmin)
             }
 
+        binding.btnCancelarfotoPerfil.setOnClickListener {
+            findNavController().navigate(R.id.action_fotoPerfilAdmin_to_configuracioAdmin)
         }
-
     }
 
     /**
@@ -135,15 +135,15 @@ class FotoPerfilAdmin: Fragment() {
     private suspend fun afegirImatge() {
         lifecycleScope.launch {
             var correo = utils.getCorreoUserActural()
-            storageRef = storage.reference.child("image/imatges").child("$correo.jpeg")
+            storageRef = storage.reference.child("image/imatges").child("$correo.png")
             //Afegim la imatge seleccionada a storage
             photoSelectedUri?.let { uri -> //Hem seleccionat una imatge...
                 //Afegim (pujem) la imatge que hem seleccionat mitjançant el mètode putFile de la classe FirebasStorage, passant-li com a
                 //paràmetre l'URI de la imatge.
                 storageRef.putFile(uri).await()
                 val storageRef =
-                    FirebaseStorage.getInstance().reference.child("image/imatges/$correo.jpeg")
-                val localfile = File.createTempFile("tempImage", "jpeg")
+                    FirebaseStorage.getInstance().reference.child("image/imatges/$correo.png")
+                val localfile = File.createTempFile("tempImage", "png")
                 storageRef.getFile(localfile).await()
                 val bitmap = BitmapFactory.decodeFile(localfile.absolutePath)
                 binding.imgFotoDePerfil.setImageBitmap(bitmap)
@@ -159,8 +159,8 @@ class FotoPerfilAdmin: Fragment() {
     suspend fun carregarImatge() {
         var correo = utils.getCorreoUserActural()
         val storageRef =
-            FirebaseStorage.getInstance().reference.child("image/imatges/$correo.jpeg")
-        val localfile = File.createTempFile("tempImage", "jpeg")
+            FirebaseStorage.getInstance().reference.child("image/imatges/$correo.png")
+        val localfile = File.createTempFile("tempImage", "png")
         val task = storageRef.getFile(localfile).await()
         try {
             (task)

@@ -65,7 +65,7 @@
         android:id="@+id/fotoPerfil"
         android:name="copernic.cat.kingsleague.FotoPerfil"
         android:label="fragment_foto_perfil"
-        tools:layout="@layout/fragment_foto_perfil_admin" >
+        tools:layout="@layout/fragment_foto_perfil" >
         <action
             android:id="@+id/action_fotoPerfil_to_configuracio2"
             app:destination="@id/configuracio2" />

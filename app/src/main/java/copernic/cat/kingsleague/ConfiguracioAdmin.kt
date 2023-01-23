@@ -35,7 +35,7 @@ class ConfiguracioAdmin : Fragment() {
         _binding = FragmentConfiguracioAdminBinding.inflate(inflater, container, false)
 
         binding.btnFotoPerfil.setOnClickListener() {
-            findNavController().navigate(R.id.action_configuracioAdmin_to_fotoPerfil2)
+            findNavController().navigate(R.id.action_configuracioAdmin_to_fotoPerfilAdmin)
         }
         auth= Firebase.auth
         binding.btnTancarSessio.setOnClickListener() {
