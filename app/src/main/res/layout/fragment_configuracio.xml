@@ -17,6 +17,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <Button
         android:id="@+id/btnTancarSessio"
         style="@style/Widget.ComunicaProdis.ButtonEnter"
@@ -26,8 +27,7 @@
         android:text="@string/tancar_sessio"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titol_configuracio" />
-
+        app:layout_constraintTop_toBottomOf="@+id/btnFotoPerfil" />
 
     <Button
         android:id="@+id/btnGeolocalitzacio"
@@ -38,14 +38,14 @@
         android:text="@string/vine_al_camp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnTancarSessio" />
+        app:layout_constraintTop_toBottomOf="@+id/titol_configuracio" />
 
     <Button
         android:id="@+id/btnFotoPerfil"
         style="@style/Widget.ComunicaProdis.ButtonEnter"
         android:layout_width="320dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="50dp"
         android:text="@string/canviar_foto"
         android:textSize="21sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -61,6 +61,6 @@
         android:text="@string/tornar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnFotoPerfil" />
+        app:layout_constraintTop_toBottomOf="@+id/btnTancarSessio" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Configuracio">
+    tools:context=".ConfiguracioAdmin">
 
     <TextView
         android:id="@+id/titol_configuracio"
@@ -17,6 +17,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <Button
         android:id="@+id/btnTancarSessio"
         style="@style/Widget.ComunicaProdis.ButtonEnter"
@@ -26,8 +27,7 @@
         android:text="@string/tancar_sessio"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titol_configuracio" />
-
+        app:layout_constraintTop_toBottomOf="@+id/btnFotoPerfil" />
 
     <Button
         android:id="@+id/btnGeolocalitzacio"
@@ -38,7 +38,7 @@
         android:text="@string/vine_al_camp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnTancarSessio" />
+        app:layout_constraintTop_toBottomOf="@+id/titol_configuracio" />
 
     <Button
         android:id="@+id/btnFotoPerfil"
@@ -61,6 +61,6 @@
         android:text="@string/tornar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnFotoPerfil" />
+        app:layout_constraintTop_toBottomOf="@+id/btnTancarSessio" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -64,12 +64,10 @@
             android:id="@+id/textInputEditTextLoginPassword"
             android:layout_width="314dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="37dp"
-            android:layout_marginEnd="9dp"
+            android:inputType="textPassword"
             android:minHeight="48dp"
-            tools:ignore="SpeakableTextPresentCheck,TextContrastCheck" />
-
+            android:textColor="#757575"
+            tools:ignore="TextContrastCheck"/>
     </com.google.android.material.textfield.TextInputLayout>
 
 
