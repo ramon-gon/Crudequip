@@ -71,10 +71,8 @@ class ModificarClassificacio : Fragment() {
 
 
                     var equips = llegirDades() //Departament introduït per l'usuari
-
                     //Si hem introduit un codi (és l'identifiacdor del departament, per tant ha de ser obligatori).
                     //En el nostre cas, els altres camps no cal que tinguin contingut
-
 
                         if (equips.nom.isNotEmpty() && equips.id.isNotEmpty()) {
 

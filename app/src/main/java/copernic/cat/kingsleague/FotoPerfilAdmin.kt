@@ -119,12 +119,12 @@ class FotoPerfilAdmin: Fragment() {
                 photoSelectedUri = result.data?.data //Assignem l'URI de la imatge
                 //metode per afegir l'imatge
                 lifecycleScope.launch {
-                    withContext(Dispatchers.IO) {
-                        afegirImatge()
+
+                        carregarImatgeGaleria()
                     }
                 }
             }
-        }
+
 
     /**
      * Esta función se encarga de añadir una imagen seleccionada al storage de Firebase, asignando a la imagen un
@@ -183,5 +183,17 @@ class FotoPerfilAdmin: Fragment() {
                 MediaStore.Images.Media.EXTERNAL_CONTENT_URI
             )
         )
+    }
+    suspend fun carregarImatgeGaleria() {
+        var correo = utils.getCorreoUserActural()
+        val storageRef =
+            FirebaseStorage.getInstance().reference.child("image/imatges/$correo.png")
+        val localfile = File.createTempFile(guardarImgCamera.toString(), "png")
+        try {
+            val bitmap = BitmapFactory.decodeFile(localfile.absolutePath)
+            binding.imgFotoDePerfil.setImageBitmap(bitmap)
+        } catch (e: Exception) {
+            // maneja el error aquí
+        }
     }
 }
