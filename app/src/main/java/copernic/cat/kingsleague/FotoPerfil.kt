@@ -118,13 +118,10 @@ class FotoPerfil: Fragment() {
             if (result.resultCode == Activity.RESULT_OK) {
                 photoSelectedUri = result.data?.data //Assignem l'URI de la imatge
                 //metode per afegir l'imatge
-                lifecycleScope.launch {
-                    withContext(Dispatchers.IO) {
-                        afegirImatge()
-                    }
-                }
+                binding.imgFotoDePerfil.setImageURI(photoSelectedUri)
             }
         }
+
 
     /**
      * Esta función se encarga de añadir una imagen seleccionada al storage de Firebase, asignando a la imagen un
@@ -150,6 +147,7 @@ class FotoPerfil: Fragment() {
             }
         }
     }
+
     /**
      * Método que se encarga de cargar la imagen del perfil del usuario en caso de ya estar creada.
      * Se utiliza el método getFile de la clase FirebaseStorage para obtener la imagen almacenada en el servidor.

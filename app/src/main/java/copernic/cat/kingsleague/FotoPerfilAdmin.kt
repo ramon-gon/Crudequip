@@ -70,7 +70,11 @@ class FotoPerfilAdmin: Fragment() {
      * @param savedInstanceState El estado previamente guardado del fragmento.
      * @return La vista del fragmento de autoritzacionsUsuari.
      */
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         _binding = FragmentFotoPerfilAdminBinding.inflate(inflater)
         return binding.root
     }
@@ -85,8 +89,8 @@ class FotoPerfilAdmin: Fragment() {
         super.onViewCreated(view, savedInstanceState)
         //metode per carregar l'imatge si ya esta creada
         lifecycleScope.launch {
-                carregarImatge()
-            }
+            carregarImatge()
+        }
 
         binding.imgButtonBuscar.setOnClickListener {
             lifecycleScope.launch {
@@ -100,8 +104,8 @@ class FotoPerfilAdmin: Fragment() {
             lifecycleScope.launch {
                 afegirImatge()
             }
-                findNavController().navigate(R.id.action_fotoPerfilAdmin_to_configuracioAdmin)
-            }
+            findNavController().navigate(R.id.action_fotoPerfilAdmin_to_configuracioAdmin)
+        }
 
         binding.btnCancelarfotoPerfil.setOnClickListener {
             findNavController().navigate(R.id.action_fotoPerfilAdmin_to_configuracioAdmin)
@@ -118,12 +122,9 @@ class FotoPerfilAdmin: Fragment() {
             if (result.resultCode == Activity.RESULT_OK) {
                 photoSelectedUri = result.data?.data //Assignem l'URI de la imatge
                 //metode per afegir l'imatge
-                lifecycleScope.launch {
-
-                        carregarImatgeGaleria()
-                    }
-                }
+              binding.imgFotoDePerfil.setImageURI(photoSelectedUri)
             }
+        }
 
 
     /**
@@ -150,6 +151,7 @@ class FotoPerfilAdmin: Fragment() {
             }
         }
     }
+
     /**
      * Método que se encarga de cargar la imagen del perfil del usuario en caso de ya estar creada.
      * Se utiliza el método getFile de la clase FirebaseStorage para obtener la imagen almacenada en el servidor.
@@ -184,16 +186,4 @@ class FotoPerfilAdmin: Fragment() {
             )
         )
     }
-    suspend fun carregarImatgeGaleria() {
-        var correo = utils.getCorreoUserActural()
-        val storageRef =
-            FirebaseStorage.getInstance().reference.child("image/imatges/$correo.png")
-        val localfile = File.createTempFile(guardarImgCamera.toString(), "png")
-        try {
-            val bitmap = BitmapFactory.decodeFile(localfile.absolutePath)
-            binding.imgFotoDePerfil.setImageBitmap(bitmap)
-        } catch (e: Exception) {
-            // maneja el error aquí
         }
-    }
-}
