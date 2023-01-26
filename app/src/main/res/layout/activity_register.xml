@@ -47,7 +47,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/registre_contrasenya"
                 app:endIconMode="password_toggle"
-                >
+                app:endIconDrawable="@drawable/eye_password">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/registre_editContrasenya"
@@ -78,6 +78,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 app:endIconMode="password_toggle"
+                app:endIconDrawable="@drawable/eye_password"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/registre_Repetircontrasenya">
 
