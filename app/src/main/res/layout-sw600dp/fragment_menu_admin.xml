@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Menu">
+
+    <TextView
+        android:id="@+id/titol_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="130dp"
+        android:text="@string/benvingut_a_la_kings_league"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="50sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/logomenu"
+        android:layout_width="300dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titol_menu" />
+
+    <Button
+        android:id="@+id/btnJugadors"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="51dp"
+        android:backgroundTint="@color/purple_500"
+        android:text="@string/veure_jugadors"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logomenu" />
+
+    <Button
+        android:id="@+id/btnClasificacio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="51dp"
+        android:backgroundTint="@color/purple_500"
+        android:text="@string/veure_classificacio"
+        android:textSize="30sp"
+        app:layout_constraintStart_toEndOf="@+id/btnJugadors"
+        app:layout_constraintTop_toBottomOf="@+id/logomenu" />
+
+
+    <Button
+        android:id="@+id/btnJugadorsModificar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="@color/purple_500"
+        android:text="@string/modificar_jugadors"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnJugadors" />
+
+    <Button
+        android:id="@+id/btnEquipsModificar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="@color/purple_500"
+        android:text="@string/modificar_equips"
+        android:textSize="30sp"
+        app:layout_constraintStart_toEndOf="@+id/btnJugadorsModificar"
+        app:layout_constraintTop_toBottomOf="@+id/btnClasificacio" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+

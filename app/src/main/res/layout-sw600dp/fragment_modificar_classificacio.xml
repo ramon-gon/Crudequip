@@ -15,7 +15,7 @@
         android:layout_marginTop="75dp"
         android:layout_marginEnd="5dp"
         android:text="@string/modificar_classificacio"
-        android:textSize="30sp"
+        android:textSize="50sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -26,12 +26,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="120dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="120dp"
-        android:layout_marginBottom="200dp"
         android:text="@string/tornar"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="35sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ModificarClassificacio" />
 
     <TextView
         android:id="@+id/nomEquip"
@@ -40,6 +41,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:text="@string/nom"
+        android:textSize="40sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TitolModificarClassificacio" />
 
@@ -62,6 +64,7 @@
         android:hint="@string/nom"
         android:minHeight="48dp"
         android:textColor="#757575"
+        android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nomEquip"
         tools:ignore="DuplicateSpeakableTextCheck,MissingConstraints,TextContrastCheck">
@@ -73,8 +76,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="100dp"
         android:text="@string/puntuacio"
+        android:textSize="40sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editNomEquip" />
 
@@ -95,10 +99,11 @@
         android:layout_marginStart="4dp"
         android:layout_marginTop="4dp"
         android:hint="@string/introdueix_puntuacio"
+        android:inputType="number"
         android:minHeight="48dp"
         android:textColor="#757575"
+        android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
-        android:inputType="number"
         app:layout_constraintTop_toBottomOf="@+id/Puntuacio"
         tools:ignore="DuplicateSpeakableTextCheck,MissingConstraints,TextContrastCheck">
 
@@ -114,6 +119,7 @@
         android:layout_marginEnd="95dp"
         android:backgroundTint="@color/blue"
         android:text="@string/modificar"
+        android:textSize="35sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editPuntuacio" />
