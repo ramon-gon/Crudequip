@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Configuracio">
+
+    <TextView
+        android:id="@+id/titol_configuracio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="90dp"
+        android:text="@string/configuracio"
+        android:textSize="50sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <Button
+        android:id="@+id/btnTancarSessio"
+        style="@style/Widget.ComunicaProdis.ButtonEnter"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="75dp"
+        android:text="@string/tancar_sessio"
+        android:textSize="35sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnFotoPerfil" />
+
+    <Button
+        android:id="@+id/btnGeolocalitzacio"
+        style="@style/Widget.ComunicaProdis.ButtonEnter"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="@string/vine_al_camp"
+        android:textSize="35sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titol_configuracio" />
+
+    <Button
+        android:id="@+id/btnFotoPerfil"
+        style="@style/Widget.ComunicaProdis.ButtonEnter"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="75dp"
+        android:text="@string/canviar_foto"
+        android:textSize="35sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnGeolocalitzacio" />
+
+    <Button
+        android:id="@+id/btn_tornar_configuracio"
+        style="@style/Widget.ComunicaProdis.ButtonConfirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:text="@string/tornar"
+        android:textSize="35sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnTancarSessio" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
