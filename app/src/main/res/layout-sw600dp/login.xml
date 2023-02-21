@@ -6,15 +6,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Login">
-<ScrollView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    tools:ignore="MissingConstraints">
+
 
     <ImageView
         android:id="@+id/LoginLogo"
         android:layout_width="500dp"
-        android:layout_height="400dp"
+        android:layout_height="200dp"
         android:layout_marginTop="100dp"
         android:contentDescription="TODO"
         app:layout_constraintEnd_toEndOf="parent"
@@ -28,7 +25,7 @@
         android:id="@+id/GmailImputText"
         android:layout_width="500dp"
         android:layout_height="200dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="50dp"
         android:hint="@string/escriu_gmail"
 
         app:layout_constraintEnd_toEndOf="parent"
@@ -38,7 +35,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/textInputEditTextLoginGmail"
             android:layout_width="500dp"
-            android:layout_height="150dp"
+            android:layout_height="100dp"
             android:layout_marginStart="10dp"
             android:layout_marginTop="28dp"
             android:layout_marginEnd="9dp"
@@ -67,7 +64,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/textInputEditTextLoginPassword"
             android:layout_width="500dp"
-            android:layout_height="150dp"
+            android:layout_height="100dp"
             android:inputType="textPassword"
             android:minHeight="48dp"
             android:textColor="#757575"
@@ -77,7 +74,6 @@
 
     <Button
         android:id="@+id/buttonLoginAccedir"
-        android:textSize="30sp"
         style="@style/Widget.ComunicaProdis.ButtonEnter"
         android:layout_width="700dp"
         android:layout_height="80dp"
@@ -88,8 +84,8 @@
         android:gravity="center"
         android:minHeight="48dp"
         android:text="@string/accedir"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/passwordImputText" />
 
@@ -99,7 +95,7 @@
         android:layout_width="700dp"
         android:layout_height="80dp"
         android:layout_marginStart="100dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="100dp"
         android:backgroundTint="#2196F3"
         android:gravity="center"
@@ -107,7 +103,6 @@
         android:text="@string/registrarse"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonLoginAccedir" />
 
@@ -124,5 +119,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonLoginRegister" />
 
-</ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
