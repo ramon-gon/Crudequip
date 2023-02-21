@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="90dp"
         android:text="@string/classificaci"
-        android:textSize="30sp"
+        android:textSize="50sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -20,22 +20,23 @@
     <Button
         android:id="@+id/btn_tornar_classificacio"
         style="@style/Widget.ComunicaProdis.ButtonConfirm"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="100dp"
+        android:layout_width="300dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="300dp"
+        android:layout_marginBottom="270dp"
+        android:gravity="center"
         android:text="@string/tornar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rvClassificacio" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvClassificacio"
-        android:layout_width="350dp"
-        android:layout_height="450dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_tornar_classificacio"
+        android:layout_width="550dp"
+        android:layout_height="700dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="200dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TitolClassificacio" />
 </androidx.constraintlayout.widget.ConstraintLayout>
