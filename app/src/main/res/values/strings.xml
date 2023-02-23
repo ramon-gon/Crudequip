@@ -1,23 +1,23 @@
 <resources>
     <string name="app_name">Kings league</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
     <string name="has_oblidat_la_contrasenya">Has oblidat la contrasenya?</string>
     <string name="registrarse">REGISTRAR-SE</string>
     <string name="escriu_contrasenya">Escriu contrasenya</string>
     <string name="escriu_gmail">Escriu Gmail</string>
-    <string name="title_activity_login">Login</string>
-    <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password</string>
-    <string name="action_sign_in">Sign in or register</string>
-    <string name="action_sign_in_short">Sign in</string>
-    <string name="welcome">"Welcome !"</string>
-    <string name="invalid_username">Not a valid username</string>
-    <string name="invalid_password">Password must be >5 characters</string>
-    <string name="login_failed">"Login failed"</string>
+    <string name="title_activity_login" translatable="false">Login</string>
+    <string name="prompt_email" translatable="false">Email</string>
+    <string name="prompt_password" translatable="false">Password</string>
+    <string name="action_sign_in" translatable="false">Sign in or register</string>
+    <string name="action_sign_in_short" translatable="false">Sign in</string>
+    <string name="welcome" translatable="false">"Welcome !"</string>
+    <string name="invalid_username" translatable="false">Not a valid username</string>
+    <string name="invalid_password" translatable="false">Password must be >5 characters</string>
+    <string name="login_failed" translatable="false">"Login failed"</string>
     <string name="accedir">ACCEDIR</string>
-    <string name="acceptar">ACCEPTARñ</string>
-    <string name="email">Email</string>
+    <string name="acceptar">ACEPTAR</string>
+    <string name="email" translatable="false">Email</string>
     <string name="recuperar">RECUPERAR</string>
     <string name="introdueix_email">introdueix_email</string>
     <string name="cancelar">CANCELAR</string>
@@ -26,11 +26,11 @@
     <string name="nom_usuari">Nom Usuari</string>
     <string name="gmail">Gmail</string>
     <string name="repetir_contrasenya">Repetir Contrasenya</string>
-    <string name="logo_splash_screen">Logo Splash screen</string>
+    <string name="logo_splash_screen" translatable="false">Logo Splash screen</string>
     <string name="benvingut_a_la_kings_league">Benvingut a la Kings League</string>
     <string name="veure_jugadors">Veure jugadors</string>
     <string name="veure_classificacio">Veure classificació</string>
-    <string name="item">Item</string>
+    <string name="item" translatable="false">Item</string>
     <string name="classificaci">Classificació</string>
     <string name="tornar">TORNAR</string>
     <string name="nom">Nom</string>
@@ -46,14 +46,14 @@
     <string name="eliminar_jugador">ELIMINAR JUGADOR</string>
     <string name="introdueix_el_nom_del_equip">Introdueix el nom de l equip</string>
     <string name="eliminar">ELIMINAR</string>
-    <string name="crear">CREAR</string>
-    <string name="modificar">MODIFICAR</string>
+    <string name="crear" translatable="false">CREAR</string>
+    <string name="modificar" translatable="false">MODIFICAR</string>
     <string name="equip">Equip</string>
     <string name="crear_equips">CREAR EQUIPS</string>
     <string name="eliminar_equips">ELIMINAR EQUIPS</string>
     <string name="modificar_puntuacio">MODIFICAR PUNTUACIO</string>
-    <string name="foto_de_perfil">Foto de perfil</string>
-    <string name="guardar">GUARDAR</string>
+    <string name="foto_de_perfil" translatable="false">Foto de perfil</string>
+    <string name="guardar" translatable="false">GUARDAR</string>
     <string name="configuracio">Configuracio</string>
     <string name="tancar_sessio">TANCAR SESSIO</string>
     <string name="vine_al_camp">VINE AL CAMP</string>
@@ -61,7 +61,7 @@
     <string name="nom_del_equip">Nom del equip</string>
     <string name="veure">VEURE</string>
     <string name="nom_equip">Nom equip</string>
-    <string name="_555">555</string>
+    <string name="_555" translatable="false">555</string>
     <string name="nom_jugador">Nom Jugador</string>
 
 </resources>
