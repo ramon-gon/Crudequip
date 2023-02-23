@@ -24,7 +24,7 @@
     <string name="confirmar">CONFIRMAR</string>
     <string name="contrasenya">Contrasenya</string>
     <string name="nom_usuari">Nom Usuari</string>
-    <string name="gmail">Gmail</string>
+    <string name="gmail" translatable="false">Gmail</string>
     <string name="repetir_contrasenya">Repetir Contrasenya</string>
     <string name="logo_splash_screen" translatable="false">Logo Splash screen</string>
     <string name="benvingut_a_la_kings_league">Benvingut a la Kings League</string>

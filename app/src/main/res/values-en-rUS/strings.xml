@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Kings league</string>
+    <string name="has_oblidat_la_contrasenya">Have you forgotten the password?</string>
+    <string name="registrarse">CHECK IN</string>
+    <string name="escriu_contrasenya">Write password</string>
+    <string name="escriu_gmail">Write Gmail</string>
+    <string name="accedir">ACCESS</string>
+    <string name="acceptar">ACCEPT</string>
+    <string name="recuperar">RECOVER</string>
+    <string name="introdueix_email">insert_email</string>
+    <string name="cancelar">CANCEL</string>
+    <string name="confirmar">CONFIRM</string>
+    <string name="contrasenya">Password</string>
+    <string name="nom_usuari">Name user</string>
+    <string name="repetir_contrasenya">Repeat Paassword</string>
+    <string name="benvingut_a_la_kings_league">Welcome to the Kings League</string>
+    <string name="veure_jugadors">See players</string>
+    <string name="veure_classificacio">See classification</string>
+    <string name="classificaci">Classification</string>
+    <string name="tornar">RETURN</string>
+    <string name="nom">Name</string>
+    <string name="modificar_jugadors">Modify players</string>
+    <string name="modificar_classificacio">Modify classification</string>
+    <string name="puntuacio">Punctuation</string>
+    <string name="introdueix_puntuacio">Insert punctuation</string>
+    <string name="jugadors">Players</string>
+    <string name="introdueix_nom_jugador">Enter player name</string>
+    <string name="modificar_equips">Modify teams</string>
+    <string name="jugador">Player</string>
+    <string name="crear_jugador">CREATE PLAYER</string>
+    <string name="eliminar_jugador">DELETE PLAYER</string>
+    <string name="introdueix_el_nom_del_equip">Enter team name</string>
+    <string name="eliminar">DELETE</string>
+    <string name="equip">Team</string>
+    <string name="crear_equips">CREATE TEAMS</string>
+    <string name="eliminar_equips">DELETE TEAMS</string>
+    <string name="modificar_puntuacio">MODIFY PUNTUACTION</string>
+    <string name="configuracio">Setting</string>
+    <string name="tancar_sessio">SIGN OUT</string>
+    <string name="vine_al_camp">COME TO THE FIELD</string>
+    <string name="canviar_foto">CHANGE PHOTO</string>
+    <string name="nom_del_equip">Name of the team</string>
+    <string name="veure">See</string>
+    <string name="nom_equip">Team name</string>
+    <string name="nom_jugador">Player Name</string>
+</resources>
