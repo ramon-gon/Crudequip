@@ -5,31 +5,30 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     style="@style/constraintlayoutTherme"
-    tools:context=".CrearEquips">
+    tools:context=".EliminarEquips">
 
     <TextView
-        android:id="@+id/TitolCrearEquips"
+        android:id="@+id/TitolEliminarEquips"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="90dp"
-        android:text="@string/crear_equips"
+        android:text="@string/eliminar_equips"
         android:textSize="50sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btn_tornar_Crear_equips"
+        android:id="@+id/btn_tornar_Eliminar_equips"
         style="@style/Widget.ComunicaProdis.ButtonConfirm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="63dp"
-        android:gravity="center"
         android:text="@string/tornar"
         android:textSize="35sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/crear_equip" />
+        app:layout_constraintTop_toBottomOf="@+id/eliminarEquip" />
 
     <TextView
         android:id="@+id/nomEquip"
@@ -40,7 +39,7 @@
         android:text="@string/nom"
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TitolCrearEquips" />
+        app:layout_constraintTop_toBottomOf="@+id/TitolEliminarEquips" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/nomEquipTextInput"
@@ -57,13 +56,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginTop="4dp"
         android:hint="@string/introdueix_el_nom_del_equip"
         android:minHeight="48dp"
         android:textColor="#757575"
         android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nomEquip"
         tools:ignore="DuplicateSpeakableTextCheck,MissingConstraints,TextContrastCheck">
@@ -81,14 +78,13 @@
 
 
     <Button
-        android:id="@+id/crear_equip"
+        android:id="@+id/eliminarEquip"
         style="@style/Widget.ComunicaProdis.ButtonEnter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
-        android:backgroundTint="@color/blue"
-        android:gravity="center"
-        android:text="@string/crear"
+        android:backgroundTint="#CF021A"
+        android:text="@string/eliminar"
         android:textSize="35sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

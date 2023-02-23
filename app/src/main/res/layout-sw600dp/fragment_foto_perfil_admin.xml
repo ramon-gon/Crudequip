@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="FotoPerfilAdmin">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/TextViewFotoPerfil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="90dp"
+            android:text="@string/foto_de_perfil"
+            android:textSize="50sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imgFotoDePerfil"
+            android:layout_width="300dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="50dp"
+            android:contentDescription="TODO"
+            android:src="@drawable/foto_perfil"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/TextViewFotoPerfil" />
+
+        <ImageButton
+            android:id="@+id/img_Button_buscar"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:contentDescription="TODO"
+            android:src="@android:drawable/ic_menu_upload"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgFotoDePerfil"
+            tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+        <Button
+            android:id="@+id/btn_guardar"
+            style="@style/Widget.ComunicaProdis.ButtonFotoDePerfil_guardar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="200dp"
+            android:layout_marginTop="100dp"
+            android:text="@string/guardar"
+            android:textSize="35sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img_Button_buscar" />
+
+        <Button
+            android:id="@+id/btnCancelarfotoPerfil"
+            style="@style/Widget.ComunicaProdis.ButtonCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="100dp"
+            android:textSize="35sp"
+            app:layout_constraintStart_toEndOf="@+id/btn_guardar"
+            app:layout_constraintTop_toBottomOf="@+id/img_Button_buscar" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

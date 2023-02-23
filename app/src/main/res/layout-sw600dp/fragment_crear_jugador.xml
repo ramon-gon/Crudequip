@@ -5,31 +5,30 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     style="@style/constraintlayoutTherme"
-    tools:context=".CrearEquips">
+    tools:context=".CrearJugador">
 
     <TextView
-        android:id="@+id/TitolCrearEquips"
+        android:id="@+id/TitolCrearJugadors"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="90dp"
-        android:text="@string/crear_equips"
+        android:text="@string/crear_jugador"
         android:textSize="50sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btn_tornar_Crear_equips"
+        android:id="@+id/btn_tornar_Crear_Jugador"
         style="@style/Widget.ComunicaProdis.ButtonConfirm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="63dp"
-        android:gravity="center"
         android:text="@string/tornar"
         android:textSize="35sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/crear_equip" />
+        app:layout_constraintTop_toBottomOf="@+id/crear_jugador" />
 
     <TextView
         android:id="@+id/nomEquip"
@@ -40,7 +39,7 @@
         android:text="@string/nom"
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TitolCrearEquips" />
+        app:layout_constraintTop_toBottomOf="@+id/TitolCrearJugadors" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/nomEquipTextInput"
@@ -57,18 +56,27 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginTop="4dp"
         android:hint="@string/introdueix_el_nom_del_equip"
         android:minHeight="48dp"
         android:textColor="#757575"
         android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nomEquip"
         tools:ignore="DuplicateSpeakableTextCheck,MissingConstraints,TextContrastCheck">
 
     </com.google.android.material.textfield.TextInputEditText>
+
+    <TextView
+        android:id="@+id/Jugadors"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/jugador"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editNomEquip" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/jugadorTextInput"
@@ -80,18 +88,34 @@
         tools:layout_editor_absoluteX="40dp" />
 
 
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/editjugador"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:hint="@string/introdueix_nom_jugador"
+        android:minHeight="48dp"
+        android:textColor="#757575"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Jugadors"
+        tools:ignore="DuplicateSpeakableTextCheck,MissingConstraints,TextContrastCheck">
+
+
+    </com.google.android.material.textfield.TextInputEditText>
+
     <Button
-        android:id="@+id/crear_equip"
+        android:id="@+id/crear_jugador"
         style="@style/Widget.ComunicaProdis.ButtonEnter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="50dp"
         android:backgroundTint="@color/blue"
-        android:gravity="center"
         android:text="@string/crear"
         android:textSize="35sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editNomEquip" />
+        app:layout_constraintTop_toBottomOf="@+id/editjugador" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 

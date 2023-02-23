@@ -40,6 +40,7 @@
             android:layout_marginTop="28dp"
             android:layout_marginEnd="9dp"
             android:minHeight="100dp"
+            android:textSize="30sp"
             tools:ignore="SpeakableTextPresentCheck,TextContrastCheck" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -68,6 +69,7 @@
             android:inputType="textPassword"
             android:minHeight="48dp"
             android:textColor="#757575"
+            android:textSize="30sp"
             tools:ignore="TextContrastCheck" />
     </com.google.android.material.textfield.TextInputLayout>
 

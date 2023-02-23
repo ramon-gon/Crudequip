@@ -22,11 +22,9 @@
         style="@style/Widget.ComunicaProdis.ButtonConfirm"
         android:layout_width="300dp"
         android:layout_height="80dp"
-        android:layout_marginTop="300dp"
-        android:layout_marginBottom="270dp"
+        android:layout_marginTop="100dp"
         android:gravity="center"
         android:text="@string/tornar"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rvClassificacio" />
@@ -34,9 +32,9 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvClassificacio"
         android:layout_width="550dp"
-        android:layout_height="700dp"
+        android:layout_height="400dp"
         android:layout_marginStart="100dp"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="100dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TitolClassificacio" />
 </androidx.constraintlayout.widget.ConstraintLayout>
