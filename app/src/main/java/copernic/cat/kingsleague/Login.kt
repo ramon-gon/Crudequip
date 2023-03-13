@@ -107,7 +107,7 @@ class Login : AppCompatActivity() {
                 } else { //El loguin (task) ha fallat...
                     //Mostrem un missatge a l'usuari mitjançant un Toast
                     val builder = AlertDialog.Builder(this)
-                    builder.setMessage("El Login ha fallat")
+                    builder.setMessage("El correu i/o la contrasenya és incorrecte")
                     builder.setPositiveButton("Aceptar", null)
                     val dialog = builder.create()
                     dialog.show()
