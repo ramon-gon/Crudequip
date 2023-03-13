@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/menu"
-        android:name="copernic.cat.kingsleague.MenuAdmin"
+        android:name="copernic.cat.kingsleague.administrador.MenuAdmin"
         android:label="fragment_menu_admin"
         tools:layout="@layout/fragment_menu_admin" >
         <action
@@ -28,7 +28,7 @@
     </fragment>
     <fragment
         android:id="@+id/crearEquips"
-        android:name="copernic.cat.kingsleague.CrearEquips"
+        android:name="copernic.cat.kingsleague.administrador.CrearEquips"
         android:label="fragment_crear_equips"
         tools:layout="@layout/fragment_crear_equips" >
         <action
@@ -40,7 +40,7 @@
     </fragment>
     <fragment
         android:id="@+id/crearJugador"
-        android:name="copernic.cat.kingsleague.CrearJugador"
+        android:name="copernic.cat.kingsleague.administrador.CrearJugador"
         android:label="fragment_crear_jugador"
         tools:layout="@layout/fragment_crear_jugador" >
         <action
@@ -52,7 +52,7 @@
     </fragment>
     <fragment
         android:id="@+id/eliminarEquips"
-        android:name="copernic.cat.kingsleague.EliminarEquips"
+        android:name="copernic.cat.kingsleague.administrador.EliminarEquips"
         android:label="fragment_eliminar_equips"
         tools:layout="@layout/fragment_eliminar_equips" >
         <action
@@ -64,7 +64,7 @@
     </fragment>
     <fragment
         android:id="@+id/eliminarJugadors"
-        android:name="copernic.cat.kingsleague.EliminarJugadors"
+        android:name="copernic.cat.kingsleague.administrador.EliminarJugadors"
         android:label="fragment_eliminar_jugadors"
         tools:layout="@layout/fragment_eliminar_jugadors" >
         <action
@@ -76,7 +76,7 @@
     </fragment>
     <fragment
         android:id="@+id/menuEquips"
-        android:name="copernic.cat.kingsleague.MenuEquips"
+        android:name="copernic.cat.kingsleague.administrador.MenuEquips"
         android:label="fragment_menu_equips"
         tools:layout="@layout/fragment_menu_equips" >
         <action
@@ -94,7 +94,7 @@
     </fragment>
     <fragment
         android:id="@+id/menuJugadors"
-        android:name="copernic.cat.kingsleague.MenuJugadors"
+        android:name="copernic.cat.kingsleague.administrador.MenuJugadors"
         android:label="fragment_menu_jugadors"
         tools:layout="@layout/fragment_menu_jugadors" >
         <action
@@ -109,7 +109,7 @@
     </fragment>
     <fragment
         android:id="@+id/modificarClassificacio"
-        android:name="copernic.cat.kingsleague.ModificarClassificacio"
+        android:name="copernic.cat.kingsleague.administrador.ModificarClassificacio"
         android:label="fragment_modificar_classificacio"
         tools:layout="@layout/fragment_modificar_classificacio" >
         <action
@@ -121,7 +121,7 @@
     </fragment>
     <fragment
         android:id="@+id/jugadorsAdmin"
-        android:name="copernic.cat.kingsleague.JugadorsAdmin"
+        android:name="copernic.cat.kingsleague.administrador.JugadorsAdmin"
         android:label="JugadorsAdmin" >
         <action
             android:id="@+id/action_jugadorsAdmin_to_menu"
@@ -129,7 +129,7 @@
     </fragment>
     <fragment
         android:id="@+id/classificacioAdmin"
-        android:name="copernic.cat.kingsleague.ClassificacioAdmin"
+        android:name="copernic.cat.kingsleague.administrador.ClassificacioAdmin"
         android:label="ClassificacioAdmin" >
         <action
             android:id="@+id/action_classificacioAdmin_to_menu"
@@ -137,7 +137,7 @@
     </fragment>
     <fragment
         android:id="@+id/configuracioAdmin"
-        android:name="copernic.cat.kingsleague.ConfiguracioAdmin"
+        android:name="copernic.cat.kingsleague.administrador.ConfiguracioAdmin"
         android:label="ConfiguracioAdmin" >
         <action
             android:id="@+id/action_configuracioAdmin_to_menu"
@@ -151,7 +151,7 @@
     </fragment>
     <fragment
         android:id="@+id/maps"
-        android:name="cat.copernic.comunicatsprodis.Maps"
+        android:name="copernic.cat.kingsleague.administrador.Maps"
         android:label="Maps" >
         <action
             android:id="@+id/action_maps_to_configuracioAdmin"
@@ -159,7 +159,7 @@
     </fragment>
     <fragment
         android:id="@+id/fotoPerfilAdmin"
-        android:name="copernic.cat.kingsleague.FotoPerfilAdmin"
+        android:name="copernic.cat.kingsleague.administrador.FotoPerfilAdmin"
         android:label="fragment_foto_perfil_admin"
         tools:layout="@layout/fragment_foto_perfil_admin" >
         <action

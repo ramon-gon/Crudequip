@@ -1,4 +1,4 @@
-package copernic.cat.kingsleague
+package copernic.cat.kingsleague.administrador
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -13,6 +13,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
+import copernic.cat.kingsleague.R
 import copernic.cat.kingsleague.databinding.FragmentCrearEquipsBinding
 import copernic.cat.kingsleague.databinding.FragmentMenuAdminBinding
 import copernic.cat.kingsleague.models.Equip

@@ -1,4 +1,4 @@
-package cat.copernic.comunicatsprodis
+package copernic.cat.kingsleague.administrador
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

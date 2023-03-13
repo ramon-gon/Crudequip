@@ -1,7 +1,7 @@
 package copernic.cat.kingsleague.models
 
 import com.google.firebase.firestore.Exclude
-import copernic.cat.kingsleague.Jugadors
+
 
 data class Equip(
     @Exclude val id:String,

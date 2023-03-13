@@ -1,4 +1,4 @@
-package copernic.cat.kingsleague
+package copernic.cat.kingsleague.administrador
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -14,6 +14,7 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 import com.google.firebase.ktx.Firebase
+import copernic.cat.kingsleague.R
 import copernic.cat.kingsleague.databinding.FragmentJugadorsAdminBinding
 import copernic.cat.kingsleague.databinding.FragmentJugadorsBinding
 import copernic.cat.kingsleague.rvClassificacio.Adapter.ClassificacioAdapter
@@ -35,15 +36,15 @@ private const val ARG_PARAM2 = "param2"
  * Use the [Jugadors.newInstance] factory method to
  * create an instance of this fragment.
  */
-class Jugadors : Fragment() {
-    private var _binding: FragmentJugadorsBinding? = null
+class JugadorsAdmin : Fragment() {
+    private var _binding: FragmentJugadorsAdminBinding? = null
     private val binding get() = _binding!!
     val bd = FirebaseFirestore.getInstance()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentJugadorsBinding.inflate(inflater, container, false)
+        _binding = FragmentJugadorsAdminBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -51,7 +52,7 @@ class Jugadors : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.btnTornarJugadors.setOnClickListener {
-            findNavController().navigate(R.id.action_jugadors_to_menuUsuari)
+            findNavController().navigate(R.id.action_jugadorsAdmin_to_menu)
         }
         binding.btnVeureJugadors.setOnClickListener {
             try {
@@ -69,24 +70,25 @@ class Jugadors : Fragment() {
 
                         } else {
                             initRecyclerView(view)
-                            val builder = AlertDialog.Builder(requireContext())
-                            builder.setMessage("L'equip no existeix")
+                                val builder = AlertDialog.Builder(requireContext())
+                                builder.setMessage("L'equip no existeix")
+                                builder.setPositiveButton("Aceptar", null)
+                                val dialog = builder.create()
+                                dialog.show()
+                            }
+                        }
+
+            } catch (e: Exception) {
+
+                val builder = AlertDialog.Builder(requireContext())
+                            builder.setMessage("Cal introduïr un nom a l'equip")
                             builder.setPositiveButton("Aceptar", null)
                             val dialog = builder.create()
                             dialog.show()
+
                         }
                     }
-
-            } catch (e: Exception) {
-                val builder = AlertDialog.Builder(requireContext())
-                builder.setMessage("Cal introduïr un nom a l'equip")
-                builder.setPositiveButton("Aceptar", null)
-                val dialog = builder.create()
-                dialog.show()
-
             }
-        }
-    }
 
 
 

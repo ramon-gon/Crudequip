@@ -1,4 +1,4 @@
-package copernic.cat.kingsleague
+package copernic.cat.kingsleague.administrador
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,18 +9,19 @@ import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
-
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
-import copernic.cat.kingsleague.databinding.FragmentModificarClassificacioBinding
+import copernic.cat.kingsleague.R
+import copernic.cat.kingsleague.databinding.FragmentCrearEquipsBinding
+import copernic.cat.kingsleague.databinding.FragmentEliminarEquipsBinding
+import copernic.cat.kingsleague.databinding.FragmentMenuAdminBinding
 import copernic.cat.kingsleague.models.Equip
 import copernic.cat.kingsleague.models.Jugador
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -29,22 +30,15 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [ModificarClassificacio.newInstance] factory method to
+ * Use the [CrearEquips.newInstance] factory method to
  * create an instance of this fragment.
  */
-class ModificarClassificacio : Fragment() {
-    private var _binding: FragmentModificarClassificacioBinding? = null
+class EliminarEquips : Fragment() {
+    private var _binding: FragmentEliminarEquipsBinding? = null
     private val binding get() = _binding!!
     private var bd = FirebaseFirestore.getInstance()
     private lateinit var auth: FirebaseAuth
     private lateinit var jugadors: ArrayList<Jugador>
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-
-    }
-
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -52,7 +46,8 @@ class ModificarClassificacio : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        _binding = FragmentModificarClassificacioBinding.inflate(inflater, container, false)
+        _binding = FragmentEliminarEquipsBinding.inflate(inflater, container, false)
+
         return binding.root
     }
 
@@ -63,97 +58,80 @@ class ModificarClassificacio : Fragment() {
 
         jugadors = arrayListOf()
 
-        binding.ModificarClassificacio.setOnClickListener {
+
+        binding.eliminarEquip.setOnClickListener {
             lifecycleScope.launch {
                 withContext(Dispatchers.Unconfined) {//llegir dades de la base de dades
 
-                    try {
+
+                    var equip = llegirDades() //Departament introduït per l'usuari
 
 
-                    var equips = llegirDades() //Departament introduït per l'usuari
                     //Si hem introduit un codi (és l'identifiacdor del departament, per tant ha de ser obligatori).
                     //En el nostre cas, els altres camps no cal que tinguin contingut
-                        if (equips.nom.isNotEmpty() && equips.id.isNotEmpty()) {
+                    if (equip.nom.isNotEmpty()) {
 
-                            //Afegim el departament mitjançant eñ mètode afegirDepartament que hem creat nosaltres
-                            AfegirPuntuacio(equips)
-                            findNavController().navigate(R.id.action_modificarClassificacio_to_menuEquips)
+                        //Afegim el departament mitjançant eñ mètode afegirDepartament que hem creat nosaltres
+                        EliminarrEquip(equip)
 
 
-                        } else {
-                            val builder = AlertDialog.Builder(requireContext())
-                            builder.setMessage("Cal introduïr un nom de l'equip")
-                            builder.setPositiveButton("Aceptar", null)
-                            val dialog = builder.create()
-                            dialog.show()
-                        }
+                        findNavController().navigate(R.id.action_eliminarEquips_to_menuEquips)
 
-                    } catch (e: Exception){
+
+                    } else {
                         val builder = AlertDialog.Builder(requireContext())
-                        builder.setMessage("Cal introduïr una puntuacio")
+                        builder.setMessage("Cal introduïr un nom a l'equip")
                         builder.setPositiveButton("Aceptar", null)
                         val dialog = builder.create()
                         dialog.show()
                     }
-
                 }
             }
         }
-
-        binding.btnTornarModificarClassificacio.setOnClickListener {
-            findNavController().navigate(R.id.action_modificarClassificacio_to_menuEquips)
+        binding.btnTornarEliminarEquips.setOnClickListener() {
+            findNavController().navigate(R.id.action_eliminarEquips_to_menuEquips)
         }
     }
-
 
     fun llegirDades(): Equip {
         //Guardem les dades introduïdes per l'usuari
         var nom = binding.editNomEquip.text.toString()
-        var puntuacio= binding.editPuntuacio.text.toString()
-        //Afegim els Tutors introduïts per l'usuari l'atribut treballadors
-        jugadors.add(Jugador("",""))
 
-        return Equip(puntuacio, nom, puntuacio.toInt(), jugadors)
+        //Afegim els Tutors introduïts per l'usuari l'atribut treballadors
+        jugadors.add(Jugador("", ""))
+
+        return Equip(nom , nom, 0, jugadors)
     }
 
-    fun AfegirPuntuacio(equips:Equip) {
-        var nomEquip = binding.editNomEquip.text.toString()
-        var puntuacio = binding.editPuntuacio.text.toString()
-        //Afegim una subcolecció igual que afegim una col.lecció però penjant de la col.lecció on està inclosa.
+    fun EliminarrEquip(equip: Equip) {
+        var nom = binding.editNomEquip.text.toString()
         var existe =
-            bd.collection("Equips").document(nomEquip)
+            bd.collection("Equips").document(nom)
 
         existe.get()
             .addOnSuccessListener { document ->
                 if (document.exists()) {
-
-                    bd.collection("Equips")//Col.lecció
-                        .document(nomEquip).update(
-
-                            "Puntuacio", equips.puntuacio,
-                        ) //Subcol.lecció
-
+                    bd.collection("Equips").document(nom).collection("Jugadors").get()
+                        .addOnSuccessListener { documents ->
+                            for (documentc in documents) {
+                                documentc.reference.delete()
+                            }
+                        }
+                    bd.collection("Equips").document(nom).delete()
                         .addOnSuccessListener {
                             val builder = AlertDialog.Builder(requireContext())
-                            builder.setMessage("La puntuacio s'ha modificat correctament")
+                            builder.setMessage("L'equip s'ha eliminat correctament")
                             builder.setPositiveButton("Aceptar", null)
                             val dialog = builder.create()
                             dialog.show()
                         }
-
-
-                                }
-                else {
+                } else {
                     val builder = AlertDialog.Builder(requireContext())
-                    builder.setMessage("L'equip no existeix'")
+                    builder.setMessage("L'equip no existeix")
                     builder.setPositiveButton("Aceptar", null)
                     val dialog = builder.create()
                     dialog.show()
                 }
-
-                        }
-
-
-                }
-
             }
+    }
+}

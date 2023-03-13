@@ -1,4 +1,4 @@
-package copernic.cat.kingsleague
+package copernic.cat.kingsleague.usuari
 
 import android.app.Activity
 import android.content.Intent
@@ -21,6 +21,7 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
+import copernic.cat.kingsleague.R
 import copernic.cat.kingsleague.Utils
 import copernic.cat.kingsleague.databinding.FragmentFotoPerfilAdminBinding
 import copernic.cat.kingsleague.databinding.FragmentFotoPerfilBinding
@@ -39,17 +40,17 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [FotoPerfilAdmin.newInstance] factory method to
+ * Use the [FotoPerfil.newInstance] factory method to
  * create an instance of this fragment.
  */
-class FotoPerfilAdmin: Fragment() {
+class FotoPerfil: Fragment() {
     private var photoSelectedUri: Uri? = null
     private lateinit var auth: FirebaseAuth
     private val utils = Utils()
     private var storage = FirebaseStorage.getInstance()
     private var storageRef = storage.getReference().child("image/imatges").child(".png")
 
-    private var _binding: FragmentFotoPerfilAdminBinding? = null
+    private var _binding: FragmentFotoPerfilBinding? = null
     private val binding get() = _binding!!
 
     /**
@@ -70,12 +71,8 @@ class FotoPerfilAdmin: Fragment() {
      * @param savedInstanceState El estado previamente guardado del fragmento.
      * @return La vista del fragmento de autoritzacionsUsuari.
      */
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        _binding = FragmentFotoPerfilAdminBinding.inflate(inflater)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        _binding = FragmentFotoPerfilBinding.inflate(inflater)
         return binding.root
     }
 
@@ -104,11 +101,11 @@ class FotoPerfilAdmin: Fragment() {
             lifecycleScope.launch {
                 afegirImatge()
             }
-            findNavController().navigate(R.id.action_fotoPerfilAdmin_to_configuracioAdmin)
+            findNavController().navigate(R.id.action_fotoPerfil_to_configuracio2)
         }
 
         binding.btnCancelarfotoPerfil.setOnClickListener {
-            findNavController().navigate(R.id.action_fotoPerfilAdmin_to_configuracioAdmin)
+            findNavController().navigate(R.id.action_fotoPerfil_to_configuracio2)
         }
     }
 
@@ -122,7 +119,7 @@ class FotoPerfilAdmin: Fragment() {
             if (result.resultCode == Activity.RESULT_OK) {
                 photoSelectedUri = result.data?.data //Assignem l'URI de la imatge
                 //metode per afegir l'imatge
-              binding.imgFotoDePerfil.setImageURI(photoSelectedUri)
+                binding.imgFotoDePerfil.setImageURI(photoSelectedUri)
             }
         }
 
@@ -186,4 +183,4 @@ class FotoPerfilAdmin: Fragment() {
             )
         )
     }
-        }
+}

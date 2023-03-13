@@ -1,4 +1,4 @@
-package copernic.cat.kingsleague
+package copernic.cat.kingsleague.usuari
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import copernic.cat.kingsleague.databinding.FragmentMenuAdminBinding
+import copernic.cat.kingsleague.R
 import copernic.cat.kingsleague.databinding.FragmentMenuUsuariBinding
 
 class MenuUsuari : Fragment() {
