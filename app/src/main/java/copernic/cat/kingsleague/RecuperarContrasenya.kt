@@ -59,14 +59,14 @@ class RecuperarContrasenya : AppCompatActivity() {
         auth.sendPasswordResetEmail(email).addOnCompleteListener() { task ->
             if (task.isSuccessful)
             {
+
+
                 val builder = AlertDialog.Builder(this)
                 builder.setMessage("S'ha enviat un correu per canviar la contrasenya")
                 builder.setPositiveButton("Aceptar", null)
                 val dialog = builder.create()
                 dialog.show()
                 //Anem al mainActivity des d'aquesta pantalla
-                startActivity(Intent(this, Login::class.java))
-                finish() //Alliberem memòria un cop finalitzada aquesta tasca.
 
 
             }
