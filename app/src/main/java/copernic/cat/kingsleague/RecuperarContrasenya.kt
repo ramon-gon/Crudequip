@@ -66,7 +66,6 @@ class RecuperarContrasenya : AppCompatActivity() {
                 builder.setPositiveButton("Aceptar", null)
                 val dialog = builder.create()
                 dialog.show()
-                //Anem al mainActivity des d'aquesta pantalla
 
 
             }
