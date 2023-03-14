@@ -26,7 +26,8 @@
         android:src="@drawable/logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titol_menu" />
+        app:layout_constraintTop_toBottomOf="@+id/titol_menu"
+        android:contentDescription="@string/surt_un_lle_que_s_el_logotip_de_l_aplicaci" />
 
     <Button
         android:id="@+id/btnJugadors"

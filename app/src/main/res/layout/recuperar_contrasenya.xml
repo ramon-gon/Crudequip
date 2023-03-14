@@ -42,7 +42,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView_email_recuperar_contrasenya"
         tools:ignore="SpeakableTextPresentCheck">
 
-        "
+
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/textInputEditTextEmail"
