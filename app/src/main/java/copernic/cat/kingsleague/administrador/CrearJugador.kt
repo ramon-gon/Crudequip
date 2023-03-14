@@ -80,13 +80,13 @@ class CrearJugador : Fragment() {
 
                     } else if (equips.nom.isNotEmpty()) {
                         val builder = AlertDialog.Builder(requireContext())
-                        builder.setMessage("Cal introduïr un nom al jugador")
+                        builder.setMessage(getString(R.string.cal_introduir_nom_al_jugador_alert))
                         builder.setPositiveButton("Aceptar", null)
                         val dialog = builder.create()
                         dialog.show()
                     } else {
                         val builder = AlertDialog.Builder(requireContext())
-                        builder.setMessage("Cal introduïr un nom per l'equip")
+                        builder.setMessage(getString(R.string.cal_introduir_nom_al_equip_alert))
                         builder.setPositiveButton("Aceptar", null)
                         val dialog = builder.create()
                         dialog.show()
@@ -143,14 +143,14 @@ class CrearJugador : Fragment() {
 
                             .addOnSuccessListener {
                                 val builder = AlertDialog.Builder(requireContext())
-                                builder.setMessage("El jugador s'ha creat correctament")
+                                builder.setMessage(getString(R.string.crear_jugador_alert))
                                 builder.setPositiveButton("Aceptar", null)
                                 val dialog = builder.create()
                                 dialog.show()
                             }
                     } else {
                         val builder = AlertDialog.Builder(requireContext())
-                        builder.setMessage("L'equip no existeix")
+                        builder.setMessage(R.string.lequip_no_existeix_alert)
                         builder.setPositiveButton("Aceptar", null)
                         val dialog = builder.create()
                         dialog.show()

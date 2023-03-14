@@ -74,8 +74,7 @@ class Login : AppCompatActivity() {
     }
 
     override fun onStart() {
-        val intentAdmin = Intent(this, MenuA::class.java)
-        val intent = Intent(this, Menu::class.java)
+
         super.onStart() //Cridem al la funció onStart() perquè ens mostri per pantalla l'activity
         //currentUser és un atribut de la classe FirebaseAuth que guarda l'usuari autenticat. Si aquest no està autenticat, el seu valor serà null.
         val currentUser = auth.currentUser
@@ -107,7 +106,7 @@ class Login : AppCompatActivity() {
                 } else { //El loguin (task) ha fallat...
                     //Mostrem un missatge a l'usuari mitjançant un Toast
                     val builder = AlertDialog.Builder(this)
-                    builder.setMessage("El correu i/o la contrasenya és incorrecte")
+                    builder.setMessage(getString(R.string.correu_error))
                     builder.setPositiveButton("Aceptar", null)
                     val dialog = builder.create()
                     dialog.show()

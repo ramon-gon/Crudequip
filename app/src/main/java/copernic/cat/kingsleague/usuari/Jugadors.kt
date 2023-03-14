@@ -71,7 +71,7 @@ class Jugadors : Fragment() {
                         } else {
                             initRecyclerView(view)
                             val builder = AlertDialog.Builder(requireContext())
-                            builder.setMessage("L'equip no existeix")
+                            builder.setMessage(getString(R.string.lequip_no_existeix_alert))
                             builder.setPositiveButton("Aceptar", null)
                             val dialog = builder.create()
                             dialog.show()
@@ -80,7 +80,7 @@ class Jugadors : Fragment() {
 
             } catch (e: Exception) {
                 val builder = AlertDialog.Builder(requireContext())
-                builder.setMessage("Cal introduïr un nom a l'equip")
+                builder.setMessage(getString(R.string.cal_introduir_equip))
                 builder.setPositiveButton("Aceptar", null)
                 val dialog = builder.create()
                 dialog.show()

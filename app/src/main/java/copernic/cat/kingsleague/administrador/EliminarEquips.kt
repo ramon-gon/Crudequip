@@ -80,7 +80,7 @@ class EliminarEquips : Fragment() {
 
                     } else {
                         val builder = AlertDialog.Builder(requireContext())
-                        builder.setMessage("Cal introduïr un nom a l'equip")
+                        builder.setMessage(getString(R.string.introduir_nom_equip))
                         builder.setPositiveButton("Aceptar", null)
                         val dialog = builder.create()
                         dialog.show()
@@ -120,14 +120,14 @@ class EliminarEquips : Fragment() {
                     bd.collection("Equips").document(nom).delete()
                         .addOnSuccessListener {
                             val builder = AlertDialog.Builder(requireContext())
-                            builder.setMessage("L'equip s'ha eliminat correctament")
+                            builder.setMessage(getString(R.string.equip_eliminat_alert))
                             builder.setPositiveButton("Aceptar", null)
                             val dialog = builder.create()
                             dialog.show()
                         }
                 } else {
                     val builder = AlertDialog.Builder(requireContext())
-                    builder.setMessage("L'equip no existeix")
+                    builder.setMessage(R.string.equip_no_existeix_alert)
                     builder.setPositiveButton("Aceptar", null)
                     val dialog = builder.create()
                     dialog.show()

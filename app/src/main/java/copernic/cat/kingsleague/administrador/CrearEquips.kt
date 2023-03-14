@@ -106,7 +106,7 @@ class CrearEquips : Fragment() {
             .addOnSuccessListener { document ->
                 if (document.exists()) {
                     val builder = AlertDialog.Builder(requireContext())
-                    builder.setMessage("L'equip no s'ha afegit perquè ja esta creat")
+                    builder.setMessage(getString(R.string.equip_ja_esta_creat_alert))
                     builder.setPositiveButton("Aceptar", null)
                     val dialog = builder.create()
                     dialog.show()
@@ -120,14 +120,14 @@ class CrearEquips : Fragment() {
                     )
                         .addOnSuccessListener {
                             val builder = AlertDialog.Builder(requireContext())
-                            builder.setMessage("L'equip s'ha afegit correctament")
+                            builder.setMessage(getString(R.string.lequip_sha_creat_alert))
                             builder.setPositiveButton("Aceptar", null)
                             val dialog = builder.create()
                             dialog.show()
                         }
                         .addOnFailureListener { //No s'ha afegit el departament...
                             val builder = AlertDialog.Builder(requireContext())
-                            builder.setMessage("L'equip no s'ha afegit")
+                            builder.setMessage(getString(R.string.lequip_no_sha_afegit_alert))
                             builder.setPositiveButton("Aceptar", null)
                             val dialog = builder.create()
                             dialog.show()

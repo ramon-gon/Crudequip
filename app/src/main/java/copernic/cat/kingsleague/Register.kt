@@ -44,9 +44,9 @@ class Register : AppCompatActivity() {
                     var contrasenya = binding.registreEditContrasenya.text.toString()
                     var contrasenyaBis = binding.registreEditRepetirContrasenya.text.toString()
 
-                    campEsBuit(correu,contrasenya,contrasenyaBis)
+                    campNoEsBuit(correu,contrasenya,contrasenyaBis)
 
-                    if (contrasenya.equals(contrasenyaBis) && campEsBuit(
+                    if (contrasenya.equals(contrasenyaBis) && campNoEsBuit(
                             correu,
                             contrasenya,
                             contrasenyaBis
@@ -81,30 +81,30 @@ class Register : AppCompatActivity() {
         }
     }
 
-    fun campEsBuit(correu: String, contrasenya: String, contrasenyaBis: String): Boolean {
+    fun campNoEsBuit(correu: String, contrasenya: String, contrasenyaBis: String): Boolean {
 
         if (correu.isEmpty()) {
             val builder = AlertDialog.Builder(this)
-            builder.setMessage("Cal introduir un correu")
+            builder.setMessage(getString(R.string.introduir_correu_alert))
             builder.setPositiveButton("Aceptar", null)
             val dialog = builder.create()
             dialog.show()
 
         } else if (contrasenya.isEmpty()) {
             val builder = AlertDialog.Builder(this)
-            builder.setMessage("Cal introduir una contrasenya")
+            builder.setMessage(getString(R.string.introduir_contrasenya_alert))
             builder.setPositiveButton("Aceptar", null)
             val dialog = builder.create()
             dialog.show()
         } else if (contrasenyaBis.isEmpty()) {
             val builder = AlertDialog.Builder(this)
-            builder.setMessage("Cal introduir la contrasenya repetida")
+            builder.setMessage(getString(R.string.introduir_contrasenya_repetida_alert))
             builder.setPositiveButton("Aceptar", null)
             val dialog = builder.create()
             dialog.show()
         } else if (contrasenyaBis != contrasenya) {
             val builder = AlertDialog.Builder(this)
-            builder.setMessage("Cal introduir la contrasenya correcta")
+            builder.setMessage(getString(R.string.introduir_contrasenya_repetida_correcte_alert))
             builder.setPositiveButton("Aceptar", null)
             val dialog = builder.create()
             dialog.show()

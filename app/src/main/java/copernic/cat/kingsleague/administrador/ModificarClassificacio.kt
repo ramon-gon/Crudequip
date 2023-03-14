@@ -83,7 +83,7 @@ class ModificarClassificacio : Fragment() {
 
                         } else {
                             val builder = AlertDialog.Builder(requireContext())
-                            builder.setMessage("Cal introduïr un nom de l'equip")
+                            builder.setMessage(R.string.introduir_nom_equip_alert)
                             builder.setPositiveButton("Aceptar", null)
                             val dialog = builder.create()
                             dialog.show()
@@ -91,7 +91,7 @@ class ModificarClassificacio : Fragment() {
 
                     } catch (e: Exception){
                         val builder = AlertDialog.Builder(requireContext())
-                        builder.setMessage("Cal introduïr una puntuacio")
+                        builder.setMessage(getString(R.string.introduir_puntuacio_alert))
                         builder.setPositiveButton("Aceptar", null)
                         val dialog = builder.create()
                         dialog.show()
@@ -136,7 +136,7 @@ class ModificarClassificacio : Fragment() {
 
                         .addOnSuccessListener {
                             val builder = AlertDialog.Builder(requireContext())
-                            builder.setMessage("La puntuacio s'ha modificat correctament")
+                            builder.setMessage(getString(R.string.la_puntuacio_sha_modificat_alert))
                             builder.setPositiveButton("Aceptar", null)
                             val dialog = builder.create()
                             dialog.show()
@@ -146,7 +146,7 @@ class ModificarClassificacio : Fragment() {
                                 }
                 else {
                     val builder = AlertDialog.Builder(requireContext())
-                    builder.setMessage("L'equip no existeix'")
+                    builder.setMessage(R.string.equip_no_existeix_alert)
                     builder.setPositiveButton("Aceptar", null)
                     val dialog = builder.create()
                     dialog.show()

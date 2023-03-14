@@ -62,7 +62,7 @@ class RecuperarContrasenya : AppCompatActivity() {
 
 
                 val builder = AlertDialog.Builder(this)
-                builder.setMessage("S'ha enviat un correu per canviar la contrasenya")
+                builder.setMessage(getString(R.string.canviar_contrasenya_alert))
                 builder.setPositiveButton("Aceptar", null)
                 val dialog = builder.create()
                 dialog.show()
@@ -72,7 +72,7 @@ class RecuperarContrasenya : AppCompatActivity() {
             else
             {
                 val builder = AlertDialog.Builder(this)
-                builder.setMessage("No s'ha pogut enviar el correu")
+                builder.setMessage(getString(R.string.canviar_contrasenya_error))
                 builder.setPositiveButton("Aceptar", null)
                 val dialog = builder.create()
                 dialog.show()

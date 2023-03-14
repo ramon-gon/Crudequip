@@ -63,5 +63,29 @@
     <string name="nom_equip">Nom equip</string>
     <string name="_555" translatable="false">555</string>
     <string name="nom_jugador">Nom Jugador</string>
+    <string name="correu_error">El correu i/o la contrasenya és incorrecte</string>
+    <string name="canviar_contrasenya_alert">S\'ha enviat un correu per canviar la contrasenya</string>
+    <string name="canviar_contrasenya_error">No s\'ha pogut enviar el correu</string>
+    <string name="introduir_correu_alert">Cal introduir un correu</string>
+    <string name="introduir_contrasenya_alert">Cal introduir una contrasenya</string>
+    <string name="introduir_contrasenya_repetida_alert">Cal introduir la contrasenya repetida</string>
+    <string name="introduir_contrasenya_repetida_correcte_alert">Cal introduir la contrasenya correcta</string>
+    <string name="lequip_no_existeix_alert">L\'equip no existeix</string>
+    <string name="cal_introduir_equip">Cal introduïr un nom a l\'equip</string>
+    <string name="equip_ja_esta_creat_alert">L\'equip no s\'ha afegit perquè ja esta creat</string>
+    <string name="lequip_sha_creat_alert">L\'equip s\'ha afegit correctament</string>
+    <string name="lequip_no_sha_afegit_alert">L\'equip no s\'ha afegit</string>
+    <string name="cal_introduir_nom_al_jugador_alert">Cal introduïr un nom al jugador</string>
+    <string name="cal_introduir_nom_al_equip_alert">Cal introduïr un nom per l\'equip</string>
+    <string name="crear_jugador_alert">El jugador s\'ha creat correctament</string>
+    <string name="introduir_jugador_alert">Cal introduïr un nom al jugador</string>
+    <string name="introduir_nom_equip_alert">Cal introduïr un nom per l\'equip</string>
+    <string name="eliminar_jugador_alert">El jugador s\'ha eliminat correctament</string>
+    <string name="jugador_no_existeix_alert">El jugador amb aquest nom no existeix a l\'equip</string>
+    <string name="equip_no_existeix_alert">L\'equip no existeix</string>
+    <string name="introduir_nom_equip">Cal introduïr un nom a l\'equip</string>
+    <string name="equip_eliminat_alert">L\'equip s\'ha eliminat correctament</string>
+    <string name="introduir_puntuacio_alert">Cal introduïr una puntuacio</string>
+    <string name="la_puntuacio_sha_modificat_alert">La puntuacio s\'ha modificat correctament</string>
 
 </resources>
