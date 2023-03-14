@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     style="@style/constraintlayoutTherme"
-    tools:context=".CrearEquips">
+    tools:context=".administrador.CrearEquips">
 
     <TextView
         android:id="@+id/TitolCrearEquips"
