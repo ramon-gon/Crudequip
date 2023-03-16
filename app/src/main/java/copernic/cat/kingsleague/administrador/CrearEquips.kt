@@ -55,7 +55,7 @@ class CrearEquips : Fragment() {
 
         binding.crearEquip.setOnClickListener {
             lifecycleScope.launch {
-                withContext(Dispatchers.Unconfined) {//llegir dades de la base de dades
+                withContext(Dispatchers.Main) {//llegir dades de la base de dades
 
 
                     var equip = llegirDades() //Departament introduït per l'usuari

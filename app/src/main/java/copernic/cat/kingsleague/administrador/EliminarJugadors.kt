@@ -66,7 +66,7 @@ class EliminarJugadors: Fragment() {
 
         binding.eliminarJugador.setOnClickListener {
             lifecycleScope.launch {
-                withContext(Dispatchers.Unconfined) {//llegir dades de la base de dades
+                withContext(Dispatchers.Main) {//llegir dades de la base de dades
 
 
                     var equips = llegirDades() //Departament introduït per l'usuari

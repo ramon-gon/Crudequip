@@ -66,7 +66,7 @@ class ModificarClassificacio : Fragment() {
 
         binding.ModificarClassificacio.setOnClickListener {
             lifecycleScope.launch {
-                withContext(Dispatchers.Unconfined) {//llegir dades de la base de dades
+                withContext(Dispatchers.Main) {//llegir dades de la base de dades
 
                     try {
 
