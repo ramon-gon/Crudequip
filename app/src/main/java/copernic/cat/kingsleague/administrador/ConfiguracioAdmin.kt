@@ -1,5 +1,6 @@
 package copernic.cat.kingsleague.administrador
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,6 +12,7 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import copernic.cat.kingsleague.databinding.FragmentConfiguracioAdminBinding
 import androidx.navigation.fragment.findNavController
+import copernic.cat.kingsleague.Login
 import copernic.cat.kingsleague.R
 
 import copernic.cat.kingsleague.databinding.FragmentConfiguracioBinding
@@ -41,6 +43,9 @@ class ConfiguracioAdmin : Fragment() {
         auth= Firebase.auth
         binding.btnTancarSessio.setOnClickListener() {
             auth.signOut()
+
+            val intent = Intent(activity, Login::class.java)
+            startActivity(intent)
             activity?.finish()
         }
 

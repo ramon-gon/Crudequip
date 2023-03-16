@@ -1,5 +1,6 @@
 package copernic.cat.kingsleague.usuari
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,6 +10,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import androidx.navigation.fragment.findNavController
+import copernic.cat.kingsleague.Login
 import copernic.cat.kingsleague.R
 
 import copernic.cat.kingsleague.databinding.FragmentConfiguracioBinding
@@ -40,6 +42,9 @@ class Configuracio : Fragment() {
 
         binding.btnTancarSessio.setOnClickListener() {
             auth.signOut()
+
+            val intent = Intent(activity, Login::class.java)
+            startActivity(intent)
             activity?.finish()
         }
 

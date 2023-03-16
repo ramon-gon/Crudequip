@@ -69,10 +69,6 @@ class Login : AppCompatActivity() {
         }
     }
 
-    fun correo(correu1: String): String {
-        return correu1
-    }
-
     override fun onStart() {
 
         super.onStart() //Cridem al la funció onStart() perquè ens mostri per pantalla l'activity
