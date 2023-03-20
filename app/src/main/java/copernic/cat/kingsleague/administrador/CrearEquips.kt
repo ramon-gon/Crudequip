@@ -68,7 +68,6 @@ class CrearEquips : Fragment() {
                         AfegirEquip(equip)
 
 
-                        findNavController().navigate(R.id.action_crearEquips_to_menuEquips)
 
 
                     } else {
@@ -119,6 +118,7 @@ class CrearEquips : Fragment() {
                         )
                     )
                         .addOnSuccessListener {
+                            findNavController().navigate(R.id.action_crearEquips_to_menuEquips)
                             val builder = AlertDialog.Builder(requireContext())
                             builder.setMessage(getString(R.string.lequip_sha_creat_alert))
                             builder.setPositiveButton("Aceptar", null)

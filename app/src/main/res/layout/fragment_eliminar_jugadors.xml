@@ -39,76 +39,71 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TitolEliminarJugadors" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/nomEquipTextInput"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        app:layout_constraintTop_toBottomOf="@+id/nomEquip"
-        tools:layout_editor_absoluteX="40dp" />
-
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/editNomEquip"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="4dp"
-        android:hint="@string/nom"
-        android:minHeight="48dp"
-        android:textColor="#757575"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nomEquip"
-        tools:ignore="DuplicateSpeakableTextCheck,MissingConstraints,TextContrastCheck">
-
-    </com.google.android.material.textfield.TextInputEditText>
 
     <TextView
         android:id="@+id/Jugadors"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:text="@string/jugadors"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editNomEquip" />
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/jugadorTextInput"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        app:layout_constraintTop_toBottomOf="@+id/nomEquip"
-        tools:layout_editor_absoluteX="40dp" />
-
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/editjugador"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="4dp"
-        android:hint="@string/introdueix_nom_jugador"
-        android:minHeight="48dp"
-        android:textColor="#757575"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Jugadors"
-        tools:ignore="DuplicateSpeakableTextCheck,MissingConstraints,TextContrastCheck">
-
-    </com.google.android.material.textfield.TextInputEditText>
 
     <Button
         android:id="@+id/eliminar_jugador"
         style="@style/Widget.ComunicaProdis.ButtonEnter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="100dp"
         android:backgroundTint="#C8051B"
         android:text="@string/eliminar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editjugador" />
+        app:layout_constraintTop_toBottomOf="@+id/cardView2" />
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="1dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/primaryColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nomEquip">
+
+        <Spinner
+            android:id="@+id/spinnerequip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            app:layout_constraintTop_toBottomOf="@+id/editNomEquip"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck"
+            tools:layout_editor_absoluteX="1dp" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="1dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/primaryColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Jugadors">
+
+        <Spinner
+            android:id="@+id/spinnerjugador"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            app:layout_constraintTop_toBottomOf="@+id/editNomEquip"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck"
+            tools:layout_editor_absoluteX="1dp" />
+
+    </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
 
