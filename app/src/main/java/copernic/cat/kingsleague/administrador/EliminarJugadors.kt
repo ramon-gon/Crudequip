@@ -80,7 +80,6 @@ class EliminarJugadors: Fragment() {
 
                         //Afegim el departament mitjançant eñ mètode afegirDepartament que hem creat nosaltres
                         EliminarJugador(equips)
-                        findNavController().navigate(R.id.action_eliminarJugadors_to_menuJugadors)
 
                     } else if (equips.nom.isNotEmpty()) {
                         val builder = AlertDialog.Builder(requireContext())
@@ -113,16 +112,59 @@ class EliminarJugadors: Fragment() {
                 }
 
                 // 3. Crear un ArrayAdapter en la actividad o fragmento correspondiente
-                val adapter = context?.let { ArrayAdapter(it, android.R.layout.simple_spinner_dropdown_item, nombres) }
+                val adapter = context?.let {
+                    ArrayAdapter(
+                        it,
+                        android.R.layout.simple_spinner_dropdown_item,
+                        nombres
+                    )
+                }
 
                 // 4. Asignar el ArrayAdapter al spinner y establecer el comportamiento correspondiente
-                val spinner= binding.spinnerequip
+                val spinner = binding.spinnerequip
                 spinner?.adapter = adapter
 
                 spinner?.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-                    override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
+                    override fun onItemSelected(
+                        parent: AdapterView<*>,
+                        view: View?,
+                        position: Int,
+                        id: Long
+                    ) {
                         val nombreSeleccionado = parent.getItemAtPosition(position).toString()
                         // Aquí se puede establecer el comportamiento correspondiente al seleccionar un elemento del spinner
+                        bd.collection("Equips").document(nombreSeleccionado).collection("Jugadors")
+                            .get()
+                            .addOnSuccessListener { documents ->
+                                val nombres = ArrayList<String>()
+                                nombres.add("-")
+                                for (document in documents) {
+                                    val nombre = document.getString("Nom")
+                                    nombres.add(nombre!!)
+                                }
+
+                                // 3. Crear un ArrayAdapter en la actividad o fragmento correspondiente
+                                val adapter = context?.let { ArrayAdapter(it, android.R.layout.simple_spinner_dropdown_item, nombres) }
+
+                                // 4. Asignar el ArrayAdapter al spinner y establecer el comportamiento correspondiente
+                                val spinner= binding.spinnerjugador
+                                spinner?.adapter = adapter
+
+                                spinner?.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+                                    override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
+                                        val nombreSeleccionado = parent.getItemAtPosition(position).toString()
+                                        // Aquí se puede establecer el comportamiento correspondiente al seleccionar un elemento del spinner
+                                    }
+
+                                    override fun onNothingSelected(parent: AdapterView<*>) {
+                                        // No se seleccionó ningún elemento del spinner
+                                    }
+                                }
+                            }
+                            .addOnFailureListener { exception ->
+                                // Ocurrió un error al obtener los datos de la base de datos
+                            }
+
                     }
 
                     override fun onNothingSelected(parent: AdapterView<*>) {
@@ -132,7 +174,8 @@ class EliminarJugadors: Fragment() {
             }
             .addOnFailureListener { exception ->
                 // Ocurrió un error al obtener los datos de la base de datos
-            }}
+            }
+    }
 
 
 
@@ -140,7 +183,7 @@ class EliminarJugadors: Fragment() {
     fun llegirDades(): Equip {
         //Guardem les dades introduïdes per l'usuari
         var nom = binding.spinnerequip?.selectedItem.toString()
-        var nomJ = binding.editjugador?.text.toString()
+        var nomJ = binding.spinnerjugador?.selectedItem.toString()
         //Afegim els Tutors introduïts per l'usuari l'atribut treballadors
         jugadors.add(Jugador("", nomJ))
 
@@ -149,7 +192,7 @@ class EliminarJugadors: Fragment() {
 
     fun EliminarJugador(equip: Equip) {
         var nomEquip = binding.spinnerequip?.selectedItem.toString()
-        var nomJ = binding.editjugador?.text.toString()
+        var nomJ = binding.spinnerjugador?.selectedItem.toString()
         //Afegim una subcolecció igual que afegim una col.lecció però penjant de la col.lecció on està inclosa.
         var existe =
             bd.collection("Equips").document(nomEquip).collection("Jugadors").document(nomJ)
@@ -160,6 +203,8 @@ class EliminarJugadors: Fragment() {
                     bd.collection("Equips").document(nomEquip)
                         .collection("Jugadors").document(nomJ).delete()
                         .addOnSuccessListener {
+                            findNavController().navigate(R.id.action_eliminarJugadors_to_menuJugadors)
+
                             val builder = AlertDialog.Builder(requireContext())
                             builder.setMessage(getString(R.string.eliminar_jugador_alert))
                             builder.setPositiveButton("Aceptar", null)
