@@ -40,7 +40,7 @@ class RecuperarContrasenya : AppCompatActivity() {
         //Implementem els listeners per quan l'usuari cliqui un dels botons
 
         binding.buttonRecuperarContrasenya.setOnClickListener {
-            val correu = binding.textInputEditTextEmail.text.toString() //Guardem el correu introduït per l'usuari
+            val correu = binding.textInputEditTextEmail.text.toString().replace(" ", "") //Guardem el correu introduït per l'usuari
 
             if (correu.isNotEmpty()) {
                 resetContrasenya(correu)
