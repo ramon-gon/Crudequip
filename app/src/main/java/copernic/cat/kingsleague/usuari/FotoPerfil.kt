@@ -13,14 +13,17 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.google.android.gms.tasks.Tasks
+import com.google.android.gms.tasks.Tasks.await
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageException
 import copernic.cat.kingsleague.R
 import copernic.cat.kingsleague.Utils
 import copernic.cat.kingsleague.databinding.FragmentFotoPerfilAdminBinding
@@ -102,6 +105,11 @@ class FotoPerfil: Fragment() {
                 afegirImatge()
             }
             findNavController().navigate(R.id.action_fotoPerfil_to_configuracio2)
+            val builder = AlertDialog.Builder(requireContext())
+            builder.setMessage("La imatge s'ha guardat ")
+            builder.setPositiveButton("Aceptar", null)
+            val dialog = builder.create()
+            dialog.show()
         }
 
         binding.btnCancelarfotoPerfil.setOnClickListener {
@@ -157,16 +165,16 @@ class FotoPerfil: Fragment() {
      */
     suspend fun carregarImatge() {
         var correo = utils.getCorreoUserActural()
-        val storageRef =
-            FirebaseStorage.getInstance().reference.child("image/imatges/$correo.png")
-        val localfile = File.createTempFile("tempImage", "png")
-        val task = storageRef.getFile(localfile).await()
-        try {
-            (task)
-            val bitmap = BitmapFactory.decodeFile(localfile.absolutePath)
-            binding.imgFotoDePerfil.setImageBitmap(bitmap)
-        } catch (e: Exception) {
-            // maneja el error aquí
+        val storageRef = FirebaseStorage.getInstance().reference.child("image/imatges/$correo.png")
+        storageRef.downloadUrl.addOnSuccessListener { uri ->
+            // la imagen existe, descargar y mostrar la imagen
+            val localfile = File.createTempFile("tempImage", "png")
+            val task = storageRef.getFile(localfile).addOnSuccessListener {
+                val bitmap = BitmapFactory.decodeFile(localfile.absolutePath)
+                binding.imgFotoDePerfil.setImageBitmap(bitmap)
+            }
+        }.addOnFailureListener { exception ->
+            // la imagen no existe
         }
     }
 

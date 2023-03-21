@@ -13,6 +13,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.google.android.gms.tasks.Tasks
@@ -50,7 +51,7 @@ class FotoPerfilAdmin: Fragment() {
     private var storage = FirebaseStorage.getInstance()
     private var storageRef = storage.getReference().child("image/imatges").child(".png")
 
-    private var _binding: FragmentFotoPerfilAdminBinding? = null
+    private var _binding: FragmentFotoPerfilBinding? = null
     private val binding get() = _binding!!
 
     /**
@@ -71,12 +72,8 @@ class FotoPerfilAdmin: Fragment() {
      * @param savedInstanceState El estado previamente guardado del fragmento.
      * @return La vista del fragmento de autoritzacionsUsuari.
      */
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        _binding = FragmentFotoPerfilAdminBinding.inflate(inflater)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        _binding = FragmentFotoPerfilBinding.inflate(inflater)
         return binding.root
     }
 
@@ -106,6 +103,11 @@ class FotoPerfilAdmin: Fragment() {
                 afegirImatge()
             }
             findNavController().navigate(R.id.action_fotoPerfilAdmin_to_configuracioAdmin)
+            val builder = AlertDialog.Builder(requireContext())
+            builder.setMessage("La imatge s'ha guardat ")
+            builder.setPositiveButton("Aceptar", null)
+            val dialog = builder.create()
+            dialog.show()
         }
 
         binding.btnCancelarfotoPerfil.setOnClickListener {
@@ -123,7 +125,7 @@ class FotoPerfilAdmin: Fragment() {
             if (result.resultCode == Activity.RESULT_OK) {
                 photoSelectedUri = result.data?.data //Assignem l'URI de la imatge
                 //metode per afegir l'imatge
-              binding.imgFotoDePerfil.setImageURI(photoSelectedUri)
+                binding.imgFotoDePerfil.setImageURI(photoSelectedUri)
             }
         }
 
@@ -161,16 +163,16 @@ class FotoPerfilAdmin: Fragment() {
      */
     suspend fun carregarImatge() {
         var correo = utils.getCorreoUserActural()
-        val storageRef =
-            FirebaseStorage.getInstance().reference.child("image/imatges/$correo.png")
-        val localfile = File.createTempFile("tempImage", "png")
-        val task = storageRef.getFile(localfile).await()
-        try {
-            (task)
-            val bitmap = BitmapFactory.decodeFile(localfile.absolutePath)
-            binding.imgFotoDePerfil.setImageBitmap(bitmap)
-        } catch (e: Exception) {
-            // maneja el error aquí
+        val storageRef = FirebaseStorage.getInstance().reference.child("image/imatges/$correo.png")
+        storageRef.downloadUrl.addOnSuccessListener { uri ->
+            // la imagen existe, descargar y mostrar la imagen
+            val localfile = File.createTempFile("tempImage", "png")
+            val task = storageRef.getFile(localfile).addOnSuccessListener {
+                val bitmap = BitmapFactory.decodeFile(localfile.absolutePath)
+                binding.imgFotoDePerfil.setImageBitmap(bitmap)
+            }
+        }.addOnFailureListener { exception ->
+            // la imagen no existe
         }
     }
 
@@ -187,4 +189,4 @@ class FotoPerfilAdmin: Fragment() {
             )
         )
     }
-        }
+}
