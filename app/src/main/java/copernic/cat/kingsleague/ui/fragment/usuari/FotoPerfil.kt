@@ -82,10 +82,8 @@ class FotoPerfil: Fragment() {
         super.onViewCreated(view, savedInstanceState)
         //metode per carregar l'imatge si ya esta creada
         lifecycleScope.launch() {
-            withContext(Dispatchers.Main) {
                 carregarImatge()
             }
-        }
 
         binding.imgButtonBuscar.setOnClickListener {
             lifecycleScope.launch {
@@ -159,13 +157,13 @@ class FotoPerfil: Fragment() {
      * En caso de error se maneja dentro del catch.
      */
     suspend fun carregarImatge() {
-        var correo = utils.getCorreoUserActural()
+        val correo = utils.getCorreoUserActural()
         val storageRef = FirebaseStorage.getInstance().reference.child("image/imatges/$correo.png")
-        try {
-            val uri = storageRef.downloadUrl.await()
-// la imagen existe, descargar y mostrar la imagen
+        try {// la imagen existe, descargar y mostrar la imagen
+             storageRef.downloadUrl.await()
+
             val localfile = File.createTempFile("tempImage", "png")
-            val task = storageRef.getFile(localfile).addOnSuccessListener {
+               storageRef.getFile(localfile).addOnSuccessListener {
                 val bitmap = BitmapFactory.decodeFile(localfile.absolutePath)
                 binding.imgFotoDePerfil.setImageBitmap(bitmap)
             }

@@ -161,10 +161,9 @@ class FotoPerfilAdmin: Fragment() {
         val correo = utils.getCorreoUserActural()
         val storageRef = FirebaseStorage.getInstance().reference.child("image/imatges/$correo.png")
         try {// la imagen existe, descargar y mostrar la imagen
-
-            val uri = storageRef.downloadUrl.await()
+            storageRef.downloadUrl.await()
             val localfile = File.createTempFile("tempImage", "png")
-            val task = storageRef.getFile(localfile).addOnSuccessListener {
+            storageRef.getFile(localfile).addOnSuccessListener {
                 val bitmap = BitmapFactory.decodeFile(localfile.absolutePath)
                 binding.imgFotoDePerfil.setImageBitmap(bitmap)
             }
