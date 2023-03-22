@@ -15,6 +15,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import com.google.android.gms.tasks.Tasks
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -82,9 +83,7 @@ class FotoPerfilAdmin: Fragment() {
         super.onViewCreated(view, savedInstanceState)
         //metode per carregar l'imatge si ya esta creada
         lifecycleScope.launch() {
-            withContext(Dispatchers.Main) {
                 carregarImatge()
-            }
         }
 
         binding.imgButtonBuscar.setOnClickListener {
@@ -159,11 +158,11 @@ class FotoPerfilAdmin: Fragment() {
      * En caso de error se maneja dentro del catch.
      */
     suspend fun carregarImatge() {
-        var correo = utils.getCorreoUserActural()
+        val correo = utils.getCorreoUserActural()
         val storageRef = FirebaseStorage.getInstance().reference.child("image/imatges/$correo.png")
-        try {
+        try {// la imagen existe, descargar y mostrar la imagen
+
             val uri = storageRef.downloadUrl.await()
-// la imagen existe, descargar y mostrar la imagen
             val localfile = File.createTempFile("tempImage", "png")
             val task = storageRef.getFile(localfile).addOnSuccessListener {
                 val bitmap = BitmapFactory.decodeFile(localfile.absolutePath)
