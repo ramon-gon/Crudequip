@@ -1,4 +1,4 @@
-package copernic.cat.kingsleague.administrador
+package copernic.cat.kingsleague.ui.fragment.usuari
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -36,15 +36,15 @@ private const val ARG_PARAM2 = "param2"
  * Use the [Classificacio.newInstance] factory method to
  * create an instance of this fragment.
  */
-class ClassificacioAdmin : Fragment() {
-    private var _binding: FragmentClassificacioAdminBinding? = null
+class Classificacio : Fragment() {
+    private var _binding: FragmentClassificacioBinding? = null
     private val binding get() = _binding!!
     private var bd = FirebaseFirestore.getInstance()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentClassificacioAdminBinding.inflate(inflater, container, false)
+        _binding = FragmentClassificacioBinding.inflate(inflater, container, false)
 
         return binding.root
     }
@@ -54,7 +54,7 @@ class ClassificacioAdmin : Fragment() {
 
         initRecyclerView(view)
         binding.btnTornarClassificacio.setOnClickListener {
-            findNavController().navigate(R.id.action_classificacioAdmin_to_menu)
+            findNavController().navigate(R.id.action_classificacio2_to_menuUsuari)
         }
     }
 
@@ -87,7 +87,7 @@ class ClassificacioAdmin : Fragment() {
                     var count=0
                     val wallItem = copernic.cat.kingsleague.rvClassificacio.Classificacio(// objecte
                         nomEquip = document["Nom"].toString(),
-                         puntuacio = document["Puntuacio"].toString(), // atribut
+                        puntuacio = document["Puntuacio"].toString(), // atribut
                     )
                     if (ClassificacioProvider.classificacioList.isEmpty()) {// Si el provider esta buit
                         ClassificacioProvider.classificacioList.add(wallItem) // Afegeix un item

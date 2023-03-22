@@ -1,8 +1,7 @@
-package copernic.cat.kingsleague.usuari
+package copernic.cat.kingsleague.ui.fragment.usuari
 
 import android.app.Activity
 import android.content.Intent
-import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Bundle
@@ -16,20 +15,14 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
-import com.google.android.gms.tasks.Tasks
-import com.google.android.gms.tasks.Tasks.await
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
-import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
-import com.google.firebase.storage.StorageException
 import copernic.cat.kingsleague.R
-import copernic.cat.kingsleague.Utils
-import copernic.cat.kingsleague.databinding.FragmentFotoPerfilAdminBinding
+import copernic.cat.kingsleague.ui.Utils
 import copernic.cat.kingsleague.databinding.FragmentFotoPerfilBinding
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
 import kotlinx.coroutines.withContext
@@ -88,8 +81,10 @@ class FotoPerfil: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         //metode per carregar l'imatge si ya esta creada
-        lifecycleScope.launch {
-            carregarImatge()
+        lifecycleScope.launch() {
+            withContext(Dispatchers.Main) {
+                carregarImatge()
+            }
         }
 
         binding.imgButtonBuscar.setOnClickListener {
@@ -106,7 +101,7 @@ class FotoPerfil: Fragment() {
             }
             findNavController().navigate(R.id.action_fotoPerfil_to_configuracio2)
             val builder = AlertDialog.Builder(requireContext())
-            builder.setMessage("La imatge s'ha guardat ")
+            builder.setMessage(getString(R.string.fotoguardadaalert))
             builder.setPositiveButton("Aceptar", null)
             val dialog = builder.create()
             dialog.show()
@@ -166,15 +161,16 @@ class FotoPerfil: Fragment() {
     suspend fun carregarImatge() {
         var correo = utils.getCorreoUserActural()
         val storageRef = FirebaseStorage.getInstance().reference.child("image/imatges/$correo.png")
-        storageRef.downloadUrl.addOnSuccessListener { uri ->
-            // la imagen existe, descargar y mostrar la imagen
+        try {
+            val uri = storageRef.downloadUrl.await()
+// la imagen existe, descargar y mostrar la imagen
             val localfile = File.createTempFile("tempImage", "png")
             val task = storageRef.getFile(localfile).addOnSuccessListener {
                 val bitmap = BitmapFactory.decodeFile(localfile.absolutePath)
                 binding.imgFotoDePerfil.setImageBitmap(bitmap)
             }
-        }.addOnFailureListener { exception ->
-            // la imagen no existe
+        } catch (exception: Exception) {
+// la imagen no existe
         }
     }
 

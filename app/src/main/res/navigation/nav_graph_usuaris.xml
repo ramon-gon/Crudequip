@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/menuUsuari"
-        android:name="copernic.cat.kingsleague.usuari.MenuUsuari"
+        android:name="copernic.cat.kingsleague.ui.fragment.usuari.MenuUsuari"
         android:label="fragment_menu_usuari"
         tools:layout="@layout/fragment_menu_usuari" >
         <action
@@ -22,7 +22,7 @@
     </fragment>
     <fragment
         android:id="@+id/classificacio2"
-        android:name="copernic.cat.kingsleague.usuari.Classificacio"
+        android:name="copernic.cat.kingsleague.ui.fragment.usuari.Classificacio"
         android:label="fragment_classificacio"
         tools:layout="@layout/fragment_classificacio" >
         <action
@@ -31,7 +31,7 @@
     </fragment>
     <fragment
         android:id="@+id/jugadors"
-        android:name="copernic.cat.kingsleague.usuari.Jugadors"
+        android:name="copernic.cat.kingsleague.ui.fragment.usuari.Jugadors"
         android:label="fragment_jugadors"
         tools:layout="@layout/fragment_jugadors" >
         <action
@@ -40,7 +40,7 @@
     </fragment>
     <fragment
         android:id="@+id/configuracio2"
-        android:name="copernic.cat.kingsleague.usuari.Configuracio"
+        android:name="copernic.cat.kingsleague.ui.fragment.usuari.Configuracio"
         android:label="fragment_configuracio"
         tools:layout="@layout/fragment_configuracio" >
         <action
@@ -55,7 +55,7 @@
     </fragment>
     <fragment
         android:id="@+id/mapsUsuaris"
-        android:name="copernic.cat.kingsleague.usuari.MapsUsuaris"
+        android:name="copernic.cat.kingsleague.ui.fragment.usuari.MapsUsuaris"
         android:label="MapsUsuaris" >
         <action
             android:id="@+id/action_mapsUsuaris_to_configuracio2"
@@ -63,11 +63,14 @@
     </fragment>
     <fragment
         android:id="@+id/fotoPerfil"
-        android:name="copernic.cat.kingsleague.usuari.FotoPerfil"
+        android:name="copernic.cat.kingsleague.ui.fragment.usuari.FotoPerfil"
         android:label="fragment_foto_perfil"
         tools:layout="@layout/fragment_foto_perfil" >
         <action
             android:id="@+id/action_fotoPerfil_to_configuracio2"
             app:destination="@id/configuracio2" />
+        <action
+            android:id="@+id/action_fotoPerfil_to_menuUsuari"
+            app:destination="@id/menuUsuari" />
     </fragment>
 </navigation>

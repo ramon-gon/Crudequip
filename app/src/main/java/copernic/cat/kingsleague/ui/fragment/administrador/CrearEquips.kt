@@ -1,4 +1,4 @@
-package copernic.cat.kingsleague.administrador
+package copernic.cat.kingsleague.ui.fragment.administrador
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
@@ -15,7 +14,6 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 import copernic.cat.kingsleague.R
 import copernic.cat.kingsleague.databinding.FragmentCrearEquipsBinding
-import copernic.cat.kingsleague.databinding.FragmentMenuAdminBinding
 import copernic.cat.kingsleague.models.Equip
 import copernic.cat.kingsleague.models.Jugador
 import kotlinx.coroutines.Dispatchers

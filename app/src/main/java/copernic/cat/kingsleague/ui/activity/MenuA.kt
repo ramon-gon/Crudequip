@@ -1,4 +1,4 @@
-package copernic.cat.kingsleague
+package copernic.cat.kingsleague.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,6 +7,7 @@ import android.view.MenuItem
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
+import copernic.cat.kingsleague.R
 import copernic.cat.kingsleague.databinding.ActivityMenu2Binding
 
 class MenuA : AppCompatActivity() {
@@ -17,7 +18,9 @@ class MenuA : AppCompatActivity() {
         binding = ActivityMenu2Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.navHostFragmentContentMainAdmin.getFragment<Fragment>().findNavController().setGraph(R.navigation.nav_graph_administrador)
+        binding.navHostFragmentContentMainAdmin.getFragment<Fragment>().findNavController().setGraph(
+            R.navigation.nav_graph_administrador
+        )
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

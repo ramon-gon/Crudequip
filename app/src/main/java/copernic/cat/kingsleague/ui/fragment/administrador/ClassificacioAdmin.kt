@@ -1,4 +1,4 @@
-package copernic.cat.kingsleague.usuari
+package copernic.cat.kingsleague.ui.fragment.administrador
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,23 +8,16 @@ import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.android.gms.tasks.Tasks.await
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
-import com.google.firebase.ktx.Firebase
 import copernic.cat.kingsleague.R
 import copernic.cat.kingsleague.databinding.FragmentClassificacioAdminBinding
-import copernic.cat.kingsleague.databinding.FragmentClassificacioBinding
-import copernic.cat.kingsleague.databinding.FragmentJugadorsBinding
 import copernic.cat.kingsleague.rvClassificacio.Adapter.ClassificacioAdapter
 import copernic.cat.kingsleague.rvClassificacio.ClassificacioProvider
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
 import kotlinx.coroutines.withContext
-import org.checkerframework.checker.units.qual.C
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -36,15 +29,15 @@ private const val ARG_PARAM2 = "param2"
  * Use the [Classificacio.newInstance] factory method to
  * create an instance of this fragment.
  */
-class Classificacio : Fragment() {
-    private var _binding: FragmentClassificacioBinding? = null
+class ClassificacioAdmin : Fragment() {
+    private var _binding: FragmentClassificacioAdminBinding? = null
     private val binding get() = _binding!!
     private var bd = FirebaseFirestore.getInstance()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentClassificacioBinding.inflate(inflater, container, false)
+        _binding = FragmentClassificacioAdminBinding.inflate(inflater, container, false)
 
         return binding.root
     }
@@ -54,7 +47,7 @@ class Classificacio : Fragment() {
 
         initRecyclerView(view)
         binding.btnTornarClassificacio.setOnClickListener {
-            findNavController().navigate(R.id.action_classificacio2_to_menuUsuari)
+            findNavController().navigate(R.id.action_classificacioAdmin_to_menu)
         }
     }
 
@@ -87,7 +80,7 @@ class Classificacio : Fragment() {
                     var count=0
                     val wallItem = copernic.cat.kingsleague.rvClassificacio.Classificacio(// objecte
                         nomEquip = document["Nom"].toString(),
-                        puntuacio = document["Puntuacio"].toString(), // atribut
+                         puntuacio = document["Puntuacio"].toString(), // atribut
                     )
                     if (ClassificacioProvider.classificacioList.isEmpty()) {// Si el provider esta buit
                         ClassificacioProvider.classificacioList.add(wallItem) // Afegeix un item

@@ -17,28 +17,28 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
         <activity
-            android:name=".Configuracio"
+            android:name=".ui.fragment.usuari.Configuracio"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".MenuA"
+            android:name=".ui.activity.MenuA"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Menu"
+            android:name=".ui.activity.Menu"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".SplashScreen"
+            android:name=".ui.activity.SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -47,21 +47,21 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Register"
+            android:name=".ui.activity.Register"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".RecuperarContrasenya"
+            android:name=".ui.activity.RecuperarContrasenya"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Login"
+            android:name=".ui.activity.Login"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

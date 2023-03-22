@@ -1,4 +1,4 @@
-package copernic.cat.kingsleague.administrador
+package copernic.cat.kingsleague.ui.fragment.usuari
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,17 +6,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
-import copernic.cat.kingsleague.databinding.FragmentConfiguracioAdminBinding
 import androidx.navigation.fragment.findNavController
-import copernic.cat.kingsleague.Login
+import copernic.cat.kingsleague.ui.activity.Login
 import copernic.cat.kingsleague.R
 
 import copernic.cat.kingsleague.databinding.FragmentConfiguracioBinding
-import copernic.cat.kingsleague.databinding.FragmentMenuAdminBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -28,19 +25,20 @@ private const val ARG_PARAM2 = "param2"
  * Use the [Configuracio.newInstance] factory method to
  * create an instance of this fragment.
  */
-class ConfiguracioAdmin : Fragment() {
-    private var _binding: FragmentConfiguracioAdminBinding? = null
+class Configuracio : Fragment() {
+    private var _binding: FragmentConfiguracioBinding? = null
     private val binding get() = _binding!!
     private lateinit var auth: FirebaseAuth
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
-        _binding = FragmentConfiguracioAdminBinding.inflate(inflater, container, false)
+        _binding = FragmentConfiguracioBinding.inflate(inflater, container, false)
 
         binding.btnFotoPerfil.setOnClickListener() {
-            findNavController().navigate(R.id.action_configuracioAdmin_to_fotoPerfilAdmin)
+            findNavController().navigate(R.id.action_configuracio2_to_fotoPerfil)
         }
         auth= Firebase.auth
+
         binding.btnTancarSessio.setOnClickListener() {
             auth.signOut()
 
@@ -51,11 +49,11 @@ class ConfiguracioAdmin : Fragment() {
 
 
         binding.btnTornarConfiguracio.setOnClickListener() {
-            findNavController().navigate(R.id.action_configuracioAdmin_to_menu)
+            findNavController().navigate(R.id.action_configuracio2_to_menuUsuari)
         }
 
         binding.btnGeolocalitzacio.setOnClickListener() {
-            findNavController().navigate(R.id.action_configuracioAdmin_to_maps)
+            findNavController().navigate(R.id.action_configuracio2_to_mapsUsuaris)
         }
         return binding.root
     }

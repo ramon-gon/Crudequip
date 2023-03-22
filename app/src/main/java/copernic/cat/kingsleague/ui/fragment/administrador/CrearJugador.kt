@@ -1,4 +1,4 @@
-package copernic.cat.kingsleague.administrador
+package copernic.cat.kingsleague.ui.fragment.administrador
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.appcompat.app.AlertDialog
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
@@ -16,10 +15,7 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 import copernic.cat.kingsleague.R
-import copernic.cat.kingsleague.databinding.FragmentCrearEquipsBinding
 import copernic.cat.kingsleague.databinding.FragmentCrearJugadorBinding
-import copernic.cat.kingsleague.databinding.FragmentEliminarEquipsBinding
-import copernic.cat.kingsleague.databinding.FragmentEliminarJugadorsBinding
 import copernic.cat.kingsleague.models.Equip
 import copernic.cat.kingsleague.models.Jugador
 import kotlinx.coroutines.Dispatchers
@@ -33,11 +29,11 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [ModificarJugadors.newInstance] factory method to
+ * Use the [CrearJugador.newInstance] factory method to
  * create an instance of this fragment.
  */
-class EliminarJugadors: Fragment() {
-    private var _binding: FragmentEliminarJugadorsBinding? = null
+class CrearJugador : Fragment() {
+    private var _binding: FragmentCrearJugadorBinding? = null
     private val binding get() = _binding!!
     private var bd = FirebaseFirestore.getInstance()
     private lateinit var auth: FirebaseAuth
@@ -56,7 +52,7 @@ class EliminarJugadors: Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        _binding = FragmentEliminarJugadorsBinding.inflate(inflater, container, false)
+        _binding = FragmentCrearJugadorBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -67,7 +63,7 @@ class EliminarJugadors: Fragment() {
 
         jugadors = arrayListOf()
 
-        binding.eliminarJugador.setOnClickListener {
+        binding.crearJugador.setOnClickListener {
             lifecycleScope.launch {
                 withContext(Dispatchers.Main) {//llegir dades de la base de dades
 
@@ -79,17 +75,17 @@ class EliminarJugadors: Fragment() {
                     if (equips.nom.isNotEmpty() && equips.id.isNotEmpty()) {
 
                         //Afegim el departament mitjançant eñ mètode afegirDepartament que hem creat nosaltres
-                        EliminarJugador(equips)
+                        AfegirJugador(equips)
 
                     } else if (equips.nom.isNotEmpty()) {
                         val builder = AlertDialog.Builder(requireContext())
-                        builder.setMessage(getString(R.string.introduir_jugador_alert))
+                        builder.setMessage(getString(R.string.cal_introduir_nom_al_jugador_alert))
                         builder.setPositiveButton("Aceptar", null)
                         val dialog = builder.create()
                         dialog.show()
                     } else {
                         val builder = AlertDialog.Builder(requireContext())
-                        builder.setMessage(getString(R.string.introduir_nom_equip_alert))
+                        builder.setMessage(getString(R.string.cal_introduir_nom_al_equip_alert))
                         builder.setPositiveButton("Aceptar", null)
                         val dialog = builder.create()
                         dialog.show()
@@ -98,8 +94,8 @@ class EliminarJugadors: Fragment() {
             }
         }
 
-        binding.btnTornarEliminarJugadors.setOnClickListener {
-            findNavController().navigate(R.id.action_eliminarJugadors_to_menuJugadors)
+        binding.btnTornarCrearJugador.setOnClickListener {
+            findNavController().navigate(R.id.action_crearJugador_to_menuJugadors)
         }
         bd.collection("Equips")
             .get()
@@ -112,59 +108,16 @@ class EliminarJugadors: Fragment() {
                 }
 
                 // 3. Crear un ArrayAdapter en la actividad o fragmento correspondiente
-                val adapter = context?.let {
-                    ArrayAdapter(
-                        it,
-                        android.R.layout.simple_spinner_dropdown_item,
-                        nombres
-                    )
-                }
+                val adapter = context?.let { ArrayAdapter(it, android.R.layout.simple_spinner_dropdown_item, nombres) }
 
                 // 4. Asignar el ArrayAdapter al spinner y establecer el comportamiento correspondiente
-                val spinner = binding.spinnerequip
+                val spinner= binding.spinner
                 spinner?.adapter = adapter
 
                 spinner?.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-                    override fun onItemSelected(
-                        parent: AdapterView<*>,
-                        view: View?,
-                        position: Int,
-                        id: Long
-                    ) {
+                    override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
                         val nombreSeleccionado = parent.getItemAtPosition(position).toString()
                         // Aquí se puede establecer el comportamiento correspondiente al seleccionar un elemento del spinner
-                        bd.collection("Equips").document(nombreSeleccionado).collection("Jugadors")
-                            .get()
-                            .addOnSuccessListener { documents ->
-                                val nombres = ArrayList<String>()
-                                nombres.add("-")
-                                for (document in documents) {
-                                    val nombre = document.getString("Nom")
-                                    nombres.add(nombre!!)
-                                }
-
-                                // 3. Crear un ArrayAdapter en la actividad o fragmento correspondiente
-                                val adapter = context?.let { ArrayAdapter(it, android.R.layout.simple_spinner_dropdown_item, nombres) }
-
-                                // 4. Asignar el ArrayAdapter al spinner y establecer el comportamiento correspondiente
-                                val spinner= binding.spinnerjugador
-                                spinner?.adapter = adapter
-
-                                spinner?.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-                                    override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
-                                        val nombreSeleccionado = parent.getItemAtPosition(position).toString()
-                                        // Aquí se puede establecer el comportamiento correspondiente al seleccionar un elemento del spinner
-                                    }
-
-                                    override fun onNothingSelected(parent: AdapterView<*>) {
-                                        // No se seleccionó ningún elemento del spinner
-                                    }
-                                }
-                            }
-                            .addOnFailureListener { exception ->
-                                // Ocurrió un error al obtener los datos de la base de datos
-                            }
-
                     }
 
                     override fun onNothingSelected(parent: AdapterView<*>) {
@@ -174,25 +127,24 @@ class EliminarJugadors: Fragment() {
             }
             .addOnFailureListener { exception ->
                 // Ocurrió un error al obtener los datos de la base de datos
-            }
-    }
+            }}
 
 
 
 
     fun llegirDades(): Equip {
         //Guardem les dades introduïdes per l'usuari
-        var nom = binding.spinnerequip?.selectedItem.toString()
-        var nomJ = binding.spinnerjugador?.selectedItem.toString()
+        var nom = binding.spinner?.selectedItem.toString()
+        var nomJ = binding.editjugador.text.toString()
         //Afegim els Tutors introduïts per l'usuari l'atribut treballadors
         jugadors.add(Jugador("", nomJ))
 
         return Equip(nomJ, nom,0, jugadors)
     }
 
-    fun EliminarJugador(equip: Equip) {
-        var nomEquip = binding.spinnerequip?.selectedItem.toString()
-        var nomJ = binding.spinnerjugador?.selectedItem.toString()
+    fun AfegirJugador(equip: Equip) {
+        var nomEquip = binding.spinner?.selectedItem.toString()
+        var nomJ = binding.editjugador.text.toString()
         //Afegim una subcolecció igual que afegim una col.lecció però penjant de la col.lecció on està inclosa.
         var existe =
             bd.collection("Equips").document(nomEquip).collection("Jugadors").document(nomJ)
@@ -200,19 +152,12 @@ class EliminarJugadors: Fragment() {
         existe.get()
             .addOnSuccessListener { document ->
                 if (document.exists()) {
-                    bd.collection("Equips").document(nomEquip)
-                        .collection("Jugadors").document(nomJ).delete()
-                        .addOnSuccessListener {
-                            findNavController().navigate(R.id.action_eliminarJugadors_to_menuJugadors)
-
-                            val builder = AlertDialog.Builder(requireContext())
-                            builder.setMessage(getString(R.string.eliminar_jugador_alert))
-                            builder.setPositiveButton("Aceptar", null)
-                            val dialog = builder.create()
-                            dialog.show()
-                        }
-                }
-                else {
+                    val builder = AlertDialog.Builder(requireContext())
+                    builder.setMessage("El jugador no s'ha afegit perquè ja esta creat")
+                    builder.setPositiveButton("Aceptar", null)
+                    val dialog = builder.create()
+                    dialog.show()
+                } else {
                     //Afegim una subcolecció igual que afegim una col.lecció però penjant de la col.lecció on està inclosa.
                     var existee =
                         bd.collection("Equips").document(nomEquip)
@@ -220,26 +165,34 @@ class EliminarJugadors: Fragment() {
                     existee.get()
                         .addOnSuccessListener { documente ->
                             if (documente.exists()) {
+                        bd.collection("Equips").document(nomEquip).collection("Jugadors")
+                            .document(nomJ).set(
+                                hashMapOf(
+                                    "Nom" to equip.jugadors.get(0).nom
+                                )
+                            )
 
-                                        val builder = AlertDialog.Builder(requireContext())
-                                        builder.setMessage(getString(R.string.jugador_no_existeix_alert))
-                                        builder.setPositiveButton("Aceptar", null)
-                                        val dialog = builder.create()
-                                        dialog.show()
-                                    }
-                             else {
+                            .addOnSuccessListener {
+                                findNavController().navigate(R.id.action_crearJugador_to_menuJugadors)
                                 val builder = AlertDialog.Builder(requireContext())
-                                builder.setMessage(getString(R.string.equip_no_existeix_alert))
+                                builder.setMessage(getString(R.string.crear_jugador_alert))
                                 builder.setPositiveButton("Aceptar", null)
                                 val dialog = builder.create()
                                 dialog.show()
                             }
-
-                        }
-
+                    } else {
+                        val builder = AlertDialog.Builder(requireContext())
+                        builder.setMessage(R.string.lequip_no_existeix_alert)
+                        builder.setPositiveButton("Aceptar", null)
+                        val dialog = builder.create()
+                        dialog.show()
+                    }
 
                 }
 
+
             }
+
     }
+}
 }

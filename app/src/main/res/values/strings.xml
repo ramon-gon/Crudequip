@@ -90,5 +90,6 @@
     <string name="lupa_per_buscar">lupa per buscar</string>
     <string name="s_una_imatge_on_surt_una_silueta_de_persona">És una imatge on surt una silueta de persona</string>
     <string name="surt_un_lle_que_s_el_logotip_de_l_aplicaci">surt un lleó que és el logotip de l\'aplicació</string>
+    <string name="fotoguardadaalert">La imatge s\'ha guardat</string>
 
 </resources>

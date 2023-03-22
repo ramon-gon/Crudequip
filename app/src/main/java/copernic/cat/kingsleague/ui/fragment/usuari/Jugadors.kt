@@ -1,4 +1,4 @@
-package copernic.cat.kingsleague.administrador
+package copernic.cat.kingsleague.ui.fragment.usuari
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -38,15 +38,15 @@ private const val ARG_PARAM2 = "param2"
  * Use the [Jugadors.newInstance] factory method to
  * create an instance of this fragment.
  */
-class JugadorsAdmin : Fragment() {
-    private var _binding: FragmentJugadorsAdminBinding? = null
+class Jugadors : Fragment() {
+    private var _binding: FragmentJugadorsBinding? = null
     private val binding get() = _binding!!
     val bd = FirebaseFirestore.getInstance()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentJugadorsAdminBinding.inflate(inflater, container, false)
+        _binding = FragmentJugadorsBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -54,7 +54,7 @@ class JugadorsAdmin : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.btnTornarJugadors.setOnClickListener {
-            findNavController().navigate(R.id.action_jugadorsAdmin_to_menu)
+            findNavController().navigate(R.id.action_jugadors_to_menuUsuari)
         }
         binding.btnVeureJugadors.setOnClickListener {
             try {
@@ -72,24 +72,24 @@ class JugadorsAdmin : Fragment() {
 
                         } else {
                             initRecyclerView(view)
-                                val builder = AlertDialog.Builder(requireContext())
-                                builder.setMessage(R.string.equip_no_existeix_alert)
-                                builder.setPositiveButton("Aceptar", null)
-                                val dialog = builder.create()
-                                dialog.show()
-                            }
+                            val builder = AlertDialog.Builder(requireContext())
+                            builder.setMessage(R.string.equip_no_existeix_alert)
+                            builder.setPositiveButton("Aceptar", null)
+                            val dialog = builder.create()
+                            dialog.show()
                         }
+                    }
 
             } catch (e: Exception) {
 
                 val builder = AlertDialog.Builder(requireContext())
-                            builder.setMessage(R.string.introduir_nom_equip_alert)
-                            builder.setPositiveButton("Aceptar", null)
-                            val dialog = builder.create()
-                            dialog.show()
+                builder.setMessage(R.string.introduir_nom_equip_alert)
+                builder.setPositiveButton("Aceptar", null)
+                val dialog = builder.create()
+                dialog.show()
 
-                        }
-                    }
+            }
+        }
 
         bd.collection("Equips")
             .get()

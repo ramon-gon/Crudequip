@@ -1,4 +1,4 @@
-package copernic.cat.kingsleague.usuari
+package copernic.cat.kingsleague.ui.fragment.administrador
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -11,16 +11,9 @@ import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.Query
-import com.google.firebase.ktx.Firebase
 import copernic.cat.kingsleague.R
 import copernic.cat.kingsleague.databinding.FragmentJugadorsAdminBinding
-import copernic.cat.kingsleague.databinding.FragmentJugadorsBinding
-import copernic.cat.kingsleague.rvClassificacio.Adapter.ClassificacioAdapter
-import copernic.cat.kingsleague.rvClassificacio.ClassificacioProvider
 import copernic.cat.kingsleague.rvJugadors.Adapter.JugadorsAdapter
 import copernic.cat.kingsleague.rvJugadors.JugadorsProvider
 import kotlinx.coroutines.Dispatchers
@@ -38,15 +31,15 @@ private const val ARG_PARAM2 = "param2"
  * Use the [Jugadors.newInstance] factory method to
  * create an instance of this fragment.
  */
-class Jugadors : Fragment() {
-    private var _binding: FragmentJugadorsBinding? = null
+class JugadorsAdmin : Fragment() {
+    private var _binding: FragmentJugadorsAdminBinding? = null
     private val binding get() = _binding!!
     val bd = FirebaseFirestore.getInstance()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentJugadorsBinding.inflate(inflater, container, false)
+        _binding = FragmentJugadorsAdminBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -54,7 +47,7 @@ class Jugadors : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.btnTornarJugadors.setOnClickListener {
-            findNavController().navigate(R.id.action_jugadors_to_menuUsuari)
+            findNavController().navigate(R.id.action_jugadorsAdmin_to_menu)
         }
         binding.btnVeureJugadors.setOnClickListener {
             try {
@@ -72,24 +65,24 @@ class Jugadors : Fragment() {
 
                         } else {
                             initRecyclerView(view)
-                            val builder = AlertDialog.Builder(requireContext())
-                            builder.setMessage(R.string.equip_no_existeix_alert)
-                            builder.setPositiveButton("Aceptar", null)
-                            val dialog = builder.create()
-                            dialog.show()
+                                val builder = AlertDialog.Builder(requireContext())
+                                builder.setMessage(R.string.equip_no_existeix_alert)
+                                builder.setPositiveButton("Aceptar", null)
+                                val dialog = builder.create()
+                                dialog.show()
+                            }
                         }
-                    }
 
             } catch (e: Exception) {
 
                 val builder = AlertDialog.Builder(requireContext())
-                builder.setMessage(R.string.introduir_nom_equip_alert)
-                builder.setPositiveButton("Aceptar", null)
-                val dialog = builder.create()
-                dialog.show()
+                            builder.setMessage(R.string.introduir_nom_equip_alert)
+                            builder.setPositiveButton("Aceptar", null)
+                            val dialog = builder.create()
+                            dialog.show()
 
-            }
-        }
+                        }
+                    }
 
         bd.collection("Equips")
             .get()

@@ -1,4 +1,4 @@
-package copernic.cat.kingsleague.usuari
+package copernic.cat.kingsleague.ui.fragment.usuari
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
