@@ -111,17 +111,17 @@ class Login : AppCompatActivity() {
     }
 
     suspend fun isAdmin() {
-        val intentAdmin = Intent(this, MenuA::class.java)
-        val intent = Intent(this, Menu::class.java)
-        lifecycleScope.launch {
 
             var ola = bd.collection("Usuaris").document(utils.getCorreoUserActural()).get().await()
             if (ola.get("admin") as Boolean) {
+                val intentAdmin = Intent(applicationContext, MenuA::class.java)
+
                 startActivity(intentAdmin)
                 //generamos una animacion que hemos generado en la carpeta res/anim llamada zoom_in
             } else {
+                val intent = Intent(applicationContext, Menu::class.java)
+
                 startActivity(intent)
-            }
         }
     }
 }
