@@ -1,21 +1,24 @@
-package copernic.cat.kingsleague.ui.fragment.administrador
+package copernic.cat.kingsleague.ui.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.firestore.FirebaseFirestore
 import copernic.cat.kingsleague.R
+import copernic.cat.kingsleague.databinding.FragmentEquipsSafeArgsBinding
 import copernic.cat.kingsleague.databinding.FragmentJugadorsAdminBinding
 import copernic.cat.kingsleague.rvJugadors.Adapter.JugadorsAdapter
 import copernic.cat.kingsleague.rvJugadors.JugadorsProvider
+import copernic.cat.kingsleague.ui.Utils
+import copernic.cat.kingsleague.ui.fragment.administrador.ClassificacioAdminDirections
+import copernic.cat.kingsleague.ui.fragment.usuari.ClassificacioDirections
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
@@ -28,96 +31,52 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [Jugadors.newInstance] factory method to
+ * Use the [EquipsSafeArgs.newInstance] factory method to
  * create an instance of this fragment.
  */
-class JugadorsAdmin : Fragment() {
-    private var _binding: FragmentJugadorsAdminBinding? = null
+class EquipsSafeArgs : Fragment() {
+    private var _binding: FragmentEquipsSafeArgsBinding? = null
     private val binding get() = _binding!!
     val bd = FirebaseFirestore.getInstance()
+    private val utils = Utils()
+    private val args: EquipsSafeArgsArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentJugadorsAdminBinding.inflate(inflater, container, false)
+        _binding = FragmentEquipsSafeArgsBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initRecyclerView(view)
 
-        binding.btnTornarJugadors.setOnClickListener {
-            findNavController().navigate(R.id.action_jugadorsAdmin_to_menu)
+        val nomEquip= args.nomequip
+        binding.TitolEquip.text=nomEquip
+
+           val buscar= bd.collection("Equips").document(nomEquip)
+        buscar.get().addOnSuccessListener { documentSnapshot ->
+            val puntuacio=documentSnapshot.getLong("Puntuacio").toString()
+            binding.puntuacionumero.text=puntuacio
         }
-        binding.btnVeureJugadors.setOnClickListener {
-            try {
 
-                var nomEquip = binding.spinner?.selectedItem.toString()
-
-                var existe =
-                    bd.collection("Equips").document(nomEquip)
-
-                existe.get()
-                    .addOnSuccessListener { document ->
-                        if (document.exists()) {
-                            initRecyclerView(view)
+        binding.btnTornarEquipsSafeArgs.setOnClickListener {
+            var ola = bd.collection("Usuaris").document(utils.getCorreoUserActural())
+            ola.get().addOnSuccessListener { documentSnapshot ->
+                if (documentSnapshot.getBoolean("admin") == true) {
 
 
-                        } else {
-                            initRecyclerView(view)
-                                val builder = AlertDialog.Builder(requireContext())
-                                builder.setMessage(R.string.equip_no_existeix_alert)
-                                builder.setPositiveButton("Aceptar", null)
-                                val dialog = builder.create()
-                                dialog.show()
-                            }
-                        }
+                    view.findNavController()
+                        .navigate(R.id.action_equipsSafeArgs_to_classificacioAdmin)
 
-            } catch (e: Exception) {
+                } else {
+                    view.findNavController().navigate(R.id.action_equipsSafeArgs2_to_classificacio2)
 
-                val builder = AlertDialog.Builder(requireContext())
-                            builder.setMessage(R.string.introduir_nom_equip_alert)
-                            builder.setPositiveButton("Aceptar", null)
-                            val dialog = builder.create()
-                            dialog.show()
-
-                        }
-                    }
-
-        bd.collection("Equips")
-            .get()
-            .addOnSuccessListener { documents ->
-                val nombres = ArrayList<String>()
-                nombres.add("-")
-                for (document in documents) {
-                    val nombre = document.getString("Nom")
-                    nombres.add(nombre!!)
-                }
-
-                // 3. Crear un ArrayAdapter en la actividad o fragmento correspondiente
-                val adapter = context?.let { ArrayAdapter(it, android.R.layout.simple_spinner_dropdown_item, nombres) }
-
-                // 4. Asignar el ArrayAdapter al spinner y establecer el comportamiento correspondiente
-                val spinner= binding.spinner
-                spinner?.adapter = adapter
-
-                spinner?.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-                    override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
-                        val nombreSeleccionado = parent.getItemAtPosition(position).toString()
-                        // Aquí se puede establecer el comportamiento correspondiente al seleccionar un elemento del spinner
-                    }
-
-                    override fun onNothingSelected(parent: AdapterView<*>) {
-                        // No se seleccionó ningún elemento del spinner
-                    }
                 }
             }
-            .addOnFailureListener { exception ->
-                // Ocurrió un error al obtener los datos de la base de datos
-            }}
-
-
-
+        }
+    }
     private fun initRecyclerView(view: View) {
 
         if (JugadorsProvider.jugadorsList.isEmpty()) {
@@ -144,8 +103,7 @@ class JugadorsAdmin : Fragment() {
     }
 
     private fun rellenarCircularsProvider() {
-        var nomEquip = binding.spinner?.selectedItem.toString()
-
+        val nomEquip= args.nomequip
 
         lifecycleScope.launch {
             var resultatConsulta=

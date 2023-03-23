@@ -174,7 +174,7 @@
     </fragment>
     <fragment
         android:id="@+id/equipsSafeArgs"
-        android:name="copernic.cat.kingsleague.EquipsSafeArgs"
+        android:name="copernic.cat.kingsleague.ui.fragment.EquipsSafeArgs"
         android:label="fragment_equips_safe_args"
         tools:layout="@layout/fragment_equips_safe_args" >
         <action
