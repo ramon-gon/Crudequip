@@ -74,7 +74,6 @@ class JugadorsAdmin : Fragment() {
                         }
 
             } catch (e: Exception) {
-
                 val builder = AlertDialog.Builder(requireContext())
                             builder.setMessage(R.string.introduir_nom_equip_alert)
                             builder.setPositiveButton("Aceptar", null)

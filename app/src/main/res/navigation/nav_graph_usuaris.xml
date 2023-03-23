@@ -28,6 +28,9 @@
         <action
             android:id="@+id/action_classificacio2_to_menuUsuari"
             app:destination="@id/menuUsuari" />
+        <action
+            android:id="@+id/action_classificacio2_to_equipsSafeArgs2"
+            app:destination="@id/equipsSafeArgs2" />
     </fragment>
     <fragment
         android:id="@+id/jugadors"
@@ -72,5 +75,17 @@
         <action
             android:id="@+id/action_fotoPerfil_to_menuUsuari"
             app:destination="@id/menuUsuari" />
+    </fragment>
+    <fragment
+        android:id="@+id/equipsSafeArgs2"
+        android:name="copernic.cat.kingsleague.EquipsSafeArgs"
+        android:label="fragment_equips_safe_args"
+        tools:layout="@layout/fragment_equips_safe_args" >
+        <argument
+            android:name="nomequip"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_equipsSafeArgs2_to_classificacio2"
+            app:destination="@id/classificacio2" />
     </fragment>
 </navigation>

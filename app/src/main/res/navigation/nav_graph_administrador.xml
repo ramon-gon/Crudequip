@@ -134,6 +134,9 @@
         <action
             android:id="@+id/action_classificacioAdmin_to_menu"
             app:destination="@id/menu" />
+        <action
+            android:id="@+id/action_classificacioAdmin_to_equipsSafeArgs"
+            app:destination="@id/equipsSafeArgs" />
     </fragment>
     <fragment
         android:id="@+id/configuracioAdmin"
@@ -168,5 +171,17 @@
         <action
             android:id="@+id/action_fotoPerfilAdmin_to_menu"
             app:destination="@id/menu" />
+    </fragment>
+    <fragment
+        android:id="@+id/equipsSafeArgs"
+        android:name="copernic.cat.kingsleague.EquipsSafeArgs"
+        android:label="fragment_equips_safe_args"
+        tools:layout="@layout/fragment_equips_safe_args" >
+        <action
+            android:id="@+id/action_equipsSafeArgs_to_classificacioAdmin"
+            app:destination="@id/classificacioAdmin" />
+        <argument
+            android:name="nomequip"
+            app:argType="string" />
     </fragment>
 </navigation>
