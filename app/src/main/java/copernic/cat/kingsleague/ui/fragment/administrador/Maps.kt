@@ -73,7 +73,7 @@ class Maps : Fragment(), OnMapReadyCallback{
         // Inflate the layout for this fragment
         _binding = FragmentMapsBinding.inflate(inflater, container, false)
         binding.btnTornarGeolocalitzacio.setOnClickListener {
-        findNavController().navigate(R.id.action_maps_to_configuracioAdmin)
+        findNavController().navigate(R.id.action_maps_to_menu)
         }
         return binding.root
 

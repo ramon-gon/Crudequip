@@ -1,5 +1,6 @@
 package copernic.cat.kingsleague.ui.activity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -7,6 +8,7 @@ import android.view.MenuItem
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
+import com.google.firebase.auth.FirebaseAuth
 import copernic.cat.kingsleague.R
 import copernic.cat.kingsleague.databinding.ActivityMenuBinding
 
@@ -40,13 +42,21 @@ class Menu : AppCompatActivity() {
 
 
     override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
-        R.id.configuracio -> {
+        R.id.geolocalitzacio-> {
             binding.navHostFragmentContentMain.findNavController()
-                .navigate(R.id.configuracio2)
+                .navigate(R.id.mapsUsuaris)
             true
         }
-        R.id.menuUsuari -> {
-            onBackPressed()
+        R.id.foto-> {
+            binding.navHostFragmentContentMain.findNavController()
+                .navigate(R.id.fotoPerfil)
+            true
+        }
+        R.id.tancarsessio-> {
+            FirebaseAuth.getInstance().signOut()
+            val intent = Intent(this, Login::class.java)
+            startActivity(intent)
+            finish()
             true
         }
         else -> {

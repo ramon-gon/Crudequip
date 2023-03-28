@@ -16,9 +16,6 @@
         <action
             android:id="@+id/action_menuUsuari_to_jugadors"
             app:destination="@id/jugadors" />
-        <action
-            android:id="@+id/action_menuUsuari_to_configuracio2"
-            app:destination="@id/configuracio2" />
     </fragment>
     <fragment
         android:id="@+id/classificacio2"
@@ -42,27 +39,12 @@
             app:destination="@id/menuUsuari" />
     </fragment>
     <fragment
-        android:id="@+id/configuracio2"
-        android:name="copernic.cat.kingsleague.ui.fragment.usuari.Configuracio"
-        android:label="fragment_configuracio"
-        tools:layout="@layout/fragment_configuracio" >
-        <action
-            android:id="@+id/action_configuracio2_to_menuUsuari"
-            app:destination="@id/menuUsuari" />
-        <action
-            android:id="@+id/action_configuracio2_to_mapsUsuaris"
-            app:destination="@id/mapsUsuaris" />
-        <action
-            android:id="@+id/action_configuracio2_to_fotoPerfil"
-            app:destination="@id/fotoPerfil" />
-    </fragment>
-    <fragment
         android:id="@+id/mapsUsuaris"
         android:name="copernic.cat.kingsleague.ui.fragment.usuari.MapsUsuaris"
         android:label="MapsUsuaris" >
         <action
-            android:id="@+id/action_mapsUsuaris_to_configuracio2"
-            app:destination="@id/configuracio2" />
+            android:id="@+id/action_mapsUsuaris_to_menuUsuari"
+            app:destination="@id/menuUsuari" />
     </fragment>
     <fragment
         android:id="@+id/fotoPerfil"
@@ -70,10 +52,10 @@
         android:label="fragment_foto_perfil"
         tools:layout="@layout/fragment_foto_perfil" >
         <action
-            android:id="@+id/action_fotoPerfil_to_configuracio2"
-            app:destination="@id/configuracio2" />
-        <action
             android:id="@+id/action_fotoPerfil_to_menuUsuari"
+            app:destination="@id/menuUsuari" />
+        <action
+            android:id="@+id/action_fotoPerfil_to_menuUsuari2"
             app:destination="@id/menuUsuari" />
     </fragment>
     <fragment

@@ -97,7 +97,7 @@ class FotoPerfil: Fragment() {
             lifecycleScope.launch {
                 afegirImatge()
             }
-            findNavController().navigate(R.id.action_fotoPerfil_to_configuracio2)
+            findNavController().navigate(R.id.action_fotoPerfil_to_menuUsuari)
             val builder = AlertDialog.Builder(requireContext())
             builder.setMessage(getString(R.string.fotoguardadaalert))
             builder.setPositiveButton("Aceptar", null)
@@ -106,7 +106,7 @@ class FotoPerfil: Fragment() {
         }
 
         binding.btnCancelarfotoPerfil.setOnClickListener {
-            findNavController().navigate(R.id.action_fotoPerfil_to_configuracio2)
+            findNavController().navigate(R.id.action_fotoPerfil_to_menuUsuari)
         }
     }
 
@@ -161,7 +161,6 @@ class FotoPerfil: Fragment() {
         val storageRef = FirebaseStorage.getInstance().reference.child("image/imatges/$correo.png")
         try {// la imagen existe, descargar y mostrar la imagen
              storageRef.downloadUrl.await()
-
             val localfile = File.createTempFile("tempImage", "png")
                storageRef.getFile(localfile).addOnSuccessListener {
                 val bitmap = BitmapFactory.decodeFile(localfile.absolutePath)

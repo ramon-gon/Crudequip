@@ -98,7 +98,7 @@ class FotoPerfilAdmin: Fragment() {
             lifecycleScope.launch {
                 afegirImatge()
             }
-            findNavController().navigate(R.id.action_fotoPerfilAdmin_to_configuracioAdmin)
+            findNavController().navigate(R.id.action_fotoPerfilAdmin_to_menu)
             val builder = AlertDialog.Builder(requireContext())
             builder.setMessage(getString(R.string.fotoguardadaalert))
             builder.setPositiveButton("Aceptar", null)
@@ -107,7 +107,7 @@ class FotoPerfilAdmin: Fragment() {
         }
 
         binding.btnCancelarfotoPerfil.setOnClickListener {
-            findNavController().navigate(R.id.action_fotoPerfilAdmin_to_configuracioAdmin)
+            findNavController().navigate(R.id.action_fotoPerfilAdmin_to_menu)
         }
     }
 

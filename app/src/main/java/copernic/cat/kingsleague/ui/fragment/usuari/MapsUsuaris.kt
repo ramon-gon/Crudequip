@@ -74,7 +74,7 @@ class MapsUsuaris : Fragment(), OnMapReadyCallback{
         // Inflate the layout for this fragment
         _binding = FragmentMapsUsuarisBinding.inflate(inflater, container, false)
         binding.btnTornarGeolocalitzacio.setOnClickListener {
-            findNavController().navigate(R.id.action_mapsUsuaris_to_configuracio2)
+            findNavController().navigate(R.id.action_mapsUsuaris_to_menuUsuari)
         }
         return binding.root
 

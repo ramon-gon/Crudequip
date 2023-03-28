@@ -22,9 +22,6 @@
         <action
             android:id="@+id/action_menu_to_classificacioAdmin"
             app:destination="@id/classificacioAdmin" />
-        <action
-            android:id="@+id/action_menu_to_configuracioAdmin"
-            app:destination="@id/configuracioAdmin" />
     </fragment>
     <fragment
         android:id="@+id/crearEquips"
@@ -139,26 +136,12 @@
             app:destination="@id/equipsSafeArgs" />
     </fragment>
     <fragment
-        android:id="@+id/configuracioAdmin"
-        android:name="copernic.cat.kingsleague.ui.fragment.administrador.ConfiguracioAdmin"
-        android:label="ConfiguracioAdmin" >
-        <action
-            android:id="@+id/action_configuracioAdmin_to_menu"
-            app:destination="@id/menu" />
-        <action
-            android:id="@+id/action_configuracioAdmin_to_maps"
-            app:destination="@id/maps" />
-        <action
-            android:id="@+id/action_configuracioAdmin_to_fotoPerfilAdmin"
-            app:destination="@id/fotoPerfilAdmin" />
-    </fragment>
-    <fragment
         android:id="@+id/maps"
         android:name="copernic.cat.kingsleague.ui.fragment.administrador.Maps"
         android:label="Maps" >
         <action
-            android:id="@+id/action_maps_to_configuracioAdmin"
-            app:destination="@id/configuracioAdmin" />
+            android:id="@+id/action_maps_to_menu"
+            app:destination="@id/menu" />
     </fragment>
     <fragment
         android:id="@+id/fotoPerfilAdmin"
@@ -166,10 +149,10 @@
         android:label="fragment_foto_perfil_admin"
         tools:layout="@layout/fragment_foto_perfil_admin" >
         <action
-            android:id="@+id/action_fotoPerfilAdmin_to_configuracioAdmin"
-            app:destination="@id/configuracioAdmin" />
-        <action
             android:id="@+id/action_fotoPerfilAdmin_to_menu"
+            app:destination="@id/menu" />
+        <action
+            android:id="@+id/action_fotoPerfilAdmin_to_menu2"
             app:destination="@id/menu" />
     </fragment>
     <fragment
