@@ -9,16 +9,6 @@ import androidx.navigation.fragment.findNavController
 import copernic.cat.kingsleague.R
 import copernic.cat.kingsleague.databinding.FragmentMenuJugadorsBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [MenuJugadors.newInstance] factory method to
- * create an instance of this fragment.
- */
 class MenuJugadors : Fragment() {
     // TODO: Rename and change types of parameters
     private var _binding: FragmentMenuJugadorsBinding? = null

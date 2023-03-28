@@ -16,17 +16,7 @@ import copernic.cat.kingsleague.R
 import copernic.cat.kingsleague.databinding.FragmentMapsBinding
 import copernic.cat.kingsleague.databinding.FragmentMapsUsuarisBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [Maps.newInstance] factory method to
- * create an instance of this fragment.
- */
-class MapsUsuaris : Fragment(), OnMapReadyCallback{
+class MapsUsuaris : Fragment(), OnMapReadyCallback {
     // TODO: Rename and change types of parameters
 
     private var _binding: FragmentMapsUsuarisBinding? = null
@@ -44,9 +34,10 @@ class MapsUsuaris : Fragment(), OnMapReadyCallback{
         //  cridem al metode
         createMarker()
     }
+
     private fun createMarker() {
         // posem les coordenades de la  localitzacio
-        val maps = LatLng(41.3225857,2.1359805)
+        val maps = LatLng(41.3225857, 2.1359805)
 
         // creem un Marker per marcar el lloc que hem seleccionat anteriorment i li posem un titol
         map.addMarker(MarkerOptions().position(maps).title("Kings League"))
@@ -59,11 +50,11 @@ class MapsUsuaris : Fragment(), OnMapReadyCallback{
             null
         )
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+
         }
     }
 
@@ -89,28 +80,9 @@ class MapsUsuaris : Fragment(), OnMapReadyCallback{
     private fun createMapFragment() {
         // metode per crear el mapa
         // creem una variable del mateix tipus que el fragment map, SupportMapFragment
-        val mapFragment =  childFragmentManager.findFragmentById(R.id.fragmentMap) as SupportMapFragment
+        val mapFragment =
+            childFragmentManager.findFragmentById(R.id.fragmentMap) as SupportMapFragment
         mapFragment.getMapAsync(this)
 
-    }
-
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment Maps.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            MapsUsuaris().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
     }
 }
