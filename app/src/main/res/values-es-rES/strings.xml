@@ -72,4 +72,5 @@
     <string name="s_una_imatge_on_surt_una_silueta_de_persona">Es una imagen donde sale una silueta de persona</string>
     <string name="surt_un_lle_que_s_el_logotip_de_l_aplicaci">Sale un león que es el logotipo de la aplicación</string>
     <string name="fotoguardadaalert">La imagen se ha guardado</string>
+    <string name="jugador_no_afegit_alert">El jugador no se ha añadido porque ya está creado</string>
 </resources>

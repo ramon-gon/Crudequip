@@ -144,7 +144,7 @@ class CrearJugador : Fragment() {
             .addOnSuccessListener { document ->
                 if (document.exists()) {
                     val builder = AlertDialog.Builder(requireContext())
-                    builder.setMessage("El jugador no s'ha afegit perquè ja esta creat")
+                    builder.setMessage(getString(R.string.jugador_no_afegit_alert))
                     builder.setPositiveButton("Aceptar", null)
                     val dialog = builder.create()
                     dialog.show()
@@ -159,7 +159,7 @@ class CrearJugador : Fragment() {
                         bd.collection("Equips").document(nomEquip).collection("Jugadors")
                             .document(nomJ).set(
                                 hashMapOf(
-                                    "Nom" to equip.jugadors.get(0).nom
+                                    "Nom" to jugadors.get(0).nom
                                 )
                             )
 

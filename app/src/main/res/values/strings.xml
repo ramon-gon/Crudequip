@@ -93,5 +93,6 @@
     <string name="fotoguardadaalert">La imatge s\'ha guardat</string>
     <string name="equipnom" translatable="false">Equip</string>
     <string name="_0" translatable="false">0</string>
+    <string name="jugador_no_afegit_alert">El jugador no s\'ha afegit perquè ja esta creat</string>
 
 </resources>
