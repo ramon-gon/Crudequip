@@ -105,7 +105,7 @@ class Login : AppCompatActivity() {
                     //Mostrem un missatge a l'usuari mitjançant un Toast
                     val builder = AlertDialog.Builder(this)
                     builder.setMessage(getString(R.string.correu_error))
-                    builder.setPositiveButton("Aceptar", null)
+                    builder.setPositiveButton(R.string.acceptar, null)
                     val dialog = builder.create()
                     dialog.show()
                 }

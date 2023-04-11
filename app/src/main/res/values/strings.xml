@@ -96,5 +96,8 @@
     <string name="jugador_no_afegit_alert">El jugador no s\'ha afegit perquè ja esta creat</string>
     <string name="gestionar_jugadors">GESTIONAR JUGADORS</string>
     <string name="gestionar_equips">GESTIONAR EQUIPS</string>
+    <string name="elregistrehafallat">El registre ha fallat</string>
+    <string name="emailincorrecte">email incorrecte!!</string>
+    <string name="calintroduirunnomalequip">Cal introduïr un nom a l\'equip</string>
 
 </resources>

@@ -63,7 +63,7 @@ class Register : AppCompatActivity() {
 
                         if (!utils.isValidEmail(usuaris.gmail)) {
                             binding.registreEditnomUsuari.error =
-                                "email incorrecte!!"
+                                getString(R.string.emailincorrecte)
                         } else if (usuaris.gmail.isNotEmpty()) {
                             //Afegim una subcolecció igual que afegim una col.lecció però penjant de la col.lecció on està inclosa.
 
@@ -88,26 +88,26 @@ class Register : AppCompatActivity() {
         if (correu.isEmpty()) {
             val builder = AlertDialog.Builder(this)
             builder.setMessage(getString(R.string.introduir_correu_alert))
-            builder.setPositiveButton("Aceptar", null)
+            builder.setPositiveButton(R.string.acceptar, null)
             val dialog = builder.create()
             dialog.show()
 
         } else if (contrasenya.isEmpty()) {
             val builder = AlertDialog.Builder(this)
             builder.setMessage(getString(R.string.introduir_contrasenya_alert))
-            builder.setPositiveButton("Aceptar", null)
+            builder.setPositiveButton(R.string.acceptar, null)
             val dialog = builder.create()
             dialog.show()
         } else if (contrasenyaBis.isEmpty()) {
             val builder = AlertDialog.Builder(this)
             builder.setMessage(getString(R.string.introduir_contrasenya_repetida_alert))
-            builder.setPositiveButton("Aceptar", null)
+            builder.setPositiveButton(R.string.acceptar, null)
             val dialog = builder.create()
             dialog.show()
         } else if (contrasenyaBis != contrasenya) {
             val builder = AlertDialog.Builder(this)
             builder.setMessage(getString(R.string.introduir_contrasenya_repetida_correcte_alert))
-            builder.setPositiveButton("Aceptar", null)
+            builder.setPositiveButton(R.string.acceptar, null)
             val dialog = builder.create()
             dialog.show()
         }
@@ -152,8 +152,8 @@ class Register : AppCompatActivity() {
                     finish()
                 } else {
                     val builder = AlertDialog.Builder(this)
-                    builder.setMessage("El Registre ha fallat")
-                    builder.setPositiveButton("Aceptar", null)
+                    builder.setMessage(getString(R.string.elregistrehafallat))
+                    builder.setPositiveButton(R.string.acceptar, null)
                     val dialog = builder.create()
                     dialog.show()
                 }

@@ -59,7 +59,7 @@ class ClassificacioAdapter (private val classificacioList: List<Classificacio>):
         return ClassificacioProvider.classificacioList.size
     }
 
-    fun navigation(view: View, title: String) {
+    fun navigation(view: View, equip: String) {
 
         var ola = bd.collection("Usuaris").document(utils.getCorreoUserActural())
         ola.get().addOnSuccessListener { documentSnapshot ->
@@ -67,11 +67,11 @@ class ClassificacioAdapter (private val classificacioList: List<Classificacio>):
 
 
                 val action =
-                    ClassificacioAdminDirections.actionClassificacioAdminToEquipsSafeArgs(title)
+                    ClassificacioAdminDirections.actionClassificacioAdminToEquipsSafeArgs(equip)
                 view.findNavController().navigate(action)
 
             } else {
-                val action = ClassificacioDirections.actionClassificacio2ToEquipsSafeArgs2(title)
+                val action = ClassificacioDirections.actionClassificacio2ToEquipsSafeArgs2(equip)
                 view.findNavController().navigate(action)
 
             }

@@ -74,7 +74,7 @@ class ModificarClassificacio : Fragment() {
                         } else {
                             val builder = AlertDialog.Builder(requireContext())
                             builder.setMessage(R.string.introduir_nom_equip_alert)
-                            builder.setPositiveButton("Aceptar", null)
+                            builder.setPositiveButton(R.string.acceptar, null)
                             val dialog = builder.create()
                             dialog.show()
                         }
@@ -82,7 +82,7 @@ class ModificarClassificacio : Fragment() {
                     } catch (e: Exception){
                         val builder = AlertDialog.Builder(requireContext())
                         builder.setMessage(getString(R.string.introduir_puntuacio_alert))
-                        builder.setPositiveButton("Aceptar", null)
+                        builder.setPositiveButton(R.string.acceptar, null)
                         val dialog = builder.create()
                         dialog.show()
                     }
@@ -159,7 +159,7 @@ class ModificarClassificacio : Fragment() {
                             findNavController().navigate(R.id.action_modificarClassificacio_to_menuEquips)
                             val builder = AlertDialog.Builder(requireContext())
                             builder.setMessage(getString(R.string.la_puntuacio_sha_modificat_alert))
-                            builder.setPositiveButton("Aceptar", null)
+                            builder.setPositiveButton(R.string.acceptar, null)
                             val dialog = builder.create()
                             dialog.show()
                         }
@@ -169,7 +169,7 @@ class ModificarClassificacio : Fragment() {
                 else {
                     val builder = AlertDialog.Builder(requireContext())
                     builder.setMessage(R.string.equip_no_existeix_alert)
-                    builder.setPositiveButton("Aceptar", null)
+                    builder.setPositiveButton(R.string.acceptar, null)
                     val dialog = builder.create()
                     dialog.show()
                 }

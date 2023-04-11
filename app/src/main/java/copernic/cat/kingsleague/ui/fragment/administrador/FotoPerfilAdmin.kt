@@ -89,7 +89,7 @@ class FotoPerfilAdmin: Fragment() {
             findNavController().navigate(R.id.action_fotoPerfilAdmin_to_menu)
             val builder = AlertDialog.Builder(requireContext())
             builder.setMessage(getString(R.string.fotoguardadaalert))
-            builder.setPositiveButton("Aceptar", null)
+            builder.setPositiveButton(R.string.acceptar, null)
             val dialog = builder.create()
             dialog.show()
         }

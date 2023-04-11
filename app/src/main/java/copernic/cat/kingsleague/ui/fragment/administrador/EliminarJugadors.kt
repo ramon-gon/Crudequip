@@ -71,13 +71,13 @@ class EliminarJugadors: Fragment() {
                     } else if (equips.nom.isNotEmpty()) {
                         val builder = AlertDialog.Builder(requireContext())
                         builder.setMessage(getString(R.string.introduir_jugador_alert))
-                        builder.setPositiveButton("Aceptar", null)
+                        builder.setPositiveButton(R.string.acceptar, null)
                         val dialog = builder.create()
                         dialog.show()
                     } else {
                         val builder = AlertDialog.Builder(requireContext())
                         builder.setMessage(getString(R.string.introduir_nom_equip_alert))
-                        builder.setPositiveButton("Aceptar", null)
+                        builder.setPositiveButton(R.string.acceptar, null)
                         val dialog = builder.create()
                         dialog.show()
                     }
@@ -193,7 +193,7 @@ class EliminarJugadors: Fragment() {
 
                             val builder = AlertDialog.Builder(requireContext())
                             builder.setMessage(getString(R.string.eliminar_jugador_alert))
-                            builder.setPositiveButton("Aceptar", null)
+                            builder.setPositiveButton(R.string.acceptar, null)
                             val dialog = builder.create()
                             dialog.show()
                         }
@@ -209,14 +209,14 @@ class EliminarJugadors: Fragment() {
 
                                         val builder = AlertDialog.Builder(requireContext())
                                         builder.setMessage(getString(R.string.jugador_no_existeix_alert))
-                                        builder.setPositiveButton("Aceptar", null)
+                                        builder.setPositiveButton(R.string.acceptar, null)
                                         val dialog = builder.create()
                                         dialog.show()
                                     }
                              else {
                                 val builder = AlertDialog.Builder(requireContext())
                                 builder.setMessage(getString(R.string.equip_no_existeix_alert))
-                                builder.setPositiveButton("Aceptar", null)
+                                builder.setPositiveButton(R.string.acceptar, null)
                                 val dialog = builder.create()
                                 dialog.show()
                             }

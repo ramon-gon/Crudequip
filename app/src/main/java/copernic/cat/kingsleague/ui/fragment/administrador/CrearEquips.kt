@@ -60,8 +60,8 @@ class CrearEquips : Fragment() {
 
                     } else {
                         val builder = AlertDialog.Builder(requireContext())
-                        builder.setMessage("Cal introduïr un nom a l'equip")
-                        builder.setPositiveButton("Aceptar", null)
+                        builder.setMessage(getString(R.string.calintroduirunnomalequip))
+                        builder.setPositiveButton(R.string.acceptar, null)
                         val dialog = builder.create()
                         dialog.show()
                     }
@@ -94,7 +94,7 @@ class CrearEquips : Fragment() {
                 if (document.exists()) {
                     val builder = AlertDialog.Builder(requireContext())
                     builder.setMessage(getString(R.string.equip_ja_esta_creat_alert))
-                    builder.setPositiveButton("Aceptar", null)
+                    builder.setPositiveButton(R.string.acceptar, null)
                     val dialog = builder.create()
                     dialog.show()
                 } else {
@@ -109,14 +109,14 @@ class CrearEquips : Fragment() {
                             findNavController().navigate(R.id.action_crearEquips_to_menuEquips)
                             val builder = AlertDialog.Builder(requireContext())
                             builder.setMessage(getString(R.string.lequip_sha_creat_alert))
-                            builder.setPositiveButton("Aceptar", null)
+                            builder.setPositiveButton(R.string.acceptar, null)
                             val dialog = builder.create()
                             dialog.show()
                         }
                         .addOnFailureListener { //No s'ha afegit el departament...
                             val builder = AlertDialog.Builder(requireContext())
                             builder.setMessage(getString(R.string.lequip_no_sha_afegit_alert))
-                            builder.setPositiveButton("Aceptar", null)
+                            builder.setPositiveButton(R.string.acceptar, null)
                             val dialog = builder.create()
                             dialog.show()
                         }

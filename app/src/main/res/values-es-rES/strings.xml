@@ -75,4 +75,7 @@
     <string name="jugador_no_afegit_alert">El jugador no se ha añadido porque ya está creado</string>
     <string name="gestionar_jugadors">GESTIONAR JUGADORES</string>
     <string name="gestionar_equips">GESTIONAR EQUIPOS</string>
+    <string name="elregistrehafallat">El registro ha fallado</string>
+    <string name="emailincorrecte">Email incorrecto!!</string>
+    <string name="calintroduirunnomalequip">Se debe introducir un nombre al equipo</string>
 </resources>

@@ -75,4 +75,7 @@
     <string name="jugador_no_afegit_alert">The player has not been added because it is already created</string>
     <string name="gestionar_equips">MANAGE TEAMS</string>
     <string name="gestionar_jugadors">MANAGE PLAYERS</string>
+    <string name="elregistrehafallat">Registration failed</string>
+    <string name="emailincorrecte">Incorrect email</string>
+    <string name="calintroduirunnomalequip">A team name must be entered</string>
 </resources>

@@ -64,7 +64,7 @@ class RecuperarContrasenya : AppCompatActivity() {
 
                 val builder = AlertDialog.Builder(this)
                 builder.setMessage(getString(R.string.canviar_contrasenya_alert))
-                builder.setPositiveButton("Aceptar", null)
+                builder.setPositiveButton(R.string.acceptar, null)
                 val dialog = builder.create()
                 dialog.show()
 
@@ -74,7 +74,7 @@ class RecuperarContrasenya : AppCompatActivity() {
             {
                 val builder = AlertDialog.Builder(this)
                 builder.setMessage(getString(R.string.canviar_contrasenya_error))
-                builder.setPositiveButton("Aceptar", null)
+                builder.setPositiveButton(R.string.acceptar, null)
                 val dialog = builder.create()
                 dialog.show()
 

@@ -71,7 +71,7 @@ class EliminarEquips : Fragment() {
                     } else {
                         val builder = AlertDialog.Builder(requireContext())
                         builder.setMessage(getString(R.string.introduir_nom_equip))
-                        builder.setPositiveButton("Aceptar", null)
+                        builder.setPositiveButton(R.string.acceptar, null)
                         val dialog = builder.create()
                         dialog.show()
                     }
@@ -143,14 +143,14 @@ class EliminarEquips : Fragment() {
                         .addOnSuccessListener {
                             val builder = AlertDialog.Builder(requireContext())
                             builder.setMessage(getString(R.string.equip_eliminat_alert))
-                            builder.setPositiveButton("Aceptar", null)
+                            builder.setPositiveButton(R.string.acceptar, null)
                             val dialog = builder.create()
                             dialog.show()
                         }
                 } else {
                     val builder = AlertDialog.Builder(requireContext())
                     builder.setMessage(R.string.equip_no_existeix_alert)
-                    builder.setPositiveButton("Aceptar", null)
+                    builder.setPositiveButton(R.string.acceptar, null)
                     val dialog = builder.create()
                     dialog.show()
                 }
