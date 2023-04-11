@@ -190,7 +190,6 @@ class EliminarJugadors: Fragment() {
                     bd.collection("Equips").document(nomEquip)
                         .collection("Jugadors").document(nomJ).delete()
                         .addOnSuccessListener {
-                            findNavController().navigate(R.id.action_eliminarJugadors_to_menuJugadors)
 
                             val builder = AlertDialog.Builder(requireContext())
                             builder.setMessage(getString(R.string.eliminar_jugador_alert))
