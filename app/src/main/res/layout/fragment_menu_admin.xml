@@ -58,7 +58,7 @@
         android:layout_marginStart="15dp"
         android:layout_marginTop="30dp"
         android:backgroundTint="@color/purple_500"
-        android:text="@string/modificar_jugadors"
+        android:text="@string/gestionar_jugadors"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnJugadors" />
 
@@ -69,7 +69,7 @@
         android:layout_marginStart="15dp"
         android:layout_marginTop="30dp"
         android:backgroundTint="@color/purple_500"
-        android:text="@string/modificar_equips"
+        android:text="@string/gestionar_equips"
         app:layout_constraintStart_toEndOf="@+id/btnJugadorsModificar"
         app:layout_constraintTop_toBottomOf="@+id/btnClasificacio" />
 </androidx.constraintlayout.widget.ConstraintLayout>

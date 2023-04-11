@@ -73,4 +73,6 @@
     <string name="surt_un_lle_que_s_el_logotip_de_l_aplicaci">A lion appears, which is the logo of the application</string>
     <string name="fotoguardadaalert">The photo has been saved</string>
     <string name="jugador_no_afegit_alert">The player has not been added because it is already created</string>
+    <string name="gestionar_equips">MANAGE TEAMS</string>
+    <string name="gestionar_jugadors">MANAGE PLAYERS</string>
 </resources>
