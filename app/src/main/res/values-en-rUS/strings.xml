@@ -14,25 +14,25 @@
     <string name="contrasenya">Password</string>
     <string name="nom_usuari">Name user</string>
     <string name="repetir_contrasenya">Repeat Paassword</string>
-    <string name="benvingut_a_la_kings_league">Welcome to the Kings League</string>
-    <string name="veure_jugadors">See players</string>
+    <string name="benvingut_a_la_kings_league">WELCOME TO THE KINGS LEAGUE</string>
+    <string name="veure_jugadors">SEE PLAYERS</string>
     <string name="veure_classificacio">See classification</string>
-    <string name="classificaci">Classification</string>
+    <string name="classificaci">CLASSIFICATION</string>
     <string name="tornar">RETURN</string>
     <string name="nom">Name</string>
     <string name="modificar_jugadors">Modify players</string>
-    <string name="modificar_classificacio">Modify classification</string>
+    <string name="modificar_classificacio">MODIFY CLASSIFICATION</string>
     <string name="puntuacio">Punctuation</string>
     <string name="introdueix_puntuacio">Insert punctuation</string>
     <string name="jugadors">Players</string>
     <string name="introdueix_nom_jugador">Enter player name</string>
     <string name="modificar_equips">Modify teams</string>
-    <string name="jugador">Player</string>
+    <string name="jugador">PLAYER</string>
     <string name="crear_jugador">CREATE PLAYER</string>
     <string name="eliminar_jugador">DELETE PLAYER</string>
     <string name="introdueix_el_nom_del_equip">Enter team name</string>
     <string name="eliminar">DELETE</string>
-    <string name="equip">Team</string>
+    <string name="equip">TEAM</string>
     <string name="crear_equips">CREATE TEAMS</string>
     <string name="eliminar_equips">DELETE TEAMS</string>
     <string name="modificar_puntuacio">MODIFY PUNTUACTION</string>
@@ -78,4 +78,5 @@
     <string name="elregistrehafallat">Registration failed</string>
     <string name="emailincorrecte">Incorrect email</string>
     <string name="calintroduirunnomalequip">A team name must be entered</string>
+    <string name="eliminar_jugadors">REMOVE PLAYERS</string>
 </resources>

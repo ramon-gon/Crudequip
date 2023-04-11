@@ -27,28 +27,28 @@
     <string name="gmail" translatable="false">Gmail</string>
     <string name="repetir_contrasenya">Repetir Contrasenya</string>
     <string name="logo_splash_screen" translatable="false">Logo Splash screen</string>
-    <string name="benvingut_a_la_kings_league">Benvingut a la Kings League</string>
-    <string name="veure_jugadors">Veure jugadors</string>
+    <string name="benvingut_a_la_kings_league">BENVINGUT A LA KINGS LEAGUE</string>
+    <string name="veure_jugadors">VEURE JUGADORS</string>
     <string name="veure_classificacio">Veure classificació</string>
     <string name="item" translatable="false">Item</string>
-    <string name="classificaci">Classificació</string>
+    <string name="classificaci">CLASSIFICACIÓ</string>
     <string name="tornar">TORNAR</string>
     <string name="nom">Nom</string>
     <string name="modificar_jugadors">Modificar jugadors</string>
-    <string name="modificar_classificacio">Modificar classificacio</string>
+    <string name="modificar_classificacio">MODIFICAR CLASSIFICACIO</string>
     <string name="puntuacio">Puntuacio</string>
     <string name="introdueix_puntuacio">Introdueix puntuacio</string>
     <string name="jugadors">Jugadors</string>
     <string name="introdueix_nom_jugador">Introdueix el nom del jugador</string>
     <string name="modificar_equips">Modificar equips</string>
-    <string name="jugador">Jugador</string>
+    <string name="jugador">JUGADOR</string>
     <string name="crear_jugador">CREAR JUGADOR</string>
     <string name="eliminar_jugador">ELIMINAR JUGADOR</string>
     <string name="introdueix_el_nom_del_equip">Introdueix el nom de l equip</string>
     <string name="eliminar">ELIMINAR</string>
     <string name="crear" translatable="false">CREAR</string>
     <string name="modificar" translatable="false">MODIFICAR</string>
-    <string name="equip">Equip</string>
+    <string name="equip">EQUIP</string>
     <string name="crear_equips">CREAR EQUIPS</string>
     <string name="eliminar_equips">ELIMINAR EQUIPS</string>
     <string name="modificar_puntuacio">MODIFICAR PUNTUACIO</string>
@@ -99,5 +99,6 @@
     <string name="elregistrehafallat">El registre ha fallat</string>
     <string name="emailincorrecte">email incorrecte!!</string>
     <string name="calintroduirunnomalequip">Cal introduïr un nom a l\'equip</string>
+    <string name="eliminar_jugadors">ELIMINAR JUGADORS</string>
 
 </resources>

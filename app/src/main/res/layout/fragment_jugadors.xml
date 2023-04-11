@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="90dp"
         android:text="@string/veure_jugadors"
-        android:textSize="30sp"
+        android:textSize="27sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

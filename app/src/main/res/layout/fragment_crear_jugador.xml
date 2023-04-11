@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     style="@style/constraintlayoutTherme"
-    tools:context=".administrador.CrearJugador">
+    tools:context="ui.fragment.administrador.CrearJugador">
 
     <TextView
         android:id="@+id/TitolCrearJugadors"
@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="90dp"
         android:text="@string/crear_jugador"
-        android:textSize="30sp"
+        android:textSize="27sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

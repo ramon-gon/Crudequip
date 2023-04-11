@@ -14,25 +14,25 @@
     <string name="contrasenya">Contraseña</string>
     <string name="nom_usuari">Nombre Usuario</string>
     <string name="repetir_contrasenya">Repetir Contraseña</string>
-    <string name="benvingut_a_la_kings_league">Bienvenido a la Kings League</string>
-    <string name="veure_jugadors">Ver jugadores</string>
+    <string name="benvingut_a_la_kings_league">BIENVENIDO A LA KINGS LEAGUE</string>
+    <string name="veure_jugadors">VER JUGADORES</string>
     <string name="veure_classificacio">Ver clasificación</string>
-    <string name="classificaci">Clasificación</string>
+    <string name="classificaci">CLASIFICACIÓN</string>
     <string name="tornar">VOLVER</string>
     <string name="nom">Nombre</string>
     <string name="modificar_jugadors">Modificar jugadores</string>
-    <string name="modificar_classificacio">Modificar clasificación</string>
+    <string name="modificar_classificacio">MODIFICAR CLASIFICACIÓN</string>
     <string name="puntuacio">Puntuación</string>
     <string name="introdueix_puntuacio">Introduce puntuación</string>
     <string name="jugadors">Jugadores</string>
     <string name="introdueix_nom_jugador">Introduce el nombre del jugador</string>
     <string name="modificar_equips">Modificar equipos</string>
-    <string name="jugador">Jugador</string>
+    <string name="jugador">JUGADOR</string>
     <string name="crear_jugador">CREAR JUGADOR</string>
     <string name="eliminar_jugador">ELIMINAR JUGADOR</string>
     <string name="introdueix_el_nom_del_equip">Introduce el nombre del equipo</string>
     <string name="eliminar">ELIMINAR</string>
-    <string name="equip">Equipo</string>
+    <string name="equip">EQUIPO</string>
     <string name="crear_equips">CREAR EQUIPOS</string>
     <string name="eliminar_equips">ELIMINAR EQUIPOS</string>
     <string name="modificar_puntuacio">MODIFICAR PUNTUACIÓN</string>
@@ -78,4 +78,5 @@
     <string name="elregistrehafallat">El registro ha fallado</string>
     <string name="emailincorrecte">Email incorrecto!!</string>
     <string name="calintroduirunnomalequip">Se debe introducir un nombre al equipo</string>
+    <string name="eliminar_jugadors">ELIMINAR JUGADORES</string>
 </resources>
