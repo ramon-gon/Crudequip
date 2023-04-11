@@ -23,11 +23,11 @@
         style="@style/Widget.ComunicaProdis.ButtonConfirm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="30dp"
         android:text="@string/tornar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_veure_jugadors" />
+        app:layout_constraintTop_toBottomOf="@+id/rvJugadors" />
 
     <TextView
         android:id="@+id/nomEquip"
@@ -39,18 +39,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TitolJugadors" />
 
-
-    <Button
-        android:id="@+id/btn_veure_jugadors"
-        style="@style/Widget.ComunicaProdis.ButtonConfirm"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:backgroundTint="@color/blue"
-        android:text="@string/veure"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rvJugadors" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvJugadors"

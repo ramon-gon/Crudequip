@@ -47,40 +47,6 @@ class Jugadors : Fragment() {
         binding.btnTornarJugadors.setOnClickListener {
             findNavController().navigate(R.id.action_jugadors_to_menuUsuari)
         }
-        binding.btnVeureJugadors.setOnClickListener {
-            try {
-
-                var nomEquip = binding.spinner?.selectedItem.toString()
-
-                var existe =
-                    bd.collection("Equips").document(nomEquip)
-
-                existe.get()
-                    .addOnSuccessListener { document ->
-                        if (document.exists()) {
-                            initRecyclerView(view)
-
-
-                        } else {
-                            initRecyclerView(view)
-                            val builder = AlertDialog.Builder(requireContext())
-                            builder.setMessage(R.string.equip_no_existeix_alert)
-                            builder.setPositiveButton("Aceptar", null)
-                            val dialog = builder.create()
-                            dialog.show()
-                        }
-                    }
-
-            } catch (e: Exception) {
-
-                val builder = AlertDialog.Builder(requireContext())
-                builder.setMessage(R.string.introduir_nom_equip_alert)
-                builder.setPositiveButton("Aceptar", null)
-                val dialog = builder.create()
-                dialog.show()
-
-            }
-        }
 
         bd.collection("Equips")
             .get()
@@ -103,6 +69,7 @@ class Jugadors : Fragment() {
                     override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
                         val nombreSeleccionado = parent.getItemAtPosition(position).toString()
                         // Aquí se puede establecer el comportamiento correspondiente al seleccionar un elemento del spinner
+                        view?.let { initRecyclerView(it) }
                     }
 
                     override fun onNothingSelected(parent: AdapterView<*>) {
@@ -111,7 +78,6 @@ class Jugadors : Fragment() {
                 }
             }
             .addOnFailureListener { exception ->
-                // Ocurrió un error al obtener los datos de la base de datos
             }}
 
 
@@ -142,6 +108,8 @@ class Jugadors : Fragment() {
     }
 
     private fun rellenarCircularsProvider() {
+
+
         var nomEquip = binding.spinner?.selectedItem.toString()
 
 
@@ -152,7 +120,8 @@ class Jugadors : Fragment() {
             if(!resultatConsulta.isEmpty) {// Si troba resultat
                 for (document in resultatConsulta) {//  Creem un bucle perque mostri tots els atributs de l'objecte
                     var count=0
-                    val wallItem = copernic.cat.kingsleague.rvJugadors.Jugadors(// objecte
+                    val wallItem = copernic.cat.kingsleague.rvJugadors.Jugadors(
+// objecte
                         nom = document["Nom"].toString(),
                     )
                     if (JugadorsProvider.jugadorsList.isEmpty()) {// Si el provider esta buit
@@ -164,6 +133,7 @@ class Jugadors : Fragment() {
                             }
                         }
                         if (count == 0) { // si el contador es  0 vol dir que ja no hi ha mes items
+
                             JugadorsProvider.jugadorsList.add(wallItem) // afegim els items restants
                         }
                     }
