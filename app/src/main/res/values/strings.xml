@@ -52,7 +52,7 @@
     <string name="crear_equips">CREAR EQUIPS</string>
     <string name="eliminar_equips">ELIMINAR EQUIPS</string>
     <string name="modificar_puntuacio">MODIFICAR PUNTUACIO</string>
-    <string name="foto_de_perfil" translatable="false">Foto de perfil</string>
+    <string name="foto_de_perfil">FOTO DE PERFIL</string>
     <string name="guardar" translatable="false">GUARDAR</string>
     <string name="configuracio">Configuracio</string>
     <string name="tancar_sessio">TANCAR SESSIO</string>

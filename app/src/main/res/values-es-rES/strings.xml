@@ -79,4 +79,5 @@
     <string name="emailincorrecte">Email incorrecto!!</string>
     <string name="calintroduirunnomalequip">Se debe introducir un nombre al equipo</string>
     <string name="eliminar_jugadors">ELIMINAR JUGADORES</string>
+    <string name="foto_de_perfil">FOTO DE PERFIL</string>
 </resources>

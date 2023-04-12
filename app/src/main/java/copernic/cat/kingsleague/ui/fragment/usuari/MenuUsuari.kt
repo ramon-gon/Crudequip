@@ -1,6 +1,7 @@
 package copernic.cat.kingsleague.ui.fragment.usuari
 
 import android.os.Bundle
+import android.view.Gravity
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -16,6 +17,10 @@ class MenuUsuari : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
         _binding = FragmentMenuUsuariBinding.inflate(inflater, container, false)
+
+
+        val textView =  binding.titolMenu
+        textView.gravity = Gravity.CENTER
 
         binding.btnJugadors.setOnClickListener() {
             findNavController().navigate(R.id.action_menuUsuari_to_jugadors)

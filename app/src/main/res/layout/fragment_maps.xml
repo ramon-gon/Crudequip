@@ -6,7 +6,7 @@
     android:name="com.google.android.gms.maps.SupportMapFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".administrador.Maps">
+    tools:context="ui.fragment.administrador.Maps">
 
 <Button
 android:id="@+id/btn_tornar_geolocalitzacio"
