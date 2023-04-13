@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Kings league</string>
+    <string name="app_name" translatable="false">CRUD EQUIP</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
     <string name="has_oblidat_la_contrasenya">Has oblidat la contrasenya?</string>
@@ -27,7 +27,7 @@
     <string name="gmail" translatable="false">Gmail</string>
     <string name="repetir_contrasenya">Repetir Contrasenya</string>
     <string name="logo_splash_screen" translatable="false">Logo Splash screen</string>
-    <string name="benvingut_a_la_kings_league">BENVINGUT A LA KINGS LEAGUE</string>
+    <string name="benvingut_a_la_kings_league">BENVINGUT A CRUD EQUIP</string>
     <string name="veure_jugadors">VEURE JUGADORS</string>
     <string name="veure_classificacio">Veure classificació</string>
     <string name="item" translatable="false">Item</string>

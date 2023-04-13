@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Kings league</string>
     <string name="has_oblidat_la_contrasenya">Have you forgotten the password?</string>
     <string name="registrarse">CHECK IN</string>
     <string name="escriu_contrasenya">Write password</string>
@@ -14,7 +13,7 @@
     <string name="contrasenya">Password</string>
     <string name="nom_usuari">Name user</string>
     <string name="repetir_contrasenya">Repeat Paassword</string>
-    <string name="benvingut_a_la_kings_league">WELCOME TO THE KINGS LEAGUE</string>
+    <string name="benvingut_a_la_kings_league">WELCOME TO THE CRUD EQUIP</string>
     <string name="veure_jugadors">SEE PLAYERS</string>
     <string name="veure_classificacio">See classification</string>
     <string name="classificaci">CLASSIFICATION</string>
