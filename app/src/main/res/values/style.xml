@@ -14,18 +14,16 @@
 
     //boton confirmar
     <style name="Widget.ComunicaProdis.ButtonConfirm" parent="Widget.MaterialComponents.Button">
-        <item name="android:minHeight">40dp</item>
-        <item name="android:textSize">22dp</item>
+        <item name="android:textSize">20sp</item>
         <item name="android:text">@string/acceptar</item>
-        <item name="android:gravity">center_horizontal</item>
+        <item name="android:gravity">center</item>
         <item name="android:textAppearance">?attr/textAppearanceBody1</item>
     </style>
 
     //boton cancelar
     <style name="Widget.ComunicaProdis.ButtonCancel" parent="Widget.MaterialComponents.Button">
-        <item name="android:minHeight">40dp</item>
         <item name="android:textSize">22sp</item>
-        <item name="android:gravity">center_horizontal</item>
+        <item name="android:gravity">center</item>
         <item name="android:textAppearance">?attr/textAppearanceBody1</item>
         <item name="backgroundTint">#FF0000</item>
         <item name="android:text">CANCELAR</item>
