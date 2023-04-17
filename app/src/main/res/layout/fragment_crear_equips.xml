@@ -11,7 +11,7 @@
         android:id="@+id/TitolCrearEquips"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="90dp"
+        android:layout_marginTop="50dp"
         android:text="@string/crear_equips"
         android:textSize="27sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -27,7 +27,8 @@
         android:text="@string/tornar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/crear_equip" />
+        app:layout_constraintTop_toBottomOf="@+id/crear_equip"
+        tools:ignore="TextContrastCheck" />
 
     <TextView
         android:id="@+id/nomEquip"
@@ -79,7 +80,7 @@
         style="@style/Widget.ComunicaProdis.ButtonEnter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="50dp"
         android:backgroundTint="@color/blue"
         android:text="@string/crear"
         app:layout_constraintEnd_toEndOf="parent"

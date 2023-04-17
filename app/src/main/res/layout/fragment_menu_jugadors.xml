@@ -10,7 +10,7 @@
         android:id="@+id/titol_menu_jugador"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="90dp"
+        android:layout_marginTop="50dp"
         android:text="@string/jugador"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,7 +26,8 @@
         android:text="@string/crear_jugador"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titol_menu_jugador" />
+        app:layout_constraintTop_toBottomOf="@+id/titol_menu_jugador"
+        tools:ignore="TextContrastCheck" />
 
 
     <Button
@@ -38,7 +39,8 @@
         android:text="@string/eliminar_jugador"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnCrearJugador" />
+        app:layout_constraintTop_toBottomOf="@+id/btnCrearJugador"
+        tools:ignore="TextContrastCheck" />
 
     <Button
         android:id="@+id/btn_tornar_menujugador"
@@ -49,5 +51,6 @@
         android:text="@string/tornar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnEliminarJugador" />
+        app:layout_constraintTop_toBottomOf="@+id/btnEliminarJugador"
+        tools:ignore="TextContrastCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>

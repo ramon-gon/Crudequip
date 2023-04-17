@@ -6,27 +6,35 @@
 
     //boton enter
     <style name="Widget.ComunicaProdis.ButtonEnter" parent="Widget.MaterialComponents.Button">
+        <item name="android:layout_width">160dp</item>
+        <item name="android:layout_height">50dp</item>
         <item name="android:minHeight">48dp</item>
         <item name="android:textSize">20sp</item>
         <item name="android:gravity">center_horizontal</item>
+        <item name="android:textStyle">bold</item>
         <item name="android:textAppearance">?attr/textAppearanceBody1</item>
     </style>
 
     //boton confirmar
     <style name="Widget.ComunicaProdis.ButtonConfirm" parent="Widget.MaterialComponents.Button">
+        <item name="android:layout_width">160dp</item>
+        <item name="android:layout_height">50dp</item>
         <item name="android:textSize">20sp</item>
         <item name="android:text">@string/acceptar</item>
-        <item name="android:gravity">center
-        </item>
+        <item name="android:gravity">center</item>
+        <item name="android:textStyle">bold</item>
         <item name="android:textAppearance">?attr/textAppearanceBody1</item>
     </style>
 
     //boton cancelar
     <style name="Widget.ComunicaProdis.ButtonCancel" parent="Widget.MaterialComponents.Button">
-        <item name="android:textSize">22sp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:layout_width">160dp</item>
+        <item name="android:layout_height">50dp</item>
         <item name="android:gravity">center</item>
         <item name="android:textAppearance">?attr/textAppearanceBody1</item>
         <item name="backgroundTint">#FF0000</item>
+        <item name="android:textStyle">bold</item>
         <item name="android:text">CANCELAR</item>
     </style>
 
@@ -36,10 +44,12 @@
     <style name="Widget.ComunicaProdis.buttonConfig" parent="Widget.MaterialComponents.Button">
         <item name="android:minHeight">48dp</item>
         <item name="android:textSize">18sp</item>
-        <item name="android:gravity">center_horizontal</item>
+        <item name="android:gravity">center</item>
         <item name="android:textAppearance">?attr/textAppearanceBody1</item>
         <item name="android:layout_marginStart">20dp</item>
         <item name="android:layout_marginEnd">20dp</item>
+        <item name="android:textStyle">bold</item>
+
     </style>
 
 
@@ -48,14 +58,20 @@
     //pnatalla Foto de perfil
     <style name="Widget.ComunicaProdis.ButtonFotoDePerfil_guardar" parent="Widget.MaterialComponents.Button">
         <item name="android:minHeight">60dp</item>
-        <item name="android:textSize">30dp</item>
-        <item name="android:gravity">center_horizontal</item>
+        <item name="android:layout_width">160dp</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textStyle">bold</item>
         <item name="android:textAppearance">?attr/textAppearanceBody1</item>
     </style>
     <style name="Widget.ComunicaProdis.ButtonFotoDePerfil_cancelar" parent="Widget.MaterialComponents.Button">
         <item name="android:minHeight">60dp</item>
-        <item name="android:textSize">30dp</item>
-        <item name="android:gravity">center_horizontal</item>
+        <item name="android:layout_width">160dp</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textStyle">bold</item>
         <item name="android:textAppearance">?attr/textAppearanceBody1</item>
     </style>
 

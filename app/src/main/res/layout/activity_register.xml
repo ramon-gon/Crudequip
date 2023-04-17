@@ -57,7 +57,7 @@
                     android:inputType="textPassword"
                     android:minHeight="48dp"
                     android:textColor="#757575"
-                    tools:ignore="TextContrastCheck">
+                    tools:ignore="TextContrastCheck,DuplicateSpeakableTextCheck">
 
                 </com.google.android.material.textfield.TextInputEditText>
             </com.google.android.material.textfield.TextInputLayout>
@@ -90,7 +90,7 @@
                     android:inputType="textPassword"
                     android:minHeight="48dp"
                     android:textColor="#757575"
-                    tools:ignore="TextContrastCheck">
+                    tools:ignore="TextContrastCheck,DuplicateSpeakableTextCheck">
 
                 </com.google.android.material.textfield.TextInputEditText>
             </com.google.android.material.textfield.TextInputLayout>
@@ -129,7 +129,7 @@
             <Button
                 android:id="@+id/registre_Guardar"
                 style="@style/Widget.ComunicaProdis.ButtonConfirm"
-                android:layout_width="160dp"
+
                 android:layout_height="50dp"
                 android:layout_marginTop="20dp"
                 android:backgroundTint="#2196F3"

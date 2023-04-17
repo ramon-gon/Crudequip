@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="ui.fragment.administrador.FotoPerfilAdmin">
+    tools:context=".ui.fragment.administrador.FotoPerfilAdmin">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -15,7 +15,7 @@
             android:textSize="25sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="90dp"
+            android:layout_marginTop="50dp"
             android:text="@string/foto_de_perfil"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -46,24 +46,20 @@
         <Button
             android:id="@+id/btn_guardar"
             style="@style/Widget.ComunicaProdis.ButtonFotoDePerfil_guardar"
-            android:layout_width="175dp"
-            android:layout_height="60dp"
             android:layout_marginStart="15dp"
-            android:layout_marginBottom="184dp"
+            android:layout_marginTop="50dp"
             android:text="@string/guardar"
-            android:textSize="22sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img_Button_buscar"
+            tools:ignore="TextContrastCheck" />
 
         <Button
             android:id="@+id/btnCancelarfotoPerfil"
             style="@style/Widget.ComunicaProdis.ButtonCancel"
-            android:layout_width="175dp"
-            android:layout_height="60dp"
             android:layout_marginStart="10dp"
-            android:layout_marginBottom="184dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/btn_guardar" />
+            android:layout_marginTop="50dp"
+            app:layout_constraintStart_toEndOf="@+id/btn_guardar"
+            app:layout_constraintTop_toBottomOf="@+id/img_Button_buscar" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

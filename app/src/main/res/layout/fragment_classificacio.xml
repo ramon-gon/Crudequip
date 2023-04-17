@@ -10,7 +10,7 @@
         android:id="@+id/TitolClassificacio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="90dp"
+        android:layout_marginTop="50dp"
         android:text="@string/classificaci"
         android:textSize="27sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,7 +26,8 @@
         android:text="@string/tornar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rvClassificacio" />
+        app:layout_constraintTop_toBottomOf="@+id/rvClassificacio"
+        tools:ignore="TextContrastCheck" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvClassificacio"
