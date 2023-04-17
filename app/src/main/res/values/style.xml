@@ -9,8 +9,8 @@
         <item name="android:layout_width">160dp</item>
         <item name="android:layout_height">50dp</item>
         <item name="android:minHeight">48dp</item>
-        <item name="android:textSize">20sp</item>
-        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:gravity">center</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textAppearance">?attr/textAppearanceBody1</item>
     </style>
@@ -19,7 +19,7 @@
     <style name="Widget.ComunicaProdis.ButtonConfirm" parent="Widget.MaterialComponents.Button">
         <item name="android:layout_width">160dp</item>
         <item name="android:layout_height">50dp</item>
-        <item name="android:textSize">20sp</item>
+        <item name="android:textSize">18sp</item>
         <item name="android:text">@string/acceptar</item>
         <item name="android:gravity">center</item>
         <item name="android:textStyle">bold</item>
@@ -28,7 +28,7 @@
 
     //boton cancelar
     <style name="Widget.ComunicaProdis.ButtonCancel" parent="Widget.MaterialComponents.Button">
-        <item name="android:textSize">20sp</item>
+        <item name="android:textSize">18sp</item>
         <item name="android:layout_width">160dp</item>
         <item name="android:layout_height">50dp</item>
         <item name="android:gravity">center</item>
@@ -60,7 +60,7 @@
         <item name="android:minHeight">60dp</item>
         <item name="android:layout_width">160dp</item>
         <item name="android:layout_height">50dp</item>
-        <item name="android:textSize">20sp</item>
+        <item name="android:textSize">18sp</item>
         <item name="android:gravity">center</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textAppearance">?attr/textAppearanceBody1</item>
@@ -69,7 +69,7 @@
         <item name="android:minHeight">60dp</item>
         <item name="android:layout_width">160dp</item>
         <item name="android:layout_height">50dp</item>
-        <item name="android:textSize">20sp</item>
+        <item name="android:textSize">18sp</item>
         <item name="android:gravity">center</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textAppearance">?attr/textAppearanceBody1</item>
