@@ -2,7 +2,7 @@
     <string name="app_name" translatable="false">CRUD EQUIP</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
-    <string name="has_oblidat_la_contrasenya">Has oblidat la contrasenya?</string>
+    <string name="has_oblidat_la_contrasenya">HAS OBLIDAT LA CONTRASENYA?</string>
     <string name="registrarse">REGISTRAR-SE</string>
     <string name="escriu_contrasenya">Escriu contrasenya</string>
     <string name="escriu_gmail">Escriu Gmail</string>

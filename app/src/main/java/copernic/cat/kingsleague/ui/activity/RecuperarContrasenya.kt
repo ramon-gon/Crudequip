@@ -2,6 +2,7 @@ package copernic.cat.kingsleague.ui.activity
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.Gravity
 import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AlertDialog
@@ -19,10 +20,6 @@ class RecuperarContrasenya : AppCompatActivity() {
       És recomanable per seguretat i facilitar-nos la feina que els noms d'aquests atributs siguin els mateixos que els noms dels
       id dels components del fitxer xml*/
 
-    private lateinit var correuRecuperarContrasenya: EditText
-    private lateinit var botoRecuperarContrasenya: Button
-    private lateinit var  botocancel: Button
-
     private lateinit var binding: RecuperarContrasenyaBinding
 
     private lateinit var auth: FirebaseAuth
@@ -34,6 +31,10 @@ class RecuperarContrasenya : AppCompatActivity() {
 
         binding = RecuperarContrasenyaBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+
+        val textView =  binding.titolRecuperarContrasenya
+        textView.gravity = Gravity.CENTER
 
         //Inicialitzem la variable de tipus FirebaseAuth amb una instància d'aquesta classe
         auth = Firebase.auth
