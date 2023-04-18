@@ -21,8 +21,6 @@ class MapsUsuaris : Fragment(), OnMapReadyCallback {
 
     private var _binding: FragmentMapsUsuarisBinding? = null
     private val binding get() = _binding!!
-    private var param1: String? = null
-    private var param2: String? = null
 
 
     private lateinit var map: GoogleMap
