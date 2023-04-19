@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="has_oblidat_la_contrasenya">Has olvidado la contraseña?</string>
+    <string name="has_oblidat_la_contrasenya">¿HAS OLVIDADO LA CONTRASEÑA?</string>
     <string name="registrarse">REGISTRARSE</string>
     <string name="escriu_contrasenya">Escribe contraseña</string>
     <string name="escriu_gmail">Escribe Gmail</string>
