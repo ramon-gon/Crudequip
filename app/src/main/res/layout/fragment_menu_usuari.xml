@@ -44,7 +44,7 @@
         android:id="@+id/btnClasificacio"
         android:layout_width="175dp"
         android:layout_height="70dp"
-        android:layout_marginStart="15dp"
+        android:layout_marginStart="5dp"
         android:layout_marginTop="51dp"
         android:backgroundTint="@color/purple_500"
         android:text="@string/veure_classificacio"

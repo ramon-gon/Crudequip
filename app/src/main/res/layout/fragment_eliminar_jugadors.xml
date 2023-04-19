@@ -57,7 +57,7 @@
         style="@style/Widget.ComunicaProdis.ButtonEnter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="50dp"
         android:backgroundTint="#C8051B"
         android:text="@string/eliminar"
         app:layout_constraintEnd_toEndOf="parent"
